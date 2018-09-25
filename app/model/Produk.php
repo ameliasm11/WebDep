@@ -12,8 +12,6 @@ class Produk extends Model
     'id',
     'name',
     'producat_id',
-    'location',
-    'idr',
     'url',
     'status',
   ];
