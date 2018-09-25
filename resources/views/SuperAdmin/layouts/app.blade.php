@@ -13,16 +13,16 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="../images/logoDEP.png">
 
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/themify-icons.css">
-    <link rel="stylesheet" href="../assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="{{ asset('plugins/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/css/cs-skin-elastic.css') }}">
     <!-- <link rel="stylesheet" type="text/css" href="/pathto/css/sweetalert.css"> -->
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="../assets/scss/style.css">
-    <link href="../assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="asset/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="{{ asset ('plugins/scss/style.css') }}">
+    <link href="{{ asset ('plugins/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -44,6 +44,12 @@
                 <a class="navbar-brand" href="./"><img src="../images/nav_logo.png" alt="Logo" width="50%"></a>
                 <a class="navbar-brand hidden" href="./"><img src="../images/logoDEP.png" alt="Logo"></a>
             </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{{route('dashboard')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -99,18 +105,18 @@
         <!-- Header-->
         @yield('content')
 
-    <script src="../assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/main.js"></script>
+        <script src="{{ asset ('plugins/js/vendor/jquery-2.1.4.min.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="{{ asset ('plugins/js/plugins.js') }}"></script>
+        <script src="{{ asset ('plugins/js/main.js') }}"></script>
 
-    <script src="../assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
-    <script src="../assets/js/widgets.js"></script>
-    <script src="../assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="../assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="../assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="../assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+        <script src="{{ asset ('plugins/js/lib/chart-js/Chart.bundle.js') }}"></script>
+        <script src="{{ asset ('plugins/js/dashboard.js') }}"></script>
+        <script src="{{ asset ('plugins/js/widgets.js') }}"></script>
+        <script src="{{ asset ('plugins/js/lib/vector-map/jquery.vmap.js') }}"></script>
+        <script src="{{ asset ('plugins/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
+        <script src="{{ asset ('plugins/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
+        <script src="{{ asset ('plugins/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
     <script>
         ( function ( $ ) {
             "use strict";

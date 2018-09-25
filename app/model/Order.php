@@ -15,7 +15,7 @@ class Order extends Model
     'tanggal',
     'jam_pesan',
     'status',
-    'no_hp'.
+    'no_hp',
   ];
     public function Jadwal()  {
       return $this->HasMany('App\model\Jadwal');
