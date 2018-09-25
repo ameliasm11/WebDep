@@ -16,39 +16,51 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Futsal List</strong>
+                            <strong class="card-title">Futsal Jadwal</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
                         <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                         <div class="col-12 col-md-3">
                           <select name="level" id="level" class="form-control">
-                            <option value="0" disabled selected>Please select</option>
-                            <option value="Tiket Kereta">Tiket Kereta</option>
-                            <option value="Tiket Pesawat">Tiket Pesawat</option>
-                            <option value="Tiket Travel">Tiket Travel</option>
-                            <option value="Hotel">Hotel</option>
-                            <option value="Futsal">Futsal</option>
+                            <option value="0" disabled selected>Product</option>
+                              @foreach($products as $product)
+                            <option href="{{$product->url}}" value="" >{{$product->nama}}</option>
+                            @endforeach
                           </select>
-                        </div>
+                   </div>
+                   <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
+                   <div class="col-12 col-md-3">
+                     <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
+                       <option value="0" disabled selected>Data</option>
+                       <option value="{{route('superadmin.futsal.order')}}">Order</a></option>
+                       <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
+                       <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
+                       <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
+                       <option value="{{route('superadmin.futsal.harga')}}">Harga</option>
+                     </select>
+                   </div>
+                 </div>
                       </div>
-                    <div align="right">
+                        <div align="right">
                         <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Place Name</th>
+                        <th>Name</th>
                         <th>ID Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @php $no = 1; @endphp
                       @foreach($data as $datas)
                       <tr>
-                        <td>{{$datas->id}}</td>
+                        <td>{{$no++}}</td>
                         <td>{{$datas->name}}</td>
                         <td>{{$datas->level}}</td>
                         <td>{{$datas->description}}</td>
