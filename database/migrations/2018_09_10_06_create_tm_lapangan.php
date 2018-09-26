@@ -13,17 +13,18 @@ class CreateTmLapangan extends Migration
      */
     public function up()
     {
-        Schema::create('tm_lapangan', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('ket_lapangan');
-            $table->integer('tempat_id')->unsigned();
-            $table->rememberToken();
-            $table->timestamps();
+      Schema::create('tm_lapangan', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('nama');
+          $table->string('ket');
+          $table->integer('tempat_id')->unsigned();
+          $table->rememberToken();
+          $table->timestamps();
 
-             $table->foreign('tempat_id')->references('id')->on('tm_tempat')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-        });
+          $table->foreign('tempat_id')->references('id')->on('tm_tempat')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+      });
     }
 
     /**

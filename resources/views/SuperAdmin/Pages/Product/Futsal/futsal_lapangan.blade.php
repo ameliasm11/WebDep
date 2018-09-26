@@ -49,8 +49,8 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>tempat</th>
+                        <th>Keterangan Lapangan</th>
+                        <th>ID Tempat</th>
                         <th>Actions</th>
                       </tr>
                     </thead>

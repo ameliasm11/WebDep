@@ -20,6 +20,6 @@ class ProductCategoryController extends SystemController
     {
       $products = Kategori_Produk::findOrFail($id);
       $products->delete();
-      return redirect()->route('product')->with('alert-success','Data berhasi dihapus!');
+      return redirect()->route('category')->with('alert-success','Data berhasi dihapus!');
     }
 }

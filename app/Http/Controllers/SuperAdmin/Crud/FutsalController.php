@@ -123,4 +123,22 @@ class FutsalController extends SystemController
         $data->delete();
         return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil dihapus!');
     }
+
+    //lapangan
+    public function newLapangan()
+      {
+          $page = 'SuperAdmin.Pages.Product.Futsal.newLapangan';
+          $modules = Module::with('Menus')->get();
+          return view($page)->with(compact('modules'));
+  	}
+
+    public function createLapangan(Request $request)
+        {
+            $data = new Lapangan();
+            $data->ket_lapangan = $request->input('ket_lapangan');
+            $data->tempat_id = $request->input('tempat_id');
+            $data->save();
+            return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
+        }
+
 }

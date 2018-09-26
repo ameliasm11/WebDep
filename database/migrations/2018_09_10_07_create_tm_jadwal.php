@@ -13,18 +13,19 @@ class CreateTmJadwal extends Migration
      */
     public function up()
     {
-        Schema::create('tm_jadwal', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('lapangan_id')->unsigned();
-            $table->string('jam');
-            $table->string('tanggal');
-            $table->rememberToken();
-            $table->timestamps();
+      Schema::create('tm_jadwal', function (Blueprint $table) {
+          $table->increments('id');
+          $table->integer('lapangan_id')->unsigned();
+          $table->string('tanggal');
+          $table->string('jam');
+          $table->string('status');
+          $table->rememberToken();
+          $table->timestamps();
 
-            $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-        });
+          $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+      });
     }
 
     /**

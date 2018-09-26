@@ -10,7 +10,8 @@ class Lapangan extends Model
 
   protected $fillable = [
     'id',
-    'ket_lapangan',
+    'nama',
+    'ket',
     'tempat_id',
   ];
     public function Tempat()  {
