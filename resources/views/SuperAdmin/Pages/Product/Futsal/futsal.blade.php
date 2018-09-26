@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Futsal</h1>
+                        <h1>Form Futsal</h1>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                           <select name="level" id="level" class="form-control">
                             <option value="0" disabled selected>Product</option>
                               @foreach($products as $product)
-                            <option href="{{$product->url}}" value="" >{{$product->nama}}</option>
+                            <option href="{{$product->url}}" value="">{{$product->nama}}</option>
                             @endforeach
                           </select>
                    </div>
@@ -42,6 +42,7 @@
                    </div>
                  </div>
                       </div>
+                      <div class="card-body">
                         <div align="right">
                         <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
@@ -84,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-
+              </div>
 
                 </div>
             </div><!-- .animated -->

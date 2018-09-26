@@ -40,7 +40,7 @@
         <button type="reset" class="btn btn-success btn-sm">
             <i class="fa fa-ban"></i> Reset
         </button>
-        <button class="btn btn-danger btn-sm" type="submit">
+        <button class="btn btn-danger btn-sm" type="submit" href="{{route('product')}}">
             <i class="fa fa-close"></i>cancel
         </button>
     </div>

@@ -61,8 +61,12 @@ Auth::routes();
       Route::get('product-futsal-tempat', 'FutsalController@tempat')->name('superadmin.futsal.tempat');
       //tabel Lapangan
       Route::get('product-futsal-lapangan', 'FutsalController@lapangan')->name('superadmin.futsal.lapangan');
-      //tabel harga
+
+      //ROUTE HARGA DI SINI
       Route::get('product-futsal-harga', 'FutsalController@harga')->name('superadmin.futsal.harga');
+      Route::get('product-futsal-harga-new', 'FutsalController@Newharga')->name('superadmin.futsal.Newharga');
+
+
       //form create tempat
       Route::get('product-futsal-newTempat', 'FutsalController@newTempat')->name('superadmin.futsal.newTempat');
       //action create
@@ -77,6 +81,12 @@ Auth::routes();
       Route::get('product-futsal-newLapangan', 'FutsalController@newLapangan')->name('superadmin.futsal.newLapangan');
       //action create
       Route::post('product-futsal-createLapangan', 'FutsalController@createLapangan')->name('superadmin.futsal.createLapangan');
+      //form edit Lapangan
+      Route::get('product-futsal-editLapangan/{id}', 'FutsalController@editLapangan')->name('superadmin.futsal.editLapangan');
+      //action update lapangan
+      Route::post('product-futsal-updateLapangan/{id}', 'FutsalController@updateLapangan')->name('superadmin.futsal.updateLapangan');
+      //delete tempart
+      Route::post('product-futsal-deleteLapangan/{id}', 'FutsalController@deleteLapangan')->name('superadmin.futsal.deleteLapangan');
 	});
 
 

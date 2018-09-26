@@ -18,8 +18,12 @@
                         <form action="{{route('superadmin.futsal.createLapangan')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                           {{ csrf_field() }}
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Lapangan</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="ket_lapangan" name="ket_lapangan" placeholder="Keterangan Tempat" class="form-control"></div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama Lapangan" class="form-control"></div>
+                          </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Tempat</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan Tempat" class="form-control"></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">ID tempat</label></div>
@@ -34,6 +38,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
+                        <a href="{{route('superadmin.futsal.lapangan')}}">
                         <button type="reset" class="btn btn-danger btn-sm"></a>
                           <i class="fa fa-close"></i> Cancel
                         </button>
