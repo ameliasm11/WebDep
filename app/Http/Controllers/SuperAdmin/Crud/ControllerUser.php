@@ -37,7 +37,6 @@ class ControllerUser extends SystemController
 
    public function edit($id)
    {
-
      // $user = Users::find($id);
      $user = Users::findOrFail($id);
      $modules = Module::with('Menus')->get();

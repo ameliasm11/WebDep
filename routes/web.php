@@ -32,8 +32,8 @@ Auth::routes();
 		Route::get('role', 'RoleManagementController@index')->name('superadmin.role.index');
 		Route::get('role-new', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
 		Route::post('role-new', 'RoleManagementController@save')->name('superadmin.role.save');
-    Route::get('role-update/{$id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
-    Route::delete('role/{$id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
+    Route::get('role-update/{id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
+    Route::delete('role/{id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
     //USER WEB MANAGEMENT
     Route::get('user', 'ControllerUser@data')->name('superadmin.user.data');
     Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('superadmin.user.edit');
@@ -65,8 +65,10 @@ Auth::routes();
       //ROUTE HARGA DI SINI
       Route::get('product-futsal-harga', 'FutsalController@harga')->name('superadmin.futsal.harga');
       Route::get('product-futsal-harga-new', 'FutsalController@Newharga')->name('superadmin.futsal.Newharga');
-
-
+      Route::post('product-futsal-harga-new', 'FutsalController@SaveHarga')->name('superadmin.futsal.SaveHarga');
+      Route::get('product-futsal-harga-edit/{id}', 'FutsalController@editHarga')->name('superadmin.futsal.editHarga');
+      Route::post('product-futsal-harga-update/{id}', 'FutsalController@updateHarga')->name('superadmin.futsal.updateHarga');
+Route::post('product-futsal-harga-delete/{id}', 'FutsalController@deleteHarga')->name('superadmin.futsal.deleteHarga');
       //form create tempat
       Route::get('product-futsal-newTempat', 'FutsalController@newTempat')->name('superadmin.futsal.newTempat');
       //action create

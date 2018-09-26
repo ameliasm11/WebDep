@@ -74,10 +74,56 @@ class FutsalController extends SystemController
           return view($page)->with(compact('modules'));
   	}
 
+    public function SaveHarga(Request $request){
+      // dd($request->request);
+        //$page = 'SuperAdmin.Pages.Role.index';
+        $this->validate($request, [
+          'jadwal_id'   => 'required',
+          'harga'   => 'required',
+        ]);
+          $harga = new Harga();
+          $harga->jadwal_id = $request->get('jadwal_id');
+          $harga->harga = $request->get('harga');
+          $harga->save();
+          return redirect()->route('superadmin.futsal.harga')->with('alert','Berhasil Menambahkan data');
+    }
 
+    public function editHarga($id)
+    {
+      $page = 'SuperAdmin.Pages.Product.Futsal.UpdateHarga';      // $user = Users::find($id);
+      $editHarga = Harga::findOrFail($id);
+      $modules = Module::with('Menus')->get();
+      return view($page)->with(compact('modules','editHarga'));
+    }
+
+    public function updateHarga(Request $request, $id)
+    {
+      // $user = Users::where('id','$id')->first();
+      $updateHarga = Harga::findOrFail($id);
+      $updateHarga->jadwal_id = $request->jadwal_id;
+      $updateHarga->harga = $request->harga;
+      $isSuccess = $updateHarga->save();
+      if ($isSuccess) {
+        // return success
+        return redirect()->route('superadmin.futsal.futsal_Harga')->with('alert-success','Data berhasil diubah!');
+      }
+      else {
+        // returm failed
+        return redirect()->route('superadmin.futsal.newHarga')->with('alert-failed','Data tidak berhasil diubah!');
+      }
+      $updateHarga->reset();
+      return redirect()->route('superadmin.futsal.editHarga');
+     }
+
+     public function deleteHarga($id)
+     {
+       $data = Harga::findOrFail($id);
+       $data->delete();
+       return redirect()->route('superadmin.futsal.harga')->with('alert-success','Data berhasil dihapus!');
+     }
 
     public function newTempat()
-      {
+    {
           $page = 'SuperAdmin.Pages.Product.Futsal.newTempat';
           $modules = Module::with('Menus')->get();
           return view($page)->with(compact('modules'));
