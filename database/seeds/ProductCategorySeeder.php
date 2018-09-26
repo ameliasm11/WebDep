@@ -11,29 +11,19 @@ class ProductCategorySeeder extends Seeder
      */
     public function run()
     {
-      DB::table('tm_category_product')->insert([
-          'name' => 'Futsal',
-          'description' => 'Pemesanan Tempat Futsal',
-      ]);
-
-      DB::table('tm_category_product')->insert([
-          'name' => 'Hiburan',
-          'description' => 'Penyewaan hiburan Organ, Sandiwara',
-      ]);
-
-      DB::table('tm_category_product')->insert([
-          'name' => 'Hotel',
-          'description' => 'Pemesanan Hotel',
-      ]);
-
-      DB::table('tm_category_product')->insert([
-          'name' => 'Restoran',
-          'description' => 'Pemesanan Restoran',
-      ]);
+      // DB::table('tm_category_product')->insert([
+      //     'name' => 'Hiburan',
+      //     'description' => 'Penyewaan Organ, Penyewaan Sandiwara',
+      // ]);
+      //
+      // DB::table('tm_category_product')->insert([
+      //     'name' => 'Tempat',
+      //     'description' => 'Pemesanan Tempat Futsal, Pemesanan Hotel, Pemesanan Restoran',
+      // ]);
 
       DB::table('tm_category_product')->insert([
           'name' => 'Tiket',
-          'description' => 'Tiket Pesawat, Tiket Kereta, Tiket Travel',
+          'description' => 'Pemesanan Tiket Kereta Api, Pemesanan Tiket Pesawat, Pemesanan Tiket Travel',
       ]);
     }
 }

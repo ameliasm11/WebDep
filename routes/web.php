@@ -45,6 +45,13 @@ Auth::routes();
     Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');
 
     //Product
+    Route::get('product', 'ProductController@product')->name('product');
+    Route::get('product/add', 'ProductController@tambah')->name('product.add');
+    Route::post('product/add', 'ProductController@store')->name('product.add');
+    Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
+    Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
+    Route::post('product/delete/{id}', 'ProductController@destroy')->name('product.delete');
+
     //Futsal
     //tabel jadwal
       Route::get('product-futsal', 'FutsalController@index')->name('superadmin.futsal.index');

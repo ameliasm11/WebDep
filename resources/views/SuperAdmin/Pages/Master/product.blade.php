@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Product Category</h1></div>
+        <h1>Product</h1></div>
       </div>
     </div>
   </div>
@@ -14,27 +14,34 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Product Category</strong></div>
+              <strong class="card-title">List Product</strong></div>
+              <div class="card-body">
+              <div align="right">
+                  <a href="{{route('product.add')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+              </div><br>
                 <div class="card-body">
                   <div align="right">
-                    <a href="{{route('product')}}"><button type="button" class="btn btn-success btn-sm">&nbsp; Detail Product</button></a>
-                  </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Deskripsi</th>
-                        <th>Aksi</th>
+                        <th>ID Produk Kategori</th>
+                        <th>URL</th>
+                        <th>status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($categorys as $category)
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->name}}</td>
-                        <td>{{$category->description}}</td>
+                      @foreach($products as $product)
+                        <td>{{$product->id}}</td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->producat_id}}</td>
+                        <td>{{$product->url}}</td>
+                        <td>{{$product->status}}</td>
                         <td>
-                          <form action="{{ route('category.delete', $category->id) }}" method="post" style="display: inline-block">
+                          <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                          <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">
                                {{ csrf_field() }}
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
