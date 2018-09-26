@@ -39,7 +39,10 @@ class RoleManagementController extends SystemController
       $this->validate($request, [
         'name'   => 'required',
         'level'   => 'required',
-        'description'   => 'required|max:255',
+        'description' => 'required|max:255',
+        // 'do_insert' => 'nullable',
+        // 'do_update' => 'nullable',
+        // 'do_insert' => 'nullable',
         // 'menus'   => 'required',
       ]);
 
@@ -80,9 +83,9 @@ class RoleManagementController extends SystemController
         //$post->Access()->save($access);
       return redirect()->route('superadmin.role.index')->with('alert','Berhasil Menambahkan data');
   }
-
   public function edit($id)
     {
+      
         $page = 'SuperAdmin.Pages.Role.UpdateRole';
         $modules = Module::with('Menus')->get();
         $data = Role::where('id', $id)->get();
@@ -90,8 +93,9 @@ class RoleManagementController extends SystemController
 	}
 
   public function destroy($id){
-    $delete = Role::where('id' , $id)->first();
-    $delete->delete();
-    return redirect()->route('superadmin.role.index')->with('alert', 'Deleted');
+    $delete = Role::find($id)->delete();
+    return !$delete
+            ? redirect()->back()->with('warning', 'Gagal hapus data')->withInput($request->all())
+            : redirect()->route('superadmin.role.index')->with('success', 'Berhasil hapus data');
     }
 }

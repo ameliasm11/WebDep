@@ -25,17 +25,15 @@ Auth::routes();
 		Route::get('logout', 'LoginController@logout')->name('superadmin.logout');
 	});
 
-	//MENAMPILKAN MODULE  DAN MENU
 	//MENAMPILKAN KONTEN
 
 	Route::group(['namespace' => 'Crud'], function () {
     //ROLE MANAGEMENT
 		Route::get('role', 'RoleManagementController@index')->name('superadmin.role.index');
-		Route::get('role/newrole', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
-		Route::post('role/newrole', 'RoleManagementController@save')->name('superadmin.role.save');
+		Route::get('role-new', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
+		Route::post('role-new', 'RoleManagementController@save')->name('superadmin.role.save');
     Route::get('role-update/{$id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
-    Route::post('role/newrole/{$id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
-
+    Route::delete('role/{$id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
     //USER WEB MANAGEMENT
     Route::get('user', 'ControllerUser@data')->name('superadmin.user.data');
     Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('superadmin.user.edit');

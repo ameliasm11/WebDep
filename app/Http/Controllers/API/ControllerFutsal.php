@@ -29,10 +29,11 @@ class ControllerFutsal extends Controller
   public function showjadwal(Request $request)
   {
         $this->validate($request, [
-        $lapangan = $request->input('lapangan_id')
+        $lapangan = $request->input('lapangan_id'),
+        $tanggal = $request->input('tanggal')
         ]);
-        $data = \App\model\Jadwal::where('lapangan_id',$lapangan)->get();
-
+        $data = \App\model\Jadwal::where('lapangan_id', $lapangan)
+            ->where('tanggal', $tanggal)->get();
     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
       $res['status'] = "ok";
       $res['code'] = 200;
