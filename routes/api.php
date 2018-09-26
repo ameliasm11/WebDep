@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('tempat','API\ControllerFutsal@tempat'); //get tempat futsal all
+Route::post('lapangan','API\ControllerFutsal@lapangan');//get lapangan order by tempat_id
+Route::post('jadwal','API\ControllerFutsal@showjadwal'); // get jadwal order by lapangan_id
+Route::post('login', 'API\ControllerLogin@doLogin'); // API Login
+Route::post('register', 'API\ControllerRegister@create'); // Api Register
