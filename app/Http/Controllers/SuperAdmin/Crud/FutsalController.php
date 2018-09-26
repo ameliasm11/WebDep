@@ -56,15 +56,25 @@ class FutsalController extends SystemController
         return view($page)->with(compact('modules','data','products'));
     }
 
+    //SEMUA FUNCTION HARGA DI SINI
     public function harga()
     {
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Harga';
         $modules = Module::with('Menus')->get();
-        $products = Produck::all();
+        $products = Produk::all();
         $data = Harga::all();
         // $accesses = Module::with('Access')->get();
         return view($page)->with(compact('modules','data','products'));
     }
+
+    public function Newharga()
+    {
+          $page = 'SuperAdmin.Pages.Product.Futsal.newHarga';
+          $modules = Module::with('Menus')->get();
+          return view($page)->with(compact('modules'));
+  	}
+
+
 
     public function newTempat()
       {

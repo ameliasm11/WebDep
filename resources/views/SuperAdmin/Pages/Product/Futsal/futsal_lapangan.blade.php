@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Futsal</h1>
+                        <h1>Form Lapangan</h1>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Futsal List</strong>
+                            <strong class="card-title">Lapangan List</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -42,7 +42,8 @@
                    </div>
                  </div>
                       </div>
-                        <div align="right">
+                      <div class="card-body">
+                      <div align="right">
                         <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -81,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-
+              </div>
 
                 </div>
             </div><!-- .animated -->
