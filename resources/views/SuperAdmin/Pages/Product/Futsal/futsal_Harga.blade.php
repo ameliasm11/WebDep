@@ -50,16 +50,15 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Jadwal ID</th>
                           <th>Harga</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @php $no = 1; @endphp
                         @foreach($data as $datas)
                         <tr>
-                          <td>{{$datas->id}}</td>
-                          <td>{{$datas->jadwal_id}}</td>
+                          <td>{{$no++}}</td>
                           <td>{{$datas->harga}}</td>
                           <td>
                             <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">

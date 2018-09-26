@@ -26,7 +26,6 @@
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>ID Produk Kategori</th>
                         <th>URL</th>
                         <th>status</th>
                         <th>Action</th>
@@ -37,7 +36,6 @@
                       @foreach($products as $product)
                         <td>{{$no++}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->producat_id}}</td>
                         <td>{{$product->url}}</td>
                         <td>{{$product->status}}</td>
                         <td>
