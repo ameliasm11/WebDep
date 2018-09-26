@@ -40,10 +40,10 @@
                         <td>{{$datas->level}}</td>
                         <td>{{$datas->description}}</td>
                         <td>
-                          <center><a href="{{route ('superadmin.role.edit', $datas->id  )}}">
+                          <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                           </a>
-                            <form action="{{route ('superadmin.role.delete', $datas->id) }}"  method="POST" style="display: inline-block">
+                            <form action="{{route ('superadmin.role.delete', $datas->id) }}" method="POST" style="display: inline-block">
   								            {{ csrf_field() }}
                               {{ method_field('DELETE') }}
                               <!-- <a href="{{route('superadmin.role.delete', [$datas->id])}}"> -->
@@ -51,7 +51,6 @@
                               <!-- </a> -->
                             </form>
                             </center>
-
                         </td>
                       </tr>
                       @endforeach
