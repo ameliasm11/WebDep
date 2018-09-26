@@ -15,11 +15,6 @@
         </div>
       </div>
     <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">ID Role</label></div>
-        <div class="col-10 col-md-9"><input type="text" id="role_id" name="role_id" class="form-control" value="{{ $user->role_id }}" disabled>
-        </div>
-      </div>
-    <div class="row form-group">
         <div class="col col-md-2"><label for="text-input" class=" form-control-label">Email</label></div>
         <div class="col-10 col-md-9"><input type="text" id="email" name="email" class="form-control" value="{{ $user->email }}">
         </div>

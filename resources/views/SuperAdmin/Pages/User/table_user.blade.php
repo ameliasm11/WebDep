@@ -24,16 +24,15 @@
                       <tr>
                         <th>No</th>
                         <th>Name</th>
-                        <th>Role</th>
                         <th>Email</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @php $no = 1; @endphp
                       @foreach($user as $users)
-                        <td>{{$users->id}}</td>
+                        <td>{{$no++}}</td>
                         <td>{{$users->name}}</td>
-                        <td>{{$users->role_id}}</td>
                         <td>{{$users->email}}</td>
                         <td>
                           <center><a href="{{route('superadmin.user.edit', [$users]) }}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
