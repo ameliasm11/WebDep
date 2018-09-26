@@ -13,19 +13,21 @@ class CreateTmOrder extends Migration
      */
     public function up()
     {
-      Schema::create('tm_oder', function (Blueprint $table) {
+      Schema::create('tm_order', function (Blueprint $table) {
           $table->increments('id');
+          $table->integer('jadwal_id')->unsigned();
           $table->string('nama');
-          $table->integer('no_hp');
-          $table->integer('tempat');
-          $table->integer('lapangan');
-          $table->integer('tanggal');
-          $table->integer('jam');
-          $table->integer('harga');
+          $table->string('tanggal');
+          $table->string('jam_pesan');
+          $table->string('no_hp');
           $table->string('status');
           $table->rememberToken();
           $table->timestamps();
-        });
+
+           $table->foreign('jadwal_id')->references('id')->on('tm_jadwal')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+      });
     }
 
     /**

@@ -21,4 +21,7 @@ class Jadwal extends Model
     public function Harga() {
       return $this->HasMany('App\model\Harga');
     }
+    public function Order() {
+      return $this->belongsTo('App\model\Order');
+    }
 }
