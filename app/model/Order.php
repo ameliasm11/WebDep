@@ -9,13 +9,14 @@ class Order extends Model
   protected $table = 'tm_order';
 
   protected $fillable = [
-    'id',
-    'nama',
-    'no_hp',
+		'id',
+		'nama',
+		'no_hp',
     'tempat',
-    'lapangan',
+		'lapangan',
     'tanggal',
     'jam',
     'harga',
-    'status',  
+    'status',
+	];
 }
