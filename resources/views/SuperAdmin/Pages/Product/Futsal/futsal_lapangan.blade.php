@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Form Lapangan</h1>
+                        <h1>Futsal</h1>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Lapangan List</strong>
+                            <strong class="card-title">Futsal List</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -42,14 +42,14 @@
                    </div>
                  </div>
                       </div>
-                      <div class="card-body">
-                      <div align="right">
-                        <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                        <div align="right">
+                        <a href="{{route('superadmin.futsal.newLapangan')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Nama</th>
                         <th>Keterangan Lapangan</th>
                         <th>ID Tempat</th>
                         <th>Actions</th>
@@ -60,19 +60,19 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->ket_lapangan}}</td>
+                        <td>{{$datas->nama}}
+                        <td>{{$datas->ket}}</td>
                         <td>{{$datas->tempat_id}}</td>
 
                         <td>
-                          <center><a href="">
+                          <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                           </a>
-                            <!-- <form method="POST" action="{{ route('superadmin.role.delete', [$datas->id]) }}" style="display: inline-block;">
+                             <form method="POST" action="{{route('superadmin.futsal.deleteLapangan', [$datas->id]) }}" style="display: inline-block;">
   								            {{ csrf_field() }}
-                              {{ method_field('DELETE') }} -->
-                              <a href="{{route('superadmin.role.delete', [$datas->id])}}">
-                                <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                              </a></center>
+                                <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                              </form>
+                              </center>
                             <!-- </form> -->
                         </td>
                       </tr>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-              </div>
+
 
                 </div>
             </div><!-- .animated -->

@@ -83,6 +83,12 @@ Route::post('product-futsal-harga-delete/{id}', 'FutsalController@deleteHarga')-
       Route::get('product-futsal-newLapangan', 'FutsalController@newLapangan')->name('superadmin.futsal.newLapangan');
       //action create
       Route::post('product-futsal-createLapangan', 'FutsalController@createLapangan')->name('superadmin.futsal.createLapangan');
+      //form edit Lapangan
+      Route::get('product-futsal-editLapangan/{id}', 'FutsalController@editLapangan')->name('superadmin.futsal.editLapangan');
+      //action update lapangan
+      Route::post('product-futsal-updateLapangan/{id}', 'FutsalController@updateLapangan')->name('superadmin.futsal.updateLapangan');
+      //delete tempart
+      Route::post('product-futsal-deleteLapangan/{id}', 'FutsalController@deleteLapangan')->name('superadmin.futsal.deleteLapangan');
 	});
 
 

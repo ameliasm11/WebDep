@@ -9,14 +9,15 @@ class Order extends Model
   protected $table = 'tm_order';
 
   protected $fillable = [
-		'id',
+    'id',
+		'jadwal_id',
 		'nama',
-		'no_hp',
-    'tempat',
-		'lapangan',
     'tanggal',
-    'jam',
-    'harga',
+		'jam_pesan',
+    'no_hp',
     'status',
 	];
+    public function Jadwal()  {
+    	return $this->HasOne('App\model\Jadwal');
+    }
 }

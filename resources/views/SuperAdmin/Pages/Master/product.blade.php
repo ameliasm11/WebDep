@@ -33,8 +33,9 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @php $no = 1; @endphp
                       @foreach($products as $product)
-                        <td>{{$product->id}}</td>
+                        <td>{{$no++}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->producat_id}}</td>
                         <td>{{$product->url}}</td>

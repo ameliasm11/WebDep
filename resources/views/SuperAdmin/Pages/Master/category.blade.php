@@ -29,8 +29,9 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @php $no = 1; @endphp
                       @foreach($categorys as $category)
-                        <td>{{$category->id}}</td>
+                        <td>{{$no++}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->description}}</td>
                         <td>
