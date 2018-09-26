@@ -43,7 +43,7 @@
                  </div>
                       </div>
                         <div align="right">
-                        <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                        <a href="{{route('superadmin.futsal.newLapangan')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
