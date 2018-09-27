@@ -27,22 +27,23 @@
           <div class="col col-md-2"><label for="select" class=" form-control-label">Status</label></div>
           <div class="col-12 col-md-9">
               <select name="status" id="status" class="form-control" value="{{ $products->status }}">
-                  <option value="0">Please select</option>
+                  <option value="0" disabled>Please select</option>
                       <option value="1">True</option>
                       <option value="2">False</option>
               </select>
           </div>
       </div>
-    <div class="card-footer">
+      <div class="card-footer">
         <button type="submit" class="btn btn-primary btn-sm">
-            <i class="fa fa-dot-circle-o"></i> Submit
+          <i class="fa fa-dot-circle-o"></i> Submit
         </button>
         <button type="reset" class="btn btn-success btn-sm">
-            <i class="fa fa-ban"></i> Reset
+          <i class="fa fa-ban"></i> Reset
         </button>
-        <button class="btn btn-danger btn-sm" type="submit" href="{{route('product')}}">
-            <i class="fa fa-close"></i>cancel
+      <button type="submit" class="btn btn-danger btn-sm" href="{{ route('product')}}">
+          <i class="fa fa-close"></i> Cancel
         </button>
+      </div>
     </div>
-  </form>
+    </form>
 @endsection

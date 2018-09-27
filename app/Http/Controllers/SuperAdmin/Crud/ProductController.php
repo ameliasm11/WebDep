@@ -59,7 +59,7 @@ class ProductController extends SystemController
        return redirect()->route('product')->with('alert-failed','Data tidak berhasil diubah!');
      }
      $products->reset();
-     return redirect()->route('product');
+     return redirect()->route('product.edit');
     }
 
     public function destroy($id)

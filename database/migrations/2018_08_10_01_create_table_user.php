@@ -16,7 +16,7 @@ class CreateTableUser extends Migration
         Schema::create('tm_user', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->integer('role_id')->unsigned()->nullable();
+            $table->integer('role_id')->unsigned()->nullable()->default(null);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

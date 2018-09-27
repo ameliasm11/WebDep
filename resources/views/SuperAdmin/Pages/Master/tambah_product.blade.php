@@ -34,15 +34,16 @@
         </div>
     </div>
     <div class="card-footer">
-        <button type="submit" class="btn btn-primary btn-sm">
-            <i class="fa fa-dot-circle-o"></i> Submit
-        </button>
-        <button type="reset" class="btn btn-success btn-sm">
-            <i class="fa fa-ban"></i> Reset
-        </button>
-        <button class="btn btn-danger btn-sm" type="submit" href="{{route('product')}}">
-            <i class="fa fa-close"></i>cancel
-        </button>
+      <button type="submit" class="btn btn-primary btn-sm">
+        <i class="fa fa-dot-circle-o"></i> Submit
+      </button>
+      <button type="reset" class="btn btn-success btn-sm">
+        <i class="fa fa-ban"></i> Reset
+      </button>
+    <button type="submit" class="btn btn-danger btn-sm" href="{{ route('product')}}">
+        <i class="fa fa-close"></i> Cancel
+      </button>
     </div>
-  </form>
+  </div>
+</form>
 @endsection

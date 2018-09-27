@@ -40,6 +40,15 @@ Auth::routes();
     Route::post('user/edituser/{id}', 'ControllerUser@update')->name('superadmin.user.update');
     Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('superadmin.user.delete');
 
+    //Payment Method dan Payment Type
+    Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');
+    Route::get('payment_type-newType', 'PaymentTypeController@newType')->name('payment_type.newType');
+    Route::post('payment_type-createType', 'PaymentTypeController@createType')->name('payment_type.createType');
+    Route::get('payment_type-editType/{id}', 'PaymentTypeController@editType')->name('payment_type.editType');
+    Route::post('payment_type-updateType/{id}', 'PaymentTypeController@updateType')->name('payment_type.updateType');
+    Route::post('payment_type-deleteType/{id}', 'PaymentTypeController@deleteType')->name('payment_type.deleteType');
+
+
     //PRODUCT CATEGORY
     Route::get('category', 'ProductCategoryController@category')->name('category');
     Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');

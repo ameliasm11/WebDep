@@ -49,7 +49,7 @@ class ControllerUser extends SystemController
      // $user = Users::where('id','$id')->first();
      $user = Users::findOrFail($id);
      $user->name = $request->name;
-     $user->role_id = $request->role_id;
+     // $user->role_id = $request->role_id;
      $user->email = $request->email;
      $isSuccess = $user->save();
      if ($isSuccess) {
