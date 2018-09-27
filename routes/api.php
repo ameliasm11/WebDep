@@ -22,3 +22,4 @@ Route::post('lapangan','API\ControllerFutsal@lapangan');//get lapangan order by 
 Route::post('jadwal','API\ControllerFutsal@showjadwal'); // get jadwal order by lapangan_id
 Route::post('login', 'API\ControllerLogin@doLogin'); // API Login
 Route::post('register', 'API\ControllerRegister@create'); // Api Register
+Route::post('order', 'API\ControllerFutsal@order'); // Api Register
