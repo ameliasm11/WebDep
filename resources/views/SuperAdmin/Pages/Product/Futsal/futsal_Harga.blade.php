@@ -59,18 +59,19 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
+<<<<<<< HEAD
+=======
+                          <td>{{$datas->jadwal_id}}</td>
+>>>>>>> 8f84217b1bad48475d08b886cf227d829f68477e
                           <td>{{$datas->harga}}</td>
                           <td>
-                            <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">
+                            <center><a href="{{route('superadmin.futsal.editHarga', $datas->id)}}">
                               <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                             </a>
-                              <form action="{{route ('superadmin.role.delete', $datas->id) }}" method="POST" style="display: inline-block">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <!-- <a href="{{route('superadmin.role.delete', [$datas->id])}}"> -->
-                                  <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button>
-                                <!-- </a> -->
-                              </form>
+                            <form method="POST" action="{{route('superadmin.futsal.deleteHarga', [$datas->id]) }}" style="display: inline-block;">
+                            {{ csrf_field() }}
+                               <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                             </form>
                               </center>
                           </td>
                         </tr>
