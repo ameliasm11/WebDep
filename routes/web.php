@@ -83,8 +83,16 @@ Auth::routes();
     Route::post('product/delete/{id}', 'ProductController@destroy')->name('product.delete');
 
     //Futsal
-    //tabel jadwal
+
+      //ROUTE JADWAL DI SINI
       Route::get('product-futsal', 'FutsalController@index')->name('superadmin.futsal.index');
+      Route::get('product-futsal-jadwal', 'FutsalController@jadwal')->name('superadmin.futsal.jadwal');
+      Route::get('product-futsal-jadwal-new', 'FutsalController@newJadwal')->name('superadmin.futsal.Newjadwal');
+      Route::post('product-futsal-jadwal-new', 'FutsalController@SaveJadwal')->name('superadmin.futsal.SaveJadwal');
+      Route::get('product-futsal-jadwal-update/{id}', 'FutsalController@editJadwal')->name('superadmin.futsal.editjadwal');
+      Route::post('product-futsal-jadwal-update/{id}', 'FutsalController@updateJadwal')->name('superadmin.futsal.updatejadwal');
+      Route::post('product-futsal-jadwal-delete/{id}', 'FutsalController@deleteJadwal')->name('superadmin.futsal.deleteJadwal');
+      Route::post('product-futsal-jadwal-status/{id}', 'FutsalController@jadwalStatus')->name('superadmin.futsal.jadwalStatus');
       //tabel order
       Route::get('product-futsal-order', 'FutsalController@order')->name('superadmin.futsal.order');
       //tabel tempat
@@ -98,7 +106,8 @@ Auth::routes();
       Route::post('product-futsal-harga-new', 'FutsalController@SaveHarga')->name('superadmin.futsal.SaveHarga');
       Route::get('product-futsal-harga-edit/{id}', 'FutsalController@editHarga')->name('superadmin.futsal.editHarga');
       Route::post('product-futsal-harga-update/{id}', 'FutsalController@updateHarga')->name('superadmin.futsal.updateHarga');
-Route::post('product-futsal-harga-delete/{id}', 'FutsalController@deleteHarga')->name('superadmin.futsal.deleteHarga');
+      Route::post('product-futsal-harga-delete/{id}', 'FutsalController@deleteHarga')->name('superadmin.futsal.deleteHarga');
+
       //form create tempat
       Route::get('product-futsal-newTempat', 'FutsalController@newTempat')->name('superadmin.futsal.newTempat');
       //action create

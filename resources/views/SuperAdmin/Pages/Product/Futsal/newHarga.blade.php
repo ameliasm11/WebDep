@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Jadwal</h1>
+                                <h1>Form Futsal</h1>
                             </div>
                         </div>
                     </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Jadwal
+                        <strong>Add New</strong> Harga
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.SaveHarga')}}" method="POST" enctype="application/json" class="form-horizontal">

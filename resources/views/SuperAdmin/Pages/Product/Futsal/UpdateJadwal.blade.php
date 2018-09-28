@@ -12,18 +12,22 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Update</strong> Harga
+                        <strong>Add New</strong> Jadwal
                       </div>
                       <div class="card-body card-block">
-                        <form action="{{route('superadmin.futsal.updateHarga', $editHarga->id)}}" method="POST" enctype="application/json" class="form-horizontal">
+                        <form action="{{route('superadmin.futsal.updatejadwal', $editJadwal->id)}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jadwal ID</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="jadwal_id" name="jadwal_id" placeholder="Jadwal ID" class="form-control" value="{{$editHarga->jadwal_id}}"></div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Lapangan ID</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="lapangan_id" name="lapangan_id" placeholder="Lapangan ID" class="form-control" value="{{$editJadwal->lapangan_id}}" disabled></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Harga</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="harga" name="harga" placeholder="Harga" class="form-control" value="{{$editHarga->harga}}"></div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>
+                            <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" placeholder="Harga" class="form-control" value="{{$editJadwal->tanggal}}"></div>
+                          </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam</label></div>
+                            <div class="col-12 col-md-9"><input type="time" id="jam" name="jam" placeholder="Harga" class="form-control" value="{{$editJadwal->jam}}"></div>
                           </div>
                       </div>
                       <div class="card-footer">
@@ -33,7 +37,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('superadmin.futsal.harga')}}">
+                        <a href="{{route('superadmin.futsal.index')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

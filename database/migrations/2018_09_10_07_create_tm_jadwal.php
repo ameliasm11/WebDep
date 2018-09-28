@@ -18,7 +18,7 @@ class CreateTmJadwal extends Migration
           $table->integer('lapangan_id')->unsigned();
           $table->string('tanggal');
           $table->string('jam');
-          $table->string('status');
+          $table->boolean('status')->nullable()->default('false');
           $table->rememberToken();
           $table->timestamps();
 
