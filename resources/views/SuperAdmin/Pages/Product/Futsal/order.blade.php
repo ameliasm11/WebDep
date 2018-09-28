@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Product</h1></div>
+        <h1>Order</h1></div>
       </div>
     </div>
   </div>
@@ -14,11 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Product</strong></div>
-              <div class="card-body">
-              <div align="right">
-                  <a href="{{route('product.add')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
-              </div><br>
+              <strong class="card-title">List Order</strong></div>
                 <div class="card-body">
                   <div align="right">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -26,24 +22,30 @@
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>URL</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>No HP</th>
                         <th>status</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
-                      @foreach($products as $product)
+                      @foreach($data as $datas)
                         <td>{{$no++}}</td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->url}}</td>
-                        <td>{{$product->status}}</td>
-                        <td>
-                          <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                          <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">
-                               {{ csrf_field() }}
-                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                          </form>
+                        <td>{{$datas->nama}}</td>
+                        <td>{{$datas->tanggal}}</td>
+                        <td>{{$datas->jam_pesan}}</td>
+                        <td>{{$datas->no_hp}}</td>
+                        <td>{{$datas->status}}</td>
+                        <center><a href="{{route('order.editOrder', [$datas->id])}}">
+                          <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
+                        </a>
+                           <form method="POST" action="{{route('order.deleteOrder', [$datas->id]) }}" style="display: inline-block;">
+                            {{ csrf_field() }}
+                              <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                            </form>
+                            </center>
                         </td>
                       </tr>
                       @endforeach

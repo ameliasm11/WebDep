@@ -40,6 +40,36 @@ Auth::routes();
     Route::post('user/edituser/{id}', 'ControllerUser@update')->name('superadmin.user.update');
     Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('superadmin.user.delete');
 
+    //Payment Method dan Payment Type
+    Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');
+    Route::get('payment_type-newType', 'PaymentTypeController@newType')->name('payment_type.newType');
+    Route::post('payment_type-createType', 'PaymentTypeController@createType')->name('payment_type.createType');
+    Route::get('payment_type-editType/{id}', 'PaymentTypeController@editType')->name('payment_type.editType');
+    Route::post('payment_type-updateType/{id}', 'PaymentTypeController@updateType')->name('payment_type.updateType');
+    Route::post('payment_type-deleteType/{id}', 'PaymentTypeController@deleteType')->name('payment_type.deleteType');
+
+    //Payment Method dan Payment Method
+    Route::get('Payment_method', 'PaymentMethodController@method')->name('payment_method');
+    Route::get('Payment_method-newMethod', 'PaymentMethodController@newMethod')->name('payment_method.newMethod');
+    Route::post('Payment_method-createMethod', 'PaymentMethodController@createMethod')->name('payment_method.createMethod');
+    Route::get('Payment_method-editMethod/{id}', 'PaymentMethodController@editMethod')->name('payment_method.editMethod');
+    Route::post('Payment_method-updateMethod/{id}', 'PaymentMethodController@updateMethod')->name('payment_method.updateMethod');
+    Route::post('Payment_method-deleteMethod/{id}', 'PaymentMethodController@deleteMethod')->name('payment_method.deleteMethod');
+
+    //Payment Method dan Partner Company
+    Route::get('Partner_company', 'PartnerCompanyController@PC')->name('partner_company');
+    Route::get('Partner_company-newPC', 'PartnerCompanyController@newPC')->name('partner_company.newPC');
+    Route::post('Partner_company-createPC', 'PartnerCompanyController@createPC')->name('partner_company.createPC');
+    Route::get('Partner_company-editPC/{id}', 'PartnerCompanyController@editPC')->name('partner_company.editPC');
+    Route::post('Partner_company-updatePC/{id}', 'PartnerCompanyController@updatePC')->name('partner_company.updatePC');
+    Route::post('Partner_company-deletePC/{id}', 'PartnerCompanyController@deletePC')->name('partner_company.deletePC');
+
+    //Order
+    Route::get('Order', 'FutsalController@order')->name('order');
+    Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
+    Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
+    Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
+
     //PRODUCT CATEGORY
     Route::get('category', 'ProductCategoryController@category')->name('category');
     Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');

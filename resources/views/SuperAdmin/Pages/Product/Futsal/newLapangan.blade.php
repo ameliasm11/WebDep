@@ -39,9 +39,9 @@
                           <i class="fa fa-ban"></i> Reset
                         </button>
                         <a href="{{route('superadmin.futsal.lapangan')}}">
-                        <button type="reset" class="btn btn-danger btn-sm"></a>
+                        <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
-                        </button>
+                        </button></a>
                         </form>
                       </div>
                     </div>

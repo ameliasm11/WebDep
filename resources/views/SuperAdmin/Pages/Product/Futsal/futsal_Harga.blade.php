@@ -50,7 +50,6 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Jadwal ID</th>
                           <th>Harga</th>
                           <th>Actions</th>
                         </tr>
@@ -60,7 +59,10 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
+<<<<<<< HEAD
+=======
                           <td>{{$datas->jadwal_id}}</td>
+>>>>>>> 8f84217b1bad48475d08b886cf227d829f68477e
                           <td>{{$datas->harga}}</td>
                           <td>
                             <center><a href="{{route('superadmin.futsal.editHarga', $datas->id)}}">

@@ -46,7 +46,7 @@ class ProductController extends SystemController
    {
      $products = Produk::findOrFail($id);
      $products->name = $request->name;
-     $products->producat_id = $request->producat_id;
+     // $products->producat_id = $request->producat_id;
      $products->url = $request->url;
      $products->status = $request->status;
      $isSuccess = $products->save();
@@ -59,7 +59,7 @@ class ProductController extends SystemController
        return redirect()->route('product')->with('alert-failed','Data tidak berhasil diubah!');
      }
      $products->reset();
-     return redirect()->route('product');
+     return redirect()->route('product.edit');
     }
 
     public function destroy($id)

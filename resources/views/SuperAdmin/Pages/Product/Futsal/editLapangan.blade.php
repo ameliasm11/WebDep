@@ -27,7 +27,7 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">ID tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="ID Tempat" class="form-control" value="{{ $data->tempat_id }}"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="ID Tempat" class="form-control" value="{{ $data->tempat_id }}" disabled></div>
                           </div>
                       </div>
                     </div>
@@ -41,7 +41,7 @@
                         </button>
                         </form>
                         <a href="{{route('superadmin.futsal.lapangan')}}">
-                      <button type="reset" class="btn btn-danger btn-sm">
+                        <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>
                       </div>

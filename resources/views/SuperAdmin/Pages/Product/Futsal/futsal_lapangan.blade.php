@@ -51,7 +51,6 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Keterangan Lapangan</th>
-                        <th>ID Tempat</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -62,8 +61,6 @@
                         <td>{{$no++}}</td>
                         <td>{{$datas->nama}}
                         <td>{{$datas->ket}}</td>
-                        <td>{{$datas->tempat_id}}</td>
-
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>

@@ -53,7 +53,7 @@
                         </button>
                         </form>
                         <a href="{{route('superadmin.futsal.tempat')}}">
-                      <button type="reset" class="btn btn-danger btn-sm">
+                        <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>
                       </div>

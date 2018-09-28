@@ -70,21 +70,21 @@ class ControllerFutsal extends Controller
   public function order(Request $request)
   {
     $this->validate($request, [
-    $nama = $request->input('pemesan'),
+    $nama = $request->input('nama'),
     $nohp = $request->input('no_hp'),
-    $tempat = $request->input('nama'),
-    $lapangan = $request->iput('ket_lapangan'),
+    $jadwal = $request->input('jadwal_id'),
     $tanggal = $request->input('tanggal'),
-    $jam = $request->input('jam_pesan')
+    $jam = $request->input('jam_pesan'),
+    $status = $request->input('status')
     ]);
 
       $data = new \App\model\Order();
-      $data->pemesan = $nama;
+      $data->nama = $nama;
       $data->no_hp = $nohp;
-      $data->nama = $tempat;
-      $data->ket_lapangan = $lapangan;
+      $data->jadwal_id = $jadwal;
       $data->tanggal = $tanggal;
       $data->jam_pesan = $jam;
+      $data->status = $status;
 
       if($data->save()){
         $res['status'] = "created";
