@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -52,7 +52,7 @@
                         <th>No</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -63,13 +63,13 @@
                         <td>{{$no++}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
-                        <td>
+                        <!-- <td>
                           @if ($datas->status == 0)
                             <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">False</a>
                           @else
                             <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">True</a>
                           @endif
-                        </td>
+                        </td> -->
                         <td>
                           <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
