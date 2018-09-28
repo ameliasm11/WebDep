@@ -46,7 +46,7 @@ class ProductController extends SystemController
    {
      $products = Produk::findOrFail($id);
      $products->name = $request->name;
-     $products->producat_id = $request->producat_id;
+     // $products->producat_id = $request->producat_id;
      $products->url = $request->url;
      $products->status = $request->status;
      $isSuccess = $products->save();

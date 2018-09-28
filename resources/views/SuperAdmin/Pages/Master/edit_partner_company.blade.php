@@ -30,9 +30,10 @@
         <button type="reset" class="btn btn-success btn-sm">
             <i class="fa fa-ban"></i> Reset
         </button>
-        <button class="btn btn-danger btn-sm" type="submit" href="{{route('partner_company')}}">
-            <i class="fa fa-close"></i>cancel
-        </button>
+        <a href="{{route('partner_company')}}">
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="fa fa-close"></i> Cancel
+        </button></a>
     </div>
   </form>
 @endsection

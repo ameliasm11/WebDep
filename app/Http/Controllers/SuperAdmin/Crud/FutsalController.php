@@ -26,16 +26,6 @@ class FutsalController extends SystemController
       return view($page)->with(compact('modules','data','products'));
   }
 
-    public function order()
-    {
-        $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Order';
-        $modules = Module::with('Menus')->get();
-        $products = Produk::all();
-        $data = Order::all();
-        // $accesses = Module::with('Access')->get();
-        return view($page)->with(compact('modules','data','products'));
-    }
-
     public function tempat()
     {
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_tempat';
@@ -213,7 +203,7 @@ class FutsalController extends SystemController
           $data = Lapangan::findOrFail($id);
           $data->nama = $request->nama;
           $data->ket = $request->ket;
-          $data->tempat_id = $request->tempat_id;
+          // $data->tempat_id = $request->tempat_id;
           $isSuccess = $data->save();
           if ($isSuccess) {
             // return success
@@ -233,5 +223,49 @@ class FutsalController extends SystemController
            $data->delete();
            return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil dihapus!');
        }
+
+       //order
+       public function order()
+       {
+           $page = 'SuperAdmin.Pages.Product.Futsal.order';
+           $modules = Module::with('Menus')->get();
+           $products = Produk::all();
+           $data = Order::all();
+           // $accesses = Module::with('Access')->get();
+           return view($page)->with(compact('modules','data','products'));
+       }
+
+       public function deleteOrder($id)
+       {
+            $data = Order::findOrFail($id);
+            $data->delete();
+            return redirect()->route('order')->with('alert-success','Data berhasil dihapus!');
+        }
+
+        public function editOrder($id)
+            {
+                $page = 'SuperAdmin.Pages.Product.Futsal.editOrder';
+                $modules = Module::with('Menus')->get();
+                $data = Order::findOrFail($id);
+                return view($page)->with(compact('modules','data'));
+          	}
+
+        public function UpdateOrder(Request $request, $id)
+            {
+              $data = Order::findOrFail($id);
+              $data->status = $request->status;
+              $isSuccess = $data->save();
+              if ($isSuccess) {
+                // return success
+                return redirect()->route('order')->with('alert-success','Data berhasil diubah!');
+              }
+              else {
+                // returm failed
+                return redirect()->route('order')->with('alert-failed','Data tidak berhasil diubah!');
+              }
+              $data->reset();
+              return redirect()->route('order.UpdateOrder');
+             }
+
 
 }

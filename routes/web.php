@@ -64,6 +64,12 @@ Auth::routes();
     Route::post('Partner_company-updatePC/{id}', 'PartnerCompanyController@updatePC')->name('partner_company.updatePC');
     Route::post('Partner_company-deletePC/{id}', 'PartnerCompanyController@deletePC')->name('partner_company.deletePC');
 
+    //Order
+    Route::get('Order', 'FutsalController@order')->name('order');
+    Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
+    Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
+    Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
+
     //PRODUCT CATEGORY
     Route::get('category', 'ProductCategoryController@category')->name('category');
     Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');

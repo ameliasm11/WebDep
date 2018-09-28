@@ -20,9 +20,10 @@
         <button type="reset" class="btn btn-success btn-sm">
             <i class="fa fa-ban"></i> Reset
         </button>
-        <button class="btn btn-danger btn-sm" type="submit" href="{{route('payment_type')}}">
-            <i class="fa fa-close"></i>cancel
-        </button>
+        <a href="{{route('payment_type')}}">
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="fa fa-close"></i> Cancel
+        </button></a>
     </div>
   </form>
 @endsection

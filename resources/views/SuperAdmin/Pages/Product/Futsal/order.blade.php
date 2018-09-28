@@ -21,27 +21,31 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>jadwal</th>
                         <th>Nama</th>
                         <th>Tanggal</th>
                         <th>Jam</th>
-                        <th>status</th>
                         <th>No HP</th>
+                        <th>status</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($orders as $order)
-                        <td>{{$order->id}}</td>
-                        <td>{{$order->jadwal_id}}</td>
-                        <td>{{$order->nama}}</td>
-                        <td>{{$order->tanggal}}</td>
-                        <td>{{$order->jam_pesan}}</td>
-                        <td>{{$order->status}}</td>
-                        <td>{{$order->no_hp}}</td>
-                          <form action="{{ route('superadmin.user.delete', $order->id) }}" method="post" style="display: inline-block">
-                               {{ csrf_field() }}
-                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                          </form>
+                      @php $no = 1; @endphp
+                      @foreach($data as $datas)
+                        <td>{{$no++}}</td>
+                        <td>{{$datas->nama}}</td>
+                        <td>{{$datas->tanggal}}</td>
+                        <td>{{$datas->jam_pesan}}</td>
+                        <td>{{$datas->no_hp}}</td>
+                        <td>{{$datas->status}}</td>
+                        <center><a href="{{route('order.editOrder', [$datas->id])}}">
+                          <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
+                        </a>
+                           <form method="POST" action="{{route('order.deleteOrder', [$datas->id]) }}" style="display: inline-block;">
+                            {{ csrf_field() }}
+                              <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                            </form>
+                            </center>
                         </td>
                       </tr>
                       @endforeach
