@@ -21,8 +21,6 @@ class FutsalController extends SystemController
       $modules = Module::with('Menus')->get();
       $products = Produk::all();
       $data = Jadwal::all();
-
-      // $accesses = Module::with('Access')->get();
       return view($page)->with(compact('modules','data','products'));
   }
 
@@ -32,7 +30,6 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Tempat::all();
-        // $accesses = Module::with('Access')->get();
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -42,7 +39,6 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Lapangan::all();
-        // $accesses = Module::with('Access')->get();
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -53,7 +49,6 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Harga::all();
-        // $accesses = Module::with('Access')->get();
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -65,8 +60,6 @@ class FutsalController extends SystemController
   	}
 
     public function SaveHarga(Request $request){
-      // dd($request->request);
-        //$page = 'SuperAdmin.Pages.Role.index';
         $this->validate($request, [
           'jadwal_id'   => 'required',
           'harga'   => 'required',
@@ -88,7 +81,6 @@ class FutsalController extends SystemController
 
     public function updateHarga(Request $request, $id)
     {
-      // $user = Users::where('id','$id')->first();
       $updateHarga = Harga::findOrFail($id);
       $updateHarga->jadwal_id = $request->jadwal_id;
       $updateHarga->harga = $request->harga;
@@ -203,7 +195,6 @@ class FutsalController extends SystemController
           $data = Lapangan::findOrFail($id);
           $data->nama = $request->nama;
           $data->ket = $request->ket;
-          // $data->tempat_id = $request->tempat_id;
           $isSuccess = $data->save();
           if ($isSuccess) {
             // return success
@@ -231,7 +222,6 @@ class FutsalController extends SystemController
            $modules = Module::with('Menus')->get();
            $products = Produk::all();
            $data = Order::all();
-           // $accesses = Module::with('Access')->get();
            return view($page)->with(compact('modules','data','products'));
        }
 
