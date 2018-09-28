@@ -9,14 +9,14 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Futsal</strong>
+                            <strong class="card-title">List Jadwal</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -28,7 +28,7 @@
                             <option href="{{$product->url}}" value="">{{$product->nama}}</option>
                             @endforeach
                           </select>
-                   </div>
+                        </div>
                    <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
@@ -44,16 +44,15 @@
                       </div>
                       <div class="card-body">
                         <div align="right">
-                        <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                        <a href="{{route('superadmin.futsal.Newjadwal')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Name</th>
-                        <th>ID Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
+                        <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -62,21 +61,24 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->name}}</td>
-                        <td>{{$datas->level}}</td>
-                        <td>{{$datas->description}}</td>
-                        <td>{{$datas->description}}</td>
+                        <td>{{$datas->jam}}</td>
+                        <td>{{$datas->tanggal}}</td>
                         <td>
-                          <center><a href="">
+                          @if ($datas->status == 0)
+                            <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">False</a>
+                          @else
+                            <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">True</a>
+                          @endif
+                        </td>
+                        <td>
+                          <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                           </a>
-                            <!-- <form method="POST" action="{{ route('superadmin.role.delete', [$datas->id]) }}" style="display: inline-block;">
+                            <form method="POST" action="{{route('superadmin.futsal.deleteJadwal' , [$datas->id])}}" style="display: inline-block;">
   								            {{ csrf_field() }}
-                              {{ method_field('DELETE') }} -->
-                              <a href="{{route('superadmin.role.delete', [$datas->id])}}">
-                                <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                              </a></center>
-                            <!-- </form> -->
+                                <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                              </center>
+                            </form>
                         </td>
                       </tr>
                       @endforeach

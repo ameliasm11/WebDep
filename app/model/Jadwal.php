@@ -25,3 +25,4 @@ class Jadwal extends Model
       return $this->belongsTo('App\model\Order');
     }
 }
+?>
