@@ -27,6 +27,7 @@
                         <th>No</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Waktu</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -36,6 +37,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$users->name}}</td>
                         <td>{{$users->email}}</td>
+                        <td>{{$users->created_at}}
                         <td>
                           <center><a href="{{route('superadmin.user.edit', [$users]) }}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('superadmin.user.delete', $users->id) }}" method="post" style="display: inline-block">
