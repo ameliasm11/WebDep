@@ -39,6 +39,8 @@ Auth::routes();
     Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('superadmin.user.edit');
     Route::post('user/edituser/{id}', 'ControllerUser@update')->name('superadmin.user.update');
     Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('superadmin.user.delete');
+    Route::get('user/newUser', 'ControllerUser@newUser')->name('superadmin.user.newUser');
+    Route::post('user/tambahuser', 'ControllerUser@createUser')->name('superadmin.user.tambah');
 
     //Payment Method dan Payment Type
     Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');

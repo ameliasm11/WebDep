@@ -18,23 +18,6 @@ class ControllerUser extends SystemController
       return view($page)->with(compact('modules','user'));
     }
 
-    // public function tambah()
-    // {
-    // 	$page = 'SuperAdmin.Pages.User.tambah_user';
-    //   $modules = Module::with('Menus')->get();
-    //   return view($page)->with(compact('modules'));
-    // }
-
-  // public function store(Request $request)
-  //  {
-  //      $user = new Users();
-  //      $user->name = $request->name;
-  //      $user->role_id = $request->role_id;
-  //      $user->email = $request->email;
-  //      $user->save();
-  //      return redirect()->route('SuperAdmin.Pages.User.table_user')->with('alert-success','Berhasil Menambahkan Data!');
-  //  }
-
    public function edit($id)
    {
      // $user = Users::find($id);
@@ -70,4 +53,26 @@ class ControllerUser extends SystemController
       $user->delete();
       return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasi dihapus!');
     }
+
+    public function newUser()
+      {
+          $page = 'SuperAdmin.Pages.User.tambah_user';
+          $modules = Module::with('Menus')->get();
+          return view($page)->with(compact('modules'));
+    }
+
+    public function createUser(Request $request)
+      {
+          $user = new Users();
+          $user->name = $request->input('name');
+          $user->role_id = $request->input('role_id');
+          $user->email = $request->input('email');
+          $user->fill([
+            'password' => bcrypt($request->password)
+          ]);
+          $user->save();
+          return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil ditambahkan!');
+          $user->reset();
+          return redirect()->route('superadmin.user.data');
+        }
 }
