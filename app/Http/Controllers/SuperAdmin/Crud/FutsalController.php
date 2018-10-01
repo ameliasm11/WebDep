@@ -71,7 +71,16 @@ class FutsalController extends SystemController
     $updateJadwal->reset();
     return redirect()->route('superadmin.futsal.editjadwal');
    }
-
+   public function jadwalStatus(Request $request, $id){
+     $jadwalStatus = Jadwal::findOrFail($id);
+     if($jadwalStatus->status == null){
+       $jadwalStatus->status = $request->status = 1;
+       return redirect()->route('superadmin.futsal.index');
+     }
+     else {
+       $jadwalStatus->status = $request->status = 0;
+       return redirect()->route('superadmin.futsal.index');
+     }
    // public function jadwalStatus(Request $request, $id){
    //   $jadwalStatus = Jadwal::findOrFail($id);
    //   if($jadwalStatus->status == 0){
@@ -92,8 +101,6 @@ class FutsalController extends SystemController
      return redirect()->route('superadmin.futsal.index')->with('alert','Data berhasil dihapus!');
    }
   //END JADWAL
-
-
     public function tempat()
     {
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_tempat';

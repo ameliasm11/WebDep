@@ -33,7 +33,6 @@
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
                        <option value="0" disabled selected>Data</option>
-                       <option value="{{route('superadmin.futsal.order')}}">Order</a></option>
                        <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
@@ -42,6 +41,7 @@
                    </div>
                  </div>
                       </div>
+                      <div class="card-body">
                         <div align="right">
                         <a href="{{route('superadmin.futsal.newLapangan')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
@@ -51,6 +51,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Keterangan Lapangan</th>
+                        <th>Created at</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -59,8 +60,9 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->nama}}
+                        <td>{{$datas->nama}}</td>
                         <td>{{$datas->ket}}</td>
+                        <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>

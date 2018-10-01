@@ -33,7 +33,6 @@
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
                        <option value="0" disabled selected>Data</option>
-                       <option value="{{route('superadmin.futsal.order')}}">Order</a></option>
                        <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
@@ -50,9 +49,15 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Nama Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
+<<<<<<< HEAD
+                        <th>Status</th>
+                        <th>Created at</th>
+=======
                         <!-- <th>Status</th> -->
+>>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -61,15 +66,25 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
+                        <td>{{$datas->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
+<<<<<<< HEAD
+                        <td>{{$datas->created_at}}</td>
+                        <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
+=======
                         <!-- <td>
+>>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                           @if ($datas->status == 0)
-                            <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">False</a>
+                            <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
-                            <a href="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" name="status" id="status">True</a>
+                            <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
+<<<<<<< HEAD
+                        </form></td>
+=======
                         </td> -->
+>>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                         <td>
                           <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
