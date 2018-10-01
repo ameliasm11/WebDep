@@ -67,7 +67,9 @@ class ControllerUser extends SystemController
           $user->name = $request->input('name');
           $user->role_id = $request->input('role_id');
           $user->email = $request->input('email');
-          $user->password = $request->input('password');
+          $user->fill([
+            'password' => bcrypt($request->password)
+          ]);
           $user->save();
           return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil ditambahkan!');
           $user->reset();

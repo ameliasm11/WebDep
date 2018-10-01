@@ -14,43 +14,49 @@ class MenuSeeder extends Seeder
         DB::table('tm_menu')->insert([
             'name' => 'Role Management',
             'module_id' => '1',
-            'url' => '',
+            'url' => 'superadmin.role.index',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'User Web Registration',
             'module_id' => '1',
-            'url' => '',
+            'url' => 'superadmin.user.data',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'Product Category',
             'module_id' => '2',
-            'url' => '',
+            'url' => 'category',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'Product',
             'module_id' => '2',
-            'url' => '',
+            'url' => 'superadmin.futsal.index',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'Partner/Company',
             'module_id' => '2',
-            'url' => '',
+            'url' => 'partner_company',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'Payment Type',
             'module_id' => '2',
-            'url' => '',
+            'url' => 'payment_type',
         ]);
 
         DB::table('tm_menu')->insert([
             'name' => 'Payment Method',
             'module_id' => '2',
-            'url' => '',
+            'url' => 'payment_method',
+        ]);
+
+        DB::table('tm_menu')->insert([
+            'name' => 'Order',
+            'module_id' => '3',
+            'url' => 'order',
         ]);
 
     }

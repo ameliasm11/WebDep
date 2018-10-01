@@ -11,7 +11,6 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
-        // //MONITORING
         DB::table('tm_module')->insert([
             'name' => 'Administrator',
             'description' => 'Module',
@@ -25,5 +24,13 @@ class ModuleSeeder extends Seeder
             'icon' => 'fa fa-tasks',
             'order' => '2'
         ]);
+
+        DB::table('tm_module')->insert([
+            'name' => 'Report',
+            'description' => 'Module',
+            'icon' => 'fa fa-file',
+            'order' => '3'
+        ]);
+
     }
 }
