@@ -29,6 +29,7 @@
                         <th>Role Name</th>
                         <th>Level</th>
                         <th>Description</th>
+                        <td>Waktu</td>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -38,6 +39,7 @@
                         <td>{{$datas->id}}</td>
                         <td>{{$datas->name}}</td>
                         <td>{{$datas->level}}</td>
+                        <td>{{$datas->created_at}}</td>
                         <td>{{$datas->description}}</td>
                         <td>
                           <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">

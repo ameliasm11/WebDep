@@ -59,7 +59,10 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
+<<<<<<< HEAD
                           <td>{{$datas->jadwal_id}}</td>
+=======
+>>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                           <td>{{$datas->harga}}</td>
                           <td>{{$datas->created_at}}</td>
                           <td>
