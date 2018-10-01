@@ -26,6 +26,7 @@
                         <th>Jam</th>
                         <th>No HP</th>
                         <th>status</th>
+                        <th>Created at</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
@@ -38,6 +39,7 @@
                         <td>{{$datas->jam_pesan}}</td>
                         <td>{{$datas->no_hp}}</td>
                         <td>{{$datas->status}}</td>
+                        <td>{{$datas->created_at}}</td>
                         <center><a href="{{route('order.editOrder', [$datas->id])}}">
                           <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                         </a>

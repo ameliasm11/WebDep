@@ -74,7 +74,7 @@ class FutsalController extends SystemController
 
    public function jadwalStatus(Request $request, $id){
      $jadwalStatus = Jadwal::findOrFail($id);
-     if($jadwalStatus->status == 0){
+     if($jadwalStatus->status == null){
        $jadwalStatus->status = $request->status = 1;
        return redirect()->route('superadmin.futsal.index');
      }
@@ -92,16 +92,6 @@ class FutsalController extends SystemController
      return redirect()->route('superadmin.futsal.index')->with('alert','Data berhasil dihapus!');
    }
   //END JADWAL
-
-    public function order()
-    {
-        $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Order';
-        $modules = Module::with('Menus')->get();
-        $products = Produk::all();
-        $data = Order::all();
-        // $accesses = Module::with('Access')->get();
-        return view($page)->with(compact('modules','data','products'));
-    }
 
     public function tempat()
     {

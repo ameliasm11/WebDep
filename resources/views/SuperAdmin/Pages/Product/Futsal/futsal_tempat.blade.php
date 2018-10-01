@@ -33,7 +33,6 @@
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
                        <option value="0" disabled selected>Data</option>
-                       <option value="{{route('superadmin.futsal.order')}}">Order</a></option>
                        <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
@@ -54,6 +53,7 @@
                         <th>Alamat</th>
                         <th>Gambar</th>
                         <th>Deskripsi</th>
+                        <th>Created at</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -66,6 +66,7 @@
                         <td>{{$datas->alamat}}</td>
                         <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
                         <td>{{$datas->deskripsi}}</td>
+                        <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editTempat', [$datas->id])}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>

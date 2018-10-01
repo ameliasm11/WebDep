@@ -33,7 +33,6 @@
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
                        <option  value="0" disabled selected>Data</option>
-                       <option value="{{route('superadmin.futsal.order')}}">Order</a></option>
                        <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
@@ -51,6 +50,7 @@
                         <tr>
                           <th>No</th>
                           <th>Harga</th>
+                          <th>Created at</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -59,11 +59,9 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
-<<<<<<< HEAD
-=======
                           <td>{{$datas->jadwal_id}}</td>
->>>>>>> 8f84217b1bad48475d08b886cf227d829f68477e
                           <td>{{$datas->harga}}</td>
+                          <td>{{$datas->created_at}}</td>
                           <td>
                             <center><a href="{{route('superadmin.futsal.editHarga', $datas->id)}}">
                               <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
