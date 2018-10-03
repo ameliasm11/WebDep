@@ -18,7 +18,7 @@ class Role extends Authenticatable
 		'id',
 		'name',
 		'level',
-		'description'
+		'description',
 	];
 
 	public function users(){

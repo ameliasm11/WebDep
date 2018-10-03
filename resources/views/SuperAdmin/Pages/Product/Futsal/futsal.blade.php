@@ -52,12 +52,8 @@
                         <th>Nama Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
-<<<<<<< HEAD
                         <th>Status</th>
                         <th>Created at</th>
-=======
-                        <!-- <th>Status</th> -->
->>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -69,22 +65,16 @@
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
-<<<<<<< HEAD
                         <td>{{$datas->created_at}}</td>
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
-=======
                         <!-- <td>
->>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                           @if ($datas->status == 0)
                             <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
                             <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
-<<<<<<< HEAD
                         </form></td>
-=======
                         </td> -->
->>>>>>> 22fab2302df693d03182bdfcde5456812d06325c
                         <td>
                           <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>

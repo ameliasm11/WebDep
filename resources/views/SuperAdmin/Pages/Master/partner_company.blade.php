@@ -25,7 +25,8 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Kategori Produk</th>
-                        <td>Produk</th>
+                        <th>Produk</th>
+                        <th>Created at</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
@@ -36,6 +37,7 @@
                         <td>{{$type->nama}}</td>
                         <td>{{$type->produk_category}}</td>
                         <td>{{$type->produk}}</td>
+                        <td>{{$type->created_at}}</td>
                         <td>
                           <center><a href="{{ route('partner_company.editPC', [$type] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('partner_company.deletePC', $type->id) }}" method="post" style="display: inline-block">

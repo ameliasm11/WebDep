@@ -27,6 +27,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>URL</th>
+                        <th>Created at</th>
                         <th>status</th>
                         <th>Action</th>
                       </tr>
@@ -37,6 +38,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->url}}</td>
+                        <td>{{$product->created_at}}</td>
                         <td>{{$product->status}}</td>
                         <td>
                           <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>

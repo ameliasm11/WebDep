@@ -51,6 +51,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Keterangan Lapangan</th>
+                        <th>Nama Tempat</th>
                         <th>Created at</th>
                         <th>Actions</th>
                       </tr>
@@ -62,6 +63,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->ket}}</td>
+                        <td>{{$datas->tm_tempat->nama}}</th>
                         <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
@@ -81,8 +83,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
