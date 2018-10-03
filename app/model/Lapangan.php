@@ -13,10 +13,16 @@ class Lapangan extends Model
     'nama',
     'ket',
     'tempat_id',
+
   ];
-    public function Tempat()  {
-      return $this->belongsTo('App\model\Tempat');
+    // public function Tempat()  {
+    //   return $this->belongsTo('App\model\Tempat');
+    // }
+
+    public function Tempat(){
+      return $this->belongsTo('Tempat', 'tempat_id');
     }
+
     public function Jadwal() {
       return $this->HasMany('App\model\Jadwal');
     }

@@ -18,7 +18,7 @@ class CreateTmProduct extends Migration
           $table->string('name');
           $table->integer('producat_id')->unsigned();
           $table->string('url');
-          $table->string('status');
+          $table->boolean('status')->nullable()->default('false');
           $table->rememberToken();
           $table->timestamps();
 

@@ -74,25 +74,17 @@ class FutsalController extends SystemController
 
    public function jadwalStatus(Request $request, $id){
      $jadwalStatus = Jadwal::findOrFail($id);
-     if($jadwalStatus->status == null){
+     if($jadwalStatus->status == 0 || null){
        $jadwalStatus->status = $request->status = 1;
-       return redirect()->route('superadmin.futsal.index');
+       $jadwalStatus->save();
+      // dd($jadwalStatus);
+      return redirect()->route('superadmin.futsal.index');
      }
      else {
        $jadwalStatus->status = $request->status = 0;
+       $jadwalStatus->save();
        return redirect()->route('superadmin.futsal.index');
      }
-   // public function jadwalStatus(Request $request, $id){
-   //   $jadwalStatus = Jadwal::findOrFail($id);
-   //   if($jadwalStatus->status == 0){
-   //     $jadwalStatus->status = $request->status = 1;
-   //     return redirect()->route('superadmin.futsal.index');
-   //   }
-   //   else {
-   //     $jadwalStatus->status = $request->status = 0;
-   //     return redirect()->route('superadmin.futsal.index');
-   //   }
-
    }
 
    public function deleteJadwal($id)
@@ -117,6 +109,7 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Lapangan::all();
+        return $data->tm_tempat->nama;
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -252,10 +245,12 @@ class FutsalController extends SystemController
 
     public function createLapangan(Request $request)
         {
+
             $data = new Lapangan();
             $data->nama = $request->input('nama');
             $data->ket = $request->input('ket');
-            $data->tempat_id = $request->input('tempat_id');
+            // $data->tempat_id = $request->input('tempat_id');
+            // $data = Lapangan::where('tempat_id')->first();
             $data->save();
             return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
             $data->reset();
@@ -336,4 +331,20 @@ class FutsalController extends SystemController
               $data->reset();
               return redirect()->route('order.UpdateOrder');
              }
+
+             public function OrderStatus(Request $request, $id){
+               $orderStatus = Produk::findOrFail($id);
+               if($orderStatus->status == 0 || null){
+                 $orderStatus->status = $request->status = 1;
+                 $orderStatus->save();
+                // dd($jadwalStatus);
+                return redirect()->route('product');
+               }
+               else {
+                 $orderStatus->status = $request->status = 0;
+                 $orderStatus->save();
+                 return redirect()->route('product');
+               }
+             }
+
 }

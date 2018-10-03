@@ -12,15 +12,11 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Jadwal
+                        <strong>Edit</strong> Jadwal
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.updatejadwal', $editJadwal->id)}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Lapangan</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="lapangan_nama" name="lapangan_nama" placeholder="Nama Lapangan" class="form-control" value="{{$editJadwal->lapangan_id}}" disabled></div>
-                          </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>
                             <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" placeholder="Harga" class="form-control" value="{{$editJadwal->tanggal}}"></div>

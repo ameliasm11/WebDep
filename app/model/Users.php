@@ -14,11 +14,19 @@ class Users extends Authenticatable
 
 	protected $table = 'tm_user';
 
-	protected $fillable = ['id', 'name', 'id_role', 'email', 'password'];
+	protected $fillable = [
+		'id',
+		'name',
+		'id_role',
+		'email',
+		'password',
+	];
 
-	protected $hidden = ['password', 'remember_token'];
+	protected $hidden = [
+		'password',
+		 'remember_token',
+	 ];
 
-	
     public function Role(){
     	return $this->hasOne('App\model\Role');
     }

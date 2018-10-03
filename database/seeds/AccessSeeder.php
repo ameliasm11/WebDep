@@ -71,5 +71,13 @@ class AccessSeeder extends Seeder
           'do_update' => '1',
           'do_delete' => '1',
       ]);
+      DB::table('tm_access')->insert([
+          'role_id' => '1',
+          'module_id' => '3',
+          'menu_id' => '1',
+          'do_insert' => '1',
+          'do_update' => '1',
+          'do_delete' => '1',
+      ]);
     }
 }

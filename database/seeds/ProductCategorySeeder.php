@@ -21,9 +21,9 @@ class ProductCategorySeeder extends Seeder
           'description' => 'Pemesanan Tempat Futsal, Pemesanan Hotel, Pemesanan Restoran',
       ]);
 
-      // DB::table('tm_category_product')->insert([
-      //     'name' => 'Tiket',
-      //     'description' => 'Pemesanan Tiket Kereta Api, Pemesanan Tiket Pesawat, Pemesanan Tiket Travel',
-      // ]);
+      DB::table('tm_category_product')->insert([
+          'name' => 'Tiket',
+          'description' => 'Pemesanan Tiket Kereta Api, Pemesanan Tiket Pesawat, Pemesanan Tiket Travel',
+      ]);
     }
 }

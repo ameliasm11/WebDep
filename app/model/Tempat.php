@@ -15,7 +15,10 @@ class Tempat extends Model
     'gambar',
     'deskripsi',
   ];
-  public function Lapangan()  {
-    return $this->HasMany('App\model\Lapangan');
+  // public function Lapangan()  {
+  //   return $this->HasMany('App\model\Lapangan');
+  // }
+  public function Lapangan(){
+    return $this->HasMany('Lapangan', 'tempat_id');
   }
 }

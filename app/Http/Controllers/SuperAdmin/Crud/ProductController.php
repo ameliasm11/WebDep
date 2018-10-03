@@ -62,6 +62,21 @@ class ProductController extends SystemController
      return redirect()->route('product.edit');
     }
 
+    public function productStatus(Request $request, $id){
+      $productStatus = Produk::findOrFail($id);
+      if($productStatus->status == 0 || null){
+        $productStatus->status = $request->status = 1;
+        $productStatus->save();
+       // dd($jadwalStatus);
+       return redirect()->route('product');
+      }
+      else {
+        $productStatus->status = $request->status = 0;
+        $productStatus->save();
+        return redirect()->route('product');
+      }
+    }
+
     public function destroy($id)
     {
       $products = Produk::findOrFail($id);

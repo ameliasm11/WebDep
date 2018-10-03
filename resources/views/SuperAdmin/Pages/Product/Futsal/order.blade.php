@@ -25,7 +25,7 @@
                         <th>Tanggal</th>
                         <th>Jam</th>
                         <th>No HP</th>
-                        <th>status</th>
+                        <th>Status</th>
                         <th>Created at</th>
                         <th>Aksi</th>
                       </tr>
@@ -38,9 +38,17 @@
                         <td>{{$datas->tanggal}}</td>
                         <td>{{$datas->jam_pesan}}</td>
                         <td>{{$datas->no_hp}}</td>
-                        <td>{{$datas->status}}</td>
+                        <td><form action="{{route('order.StatusOrder', $datas->id)}}" method="post">
+                          {{csrf_field()}}
+                          @if ($datas->status == 0)
+                            <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
+                          @else
+                            <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
+                          @endif
+                        </form>
+                        </td>
                         <td>{{$datas->created_at}}</td>
-                        <center><a href="{{route('order.editOrder', [$datas->id])}}">
+                        <td><center><a href="{{route('order.editOrder', [$datas->id])}}">
                           <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                         </a>
                            <form method="POST" action="{{route('order.deleteOrder', [$datas->id]) }}" style="display: inline-block;">

@@ -14,7 +14,11 @@ class SuperAdminAccount extends Authenticatable
 
 	protected $table = 'superadmin_account';
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+			'name',
+			'email',
+			'password',
+		];
 
     protected $hidden = ['password', 'remember_token'];
 }

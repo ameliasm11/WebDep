@@ -24,6 +24,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Created at</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
@@ -32,6 +33,7 @@
                       @foreach($types as $type)
                         <td>{{$no++}}</td>
                         <td>{{$type->nama}}</td>
+                        <td>{{$type->created_at}}</td>
                         <td>
                           <center><a href="{{ route('payment_method.editMethod', [$type] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('payment_method.deleteMethod', $type->id) }}" method="post" style="display: inline-block">

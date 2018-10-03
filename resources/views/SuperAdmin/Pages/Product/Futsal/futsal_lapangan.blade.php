@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Futsal</h1>
+                        <h1>Form Futsal</h1>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Futsal List</strong>
+                            <strong class="card-title">List Lapangan</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -51,6 +51,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Keterangan Lapangan</th>
+                        <th>Nama Tempat</th>
                         <th>Created at</th>
                         <th>Actions</th>
                       </tr>
@@ -62,6 +63,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->ket}}</td>
+                        <td>{{$datas->tm_tempat->nama}}</th>
                         <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
@@ -81,8 +83,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->

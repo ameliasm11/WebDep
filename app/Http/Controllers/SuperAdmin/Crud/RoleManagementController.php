@@ -83,14 +83,32 @@ class RoleManagementController extends SystemController
         //$post->Access()->save($access);
       return redirect()->route('superadmin.role.index')->with('alert','Berhasil Menambahkan data');
   }
+
   public function edit($id)
-    {
-      
-        $page = 'SuperAdmin.Pages.Role.UpdateRole';
-        $modules = Module::with('Menus')->get();
-        $data = Role::where('id', $id)->get();
-        return view($page)->with(compact('modules','data'));
-	}
+  {
+    $page = 'SuperAdmin.Pages.Role.UpdateRole';      // $user = Users::find($id);
+    $editRole = Role::findOrFail($id);
+    $modules = Module::with('Menus')->get();
+    return view($page)->with(compact('modules','editRole'));
+  }
+  public function UpdateRole(Request $request, $id)
+  {
+      $updateRole = Role::findOrFail($id);
+      $updateRole->name = $request->name;
+      $updateRole->level = $request->level;
+      $updateRole->description = $request->description;
+      $isSuccess = $updateRole->save();
+      if ($isSuccess) {
+        // return success
+        return redirect()->route('superadmin.role.index')->with('alert','Data berhasil diubah!');
+      }
+      else {
+        // returm failed
+        return redirect()->route('superadmin.role.edit')->with('alert','Data tidak berhasil diubah!');
+      }
+      $updateRole->reset();
+      return redirect()->route('superadmin.role.edit');
+   }
 
   public function destroy($id){
     $delete = Role::find($id)->delete();
