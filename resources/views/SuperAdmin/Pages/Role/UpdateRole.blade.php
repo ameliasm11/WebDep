@@ -12,14 +12,14 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Role
+                        <strong>Edit</strong> Role
                       </div>
                       <div class="card-body card-block">
-                        <form action="{{route('superadmin.role.save')}}" method="POST" enctype="application/json" class="form-horizontal">
+                        <form action="{{route('superadmin.role.update', $editRole->id)}}" method="POST">
                           {{ csrf_field() }}
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Role Name</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Role name" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="name" name="name" value="{{$editRole->name}}" class="form-control"></div>
                           </div>
 
                           <div class="row form-group">
@@ -35,7 +35,7 @@
 
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
-                            <div class="col-12 col-md-9"><textarea name="description" id="description" rows="3" placeholder="Description" class="form-control"></textarea></div>
+                            <div class="col-12 col-md-9"><textarea name="description" id="description" rows="3" value="{{$editRole->description}}" class="form-control"></textarea></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label class=" form-control-label">Role Access</label></div>

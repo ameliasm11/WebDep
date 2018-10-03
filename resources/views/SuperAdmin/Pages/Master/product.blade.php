@@ -27,8 +27,8 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>URL</th>
+                        <th>Status</th>
                         <th>Created at</th>
-                        <th>status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -38,8 +38,16 @@
                         <td>{{$no++}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->url}}</td>
+                        <td><form action="{{route('product.status', $product->id)}}" method="post">
+                          {{csrf_field()}}
+                          @if ($product->status == 0)
+                            <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
+                          @else
+                            <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
+                          @endif
+                        </form>
+                        </td>
                         <td>{{$product->created_at}}</td>
-                        <td>{{$product->status}}</td>
                         <td>
                           <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">

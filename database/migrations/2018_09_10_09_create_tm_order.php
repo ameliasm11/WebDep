@@ -20,7 +20,7 @@ class CreateTmOrder extends Migration
           $table->string('tanggal');
           $table->string('jam_pesan');
           $table->string('no_hp');
-          $table->string('status');
+          $table->boolean('status')->nullable()->default('false');
           $table->rememberToken();
           $table->timestamps();
 

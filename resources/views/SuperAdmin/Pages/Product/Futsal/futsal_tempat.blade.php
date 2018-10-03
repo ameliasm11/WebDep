@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Place List</strong>
+                            <strong class="card-title">List Tempat</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">

@@ -9,7 +9,6 @@
                 </div>
             </div>
         </div>
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -65,16 +64,18 @@
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
-                        <td>{{$datas->created_at}}</td>
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
-                        <!-- <td>
+                            {{csrf_field()}}
                           @if ($datas->status == 0)
                             <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
                             <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
+                        </form>
+                        </td>
+                        <td>{{$datas->created_at}}</td>
                         </form></td>
-                        </td> -->
+                        </td>
                         <td>
                           <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>

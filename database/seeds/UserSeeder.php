@@ -14,14 +14,14 @@ class UserSeeder extends Seeder
         DB::table('tm_user')->insert([
             'name' => 'Administrator 1',
             'role_id' => '1',
-            'email' => 'admin@proyekmagang.com',
+            'email' => 'admin@depapps.com',
             'password' => bcrypt('admin')
         ]);
 
         DB::table('tm_user')->insert([
-            'name' => 'Admin',
-            'role_id' => '1',
-            'email' => 'uadmin@proyek.com',
+            'name' => 'User',
+            'role_id' => '2',
+            'email' => 'user@depapps.com',
             'password' => bcrypt('admin')
         ]);
     }

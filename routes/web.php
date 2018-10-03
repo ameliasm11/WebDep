@@ -33,6 +33,7 @@ Auth::routes();
 		Route::get('role-new', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
 		Route::post('role-new', 'RoleManagementController@save')->name('superadmin.role.save');
     Route::get('role-update/{id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
+    Route::post('role-update/{id}', 'RoleManagementController@UpdateRole')->name('superadmin.role.update');
     Route::delete('role/{id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
     //USER WEB MANAGEMENT
     Route::get('user', 'ControllerUser@data')->name('superadmin.user.data');
@@ -71,6 +72,7 @@ Auth::routes();
     Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
     Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
     Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
+    Route::post('Order-StatusOrder/{id}', 'FutsalController@OrderStatus')->name('order.StatusOrder');
 
     //PRODUCT CATEGORY
     Route::get('category', 'ProductCategoryController@category')->name('category');
@@ -83,6 +85,7 @@ Auth::routes();
     Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
     Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
     Route::post('product/delete/{id}', 'ProductController@destroy')->name('product.delete');
+    Route::post('product/status/{id}', 'ProductController@productStatus')->name('product.status');
 
     //Futsal
 

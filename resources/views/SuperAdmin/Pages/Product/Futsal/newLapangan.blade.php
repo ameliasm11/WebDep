@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Lapangan Futsal</h1>
+                                <h1>Form Futsal</h1>
                             </div>
                         </div>
                     </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Lapangan Futsal
+                        <strong>Add New</strong> Lapangan
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.createLapangan')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -27,7 +27,11 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
+<<<<<<< HEAD
                             <div class="col-12 col-md-9"><input type="text" id="nama" name="nama" placeholder="ID Tempat" class="form-control"></div>
+=======
+                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="ID Tempat" class="form-control"></div>
+>>>>>>> 84afe937540819427a17804f414ff83f89467524
                           </div>
                       </div>
                     </div>
