@@ -27,7 +27,7 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="ID Tempat" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="Nama Tempat" class="form-control"></div>
                           </div>
                       </div>
                     </div>

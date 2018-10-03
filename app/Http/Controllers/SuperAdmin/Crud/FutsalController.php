@@ -111,6 +111,8 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Lapangan::all();
+        // $data = Tempat::all();
+        // return $data->tm_tempat->nama;
         //return $data->tm_tempat->nama;
         return view($page)->with(compact('modules','data','products'));
     }
@@ -128,7 +130,7 @@ class FutsalController extends SystemController
             $data = new Lapangan();
             $data->nama = $request->input('nama');
             $data->ket = $request->input('ket');
-            $data->tempat_id=Tempat::where('id' ,'=', 'nama')->$request->input('tempat_id');
+            $data->tempat_id = $request->input('tempat_id');
             // $data = Lapangan::where('tempat_id')->first();
             $data->save();
             return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
@@ -290,7 +292,61 @@ class FutsalController extends SystemController
         $data->delete();
         return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil dihapus!');
     }
+    //lapangan
+    // public function newLapangan()
+    //   {
+    //       $page = 'SuperAdmin.Pages.Product.Futsal.newLapangan';
+    //       $modules = Module::with('Menus')->get();
+    //       return view($page)->with(compact('modules'));
+  	// }
 
+    // public function createLapangan(Request $request)
+    //     {
+    //
+    //         $data = new Lapangan();
+    //         $data->nama = $request->input('nama');
+    //         $data->ket = $request->input('ket');
+    //         // $data = Lapangan::where('tempat_id')->first();
+    //         $data->tempat_id = $request->input('tempat_id');
+    //         // $data->tempat_id = $request->input('tempat_id');
+    //         $data->save();
+    //         return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
+    //         $data->reset();
+    //         return redirect()->route('superadmin.futsal.lapangan');
+    //     }
+
+    // public function editLapangan($id)
+    //     {
+    //         $page = 'SuperAdmin.Pages.Product.Futsal.editLapangan';
+    //         $modules = Module::with('Menus')->get();
+    //         $data = Lapangan::findOrFail($id);
+    //         return view($page)->with(compact('modules','data'));
+    //   	}
+
+    // public function updateLapangan(Request $request, $id)
+    //     {
+    //       $data = Lapangan::findOrFail($id);
+    //       $data->nama = $request->nama;
+    //       $data->ket = $request->ket;
+    //       $isSuccess = $data->save();
+    //       if ($isSuccess) {
+    //         // return success
+    //         return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil diubah!');
+    //       }
+    //       else {
+    //         // returm failed
+    //         return redirect()->route('superadmin.futsal.lapangan')->with('alert-failed','Data tidak berhasil diubah!');
+    //       }
+    //       $data->reset();
+    //       return redirect()->route('superadmin.futsal.lapangan');
+    //      }
+
+      // public function deleteLapangan($id)
+      //  {
+      //      $data = Lapangan::findOrFail($id);
+      //      $data->delete();
+      //      return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil dihapus!');
+      //  }
        //order
        public function order()
        {
