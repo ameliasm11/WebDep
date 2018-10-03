@@ -26,10 +26,7 @@
                         <th>Nama</th>
                         <th>Kategori Produk</th>
                         <th>Produk</th>
-<<<<<<< HEAD
-=======
                         <th>Created at</th>
->>>>>>> 947012823fea46f286048d9dbcdfb53a193bba61
                         <th>Aksi</th>
                       </tr>
                     </thead>

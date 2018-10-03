@@ -64,27 +64,18 @@
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
-<<<<<<< HEAD
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
-                          {{csrf_field()}}
-=======
-                        <td>{{$datas->created_at}}</td>
-                        <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
-                        <!-- <td>
->>>>>>> 947012823fea46f286048d9dbcdfb53a193bba61
+                            {{csrf_field()}}
                           @if ($datas->status == 0)
                             <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
                             <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
-<<<<<<< HEAD
                         </form>
                         </td>
                         <td>{{$datas->created_at}}</td>
-=======
                         </form></td>
-                        </td> -->
->>>>>>> 947012823fea46f286048d9dbcdfb53a193bba61
+                        </td>
                         <td>
                           <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
