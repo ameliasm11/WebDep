@@ -111,12 +111,9 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Lapangan::all();
-<<<<<<< HEAD
         // $data = Tempat::all();
         // return $data->tm_tempat->nama;
-=======
         //return $data->tm_tempat->nama;
->>>>>>> 84afe937540819427a17804f414ff83f89467524
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -295,8 +292,6 @@ class FutsalController extends SystemController
         $data->delete();
         return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil dihapus!');
     }
-
-<<<<<<< HEAD
     //lapangan
     public function newLapangan()
       {
