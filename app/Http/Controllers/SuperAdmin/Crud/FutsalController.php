@@ -117,7 +117,8 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Lapangan::all();
-        return $data->tm_tempat->nama;
+        $data = Tempat::all();
+        // return $data->tm_tempat->nama;
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -257,8 +258,9 @@ class FutsalController extends SystemController
             $data = new Lapangan();
             $data->nama = $request->input('nama');
             $data->ket = $request->input('ket');
-            // $data->tempat_id = $request->input('tempat_id');
             // $data = Lapangan::where('tempat_id')->first();
+            $data->tm_tempat->nama = $request->input('nama');
+            // $data->tempat_id = $request->input('tempat_id');
             $data->save();
             return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
             $data->reset();
