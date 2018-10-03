@@ -7,6 +7,7 @@ use App\Http\Controllers\SuperAdmin\SystemController;
 
 use App\model\Module;
 use App\model\Users;
+use App\model\Role;
 
 class ControllerUser extends SystemController
 {
@@ -56,14 +57,15 @@ class ControllerUser extends SystemController
       {
           $page = 'SuperAdmin.Pages.User.tambah_user';
           $modules = Module::with('Menus')->get();
-          return view($page)->with(compact('modules'));
+          $levels = Role::all();
+          return view($page)->with(compact('modules','levels'));
     }
 
     public function createUser(Request $request)
       {
           $user = new Users();
           $user->name = $request->input('name');
-          $user->role_id = $request->input('role_id');
+          $user->role_id = $request->input('level');
           $user->email = $request->input('email');
           $user->fill([
             'password' => bcrypt($request->password)
