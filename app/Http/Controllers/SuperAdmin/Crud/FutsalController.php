@@ -21,7 +21,7 @@ class FutsalController extends SystemController
       $page = 'SuperAdmin.Pages.Product.Futsal.futsal';
       $modules = Module::with('Menus')->get();
       $products = Produk::all();
-      $data = Jadwal::all();
+      $data = Jadwal::with('Lapangan')->get();
       return view($page)->with(compact('modules','data','products'));
   }
   public function newJadwal()
@@ -180,7 +180,7 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Harga';
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
-        $data = Harga::all();
+        $data = Harga::with('Jadwal')->get();
         return view($page)->with(compact('modules','data','products','jadwal'));
     }
 
