@@ -18,8 +18,15 @@
                         <form action="{{route('superadmin.futsal.SaveHarga')}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jadwal ID</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="jadwal_id" name="jadwal_id" placeholder="Jadwal ID" class="form-control"></div>
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jadwal</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="jadwal_id" id="jadwal_id" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
+                                @foreach($jadwal as $jadwals)
+                                <option value="{{$jadwals->id}}">{{$jadwals->jam}}</option>
+                                @endforeach
+                              </select>
+                            </div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Harga</label></div>

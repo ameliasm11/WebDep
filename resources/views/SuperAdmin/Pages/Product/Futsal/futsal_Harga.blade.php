@@ -49,6 +49,7 @@
                       <thead>
                         <tr>
                           <th>No</th>
+                          <th>Jam</th>
                           <th>Harga</th>
                           <th>Created at</th>
                           <th>Actions</th>
@@ -59,7 +60,7 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
-                          <td>{{$datas->jadwal_id}}</td>
+                          <td>{{$datas->jam}}</td>
                           <td>{{$datas->harga}}</td>
                           <td>{{$datas->created_at}}</td>
                           <td>

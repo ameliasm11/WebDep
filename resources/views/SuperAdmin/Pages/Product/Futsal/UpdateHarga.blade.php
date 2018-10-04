@@ -17,10 +17,10 @@
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.updateHarga', $editHarga->id)}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jadwal ID</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="jadwal_id" name="jadwal_id" placeholder="Jadwal ID" class="form-control" value="{{$editHarga->jadwal_id}}"></div>
-                          </div>
+                          <!-- <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jadwal</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="jadwal_id" name="jadwal_id" class="form-control" value="{{$editHarga->jam}}"></div>
+                          </div> -->
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Harga</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="harga" name="harga" placeholder="Harga" class="form-control" value="{{$editHarga->harga}}"></div>
