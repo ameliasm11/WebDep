@@ -22,7 +22,7 @@ class Role extends Authenticatable
 	];
 
 	public function users(){
-		return $this->belongsTo('App\model\Users');
+		return $this->hasOne('App\model\Users');
 	}
 	public function accesses(){
 		return $this->hasMany('App\model\Access');
