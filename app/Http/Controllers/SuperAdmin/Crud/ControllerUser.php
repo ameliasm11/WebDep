@@ -15,7 +15,7 @@ class ControllerUser extends SystemController
     {
     	$page = 'SuperAdmin.Pages.User.table_user';
       $modules = Module::with('Menus')->get();
-      $user = Users::all();
+      $user = Users::with('Role')->get();
       return view($page)->with(compact('modules','user'));
     }
 
