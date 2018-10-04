@@ -19,15 +19,20 @@
                           {{ csrf_field() }}
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama Lapangan" class="form-control" value="{{ $data->nama }}"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="nama" name="nama" class="form-control" value="{{ $data->nama }}"></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan Tempat" class="form-control" value="{{ $data->ket }}"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" class="form-control" value="{{ $data->ket }}"></div>
                           </div>
+                          <!-- <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" class="form-control" value="{{ $data->tempat_id }}" disabled></div>
+                          </div> -->
                       </div>
                     </div>
                   </div>
+
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit

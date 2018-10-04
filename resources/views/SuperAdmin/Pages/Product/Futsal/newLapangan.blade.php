@@ -25,26 +25,17 @@
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Tempat</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan Tempat" class="form-control"></div>
                           </div>
-                          <!-- <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" placeholder="Nama Tempat" class="form-control"></div>
-                          </div> -->
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Tempat</label></div>
-                            @foreach($tempat as $tempats)
-                          <option value="">{{$tempats->nama}}</option>
-                          @endforeach
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Lapangan</label></div>
                             <div class="col-12 col-md-9">
-                              <!-- <select name="level" id="tempat_id" class="form-control"> -->
-                              <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="tempat_id" id="tempat_id" class="form-control">
+                              <select name="tempat_id" id="tempat_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
-                                <option value="1">{{$tempats->nama}}</option>
+                                @foreach($tempats as $tempat)
+                                <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
+                                @endforeach
                               </select>
                             </div>
                           </div>
-
-                      </div>
-                    </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit
