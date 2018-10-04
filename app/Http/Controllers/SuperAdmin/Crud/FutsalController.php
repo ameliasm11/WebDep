@@ -179,7 +179,6 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Harga::all();
-        //$jadwal = Jadwal::where('jam', '=', $data->jadwal_id)->first();
         return view($page)->with(compact('modules','data','products','jadwal'));
     }
 
