@@ -28,7 +28,8 @@ class FutsalController extends SystemController
   {
         $page = 'SuperAdmin.Pages.Product.Futsal.newJadwal';
         $modules = Module::with('Menus')->get();
-        return view($page)->with(compact('modules'));
+        $lapangan = Lapangan::all();
+        return view($page)->with(compact('modules','lapangan'));
   }
 
   public function SaveJadwal(Request $request){
@@ -178,14 +179,16 @@ class FutsalController extends SystemController
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
         $data = Harga::all();
-        return view($page)->with(compact('modules','data','products'));
+        //$jadwal = Jadwal::where('jam', '=', $data->jadwal_id)->first();
+        return view($page)->with(compact('modules','data','products','jadwal'));
     }
 
     public function Newharga()
     {
           $page = 'SuperAdmin.Pages.Product.Futsal.newHarga';
           $modules = Module::with('Menus')->get();
-          return view($page)->with(compact('modules'));
+          $jadwal = Jadwal::all();
+          return view($page)->with(compact('modules', 'jadwal'));
   	}
 
     public function SaveHarga(Request $request){
@@ -211,7 +214,6 @@ class FutsalController extends SystemController
     public function updateHarga(Request $request, $id)
     {
       $updateHarga = Harga::findOrFail($id);
-      $updateHarga->jadwal_id = $request->jadwal_id;
       $updateHarga->harga = $request->harga;
       $isSuccess = $updateHarga->save();
       if ($isSuccess) {

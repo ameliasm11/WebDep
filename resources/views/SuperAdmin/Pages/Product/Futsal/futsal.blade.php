@@ -48,7 +48,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama Lapangan</th>
+                        <th>Nama</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
                         <th>Status</th>
