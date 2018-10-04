@@ -61,7 +61,7 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->nama}}</td>
+                        <td>{{$datas->Lapangan->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
