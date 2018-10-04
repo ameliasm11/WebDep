@@ -110,7 +110,8 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_lapangan';
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
-        $data = Lapangan::all();
+        $data = Lapangan::with('Tempat')->get();
+
         // $data = Tempat::all();
         // return $data->tm_tempat->nama;
         //return $data->tm_tempat->nama;
@@ -121,7 +122,8 @@ class FutsalController extends SystemController
       {
           $page = 'SuperAdmin.Pages.Product.Futsal.newLapangan';
           $modules = Module::with('Menus')->get();
-          return view($page)->with(compact('modules'));
+          $tempats = Tempat::all();
+          return view($page)->with(compact('modules', 'tempats'));
     }
 
     public function createLapangan(Request $request)
@@ -130,7 +132,7 @@ class FutsalController extends SystemController
             $data = new Lapangan();
             $data->nama = $request->input('nama');
             $data->ket = $request->input('ket');
-            $datas = $data->tempat_id = $request->input('tempat_id');
+            $data->tempat_id = $request->input('tempat_id');
             // $data = Lapangan::where('tempat_id')->first();
             $data->save();
             return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');

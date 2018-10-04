@@ -63,7 +63,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$datas->nama}}</td>
                         <td>{{$datas->ket}}</td>
-                        <td>{{$datas->tempat_id}}</th>
+                        <td>{{$datas->Tempat->nama}}</th>
                         <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
