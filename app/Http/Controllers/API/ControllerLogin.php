@@ -29,14 +29,16 @@ class ControllerLogin extends Controller
         $res['status'] = "ok";
         $res['code'] = 200;
         $res['message'] = "Success!";
-        $res['values'] = $superadmin_data;
+        // $res['data'] = $superadmin_data;
+        $res['email'] = $superadmin_data['email'];
+        $res['password'] = $superadmin_data['password'];
         return response($res);
       }
       else
       {
         $res['status'] = "Bad request";
         $res['code'] = 400;
-        $res['message'] = "Field!";
+        $res['message'] = "Email dan password salah";
         return response($res);
 
       }
