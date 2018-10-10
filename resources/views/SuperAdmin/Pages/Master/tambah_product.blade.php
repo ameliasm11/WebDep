@@ -9,7 +9,7 @@
     <form action="{{ route('product.add') }}" method="post">
     {{ csrf_field() }}
     <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama</label></div>
+        <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama Produk</label></div>
         <div class="col-10 col-md-9"><input type="text" id="name" name="name" placeholder="Nama" class="form-control">
         </div>
     </div>

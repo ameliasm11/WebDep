@@ -13,6 +13,7 @@ class Lapangan extends Model
     'nama',
     'ket',
     'tempat_id',
+    'gambar',
 
   ];
     public function Tempat()  {
