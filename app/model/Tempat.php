@@ -13,6 +13,8 @@ class Tempat extends Model
     'nama',
     'alamat',
     'gambar',
+    'jam_buka',
+    'jam_tutup',
     'deskripsi',
   ];
   public function Lapangan()  {

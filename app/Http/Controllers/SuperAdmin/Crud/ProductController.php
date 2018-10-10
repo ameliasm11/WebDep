@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Produk;
+use App\model\Kategori_Produk;
 
 class ProductController extends SystemController
 {
@@ -20,17 +21,17 @@ class ProductController extends SystemController
   {
   	$page = 'SuperAdmin.Pages.Master.tambah_product';
     $modules = Module::with('Menus')->get();
-    $products = Produk::all();
+    $products = Produk::with('Kategori_Produk')->get();
     return view($page)->with(compact('modules', 'products'));
   }
 
   public function store(Request $request)
    {
        $products = new Produk();
-       $products->name = $request->name;
-       $products->producat_id = $request->producat_id;
-       $products->url = $request->url;
-       $products->status = $request->status;
+       $products->name = $request->input('name');
+       $products->producat_id = $request->input('producat_id');
+       $products->url = $request->input('url');
+       // $products->status = $request->input('status');
        $products->save();
        return redirect()->route('product')->with('alert-success','Berhasil Menambahkan Data!');
    }

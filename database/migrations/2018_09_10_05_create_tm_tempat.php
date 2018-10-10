@@ -18,6 +18,8 @@ class CreateTmTempat extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('gambar');
+            $table->string('jam_buka');
+            $table->string('jam_tutup');
             $table->string('deskripsi');
             $table->rememberToken();
             $table->timestamps();

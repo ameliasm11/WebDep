@@ -32,10 +32,10 @@
                    <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
-                       <option  value="0" disabled selected>Data</option>
-                       <option value="{{route('superadmin.futsal.tempat')}}">Place</option>
+                       <option  value="0" disabled selected>Harga</option>
+                       <option value="{{route('superadmin.futsal.tempat')}}">Tempat</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
-                       <option value="{{route('superadmin.futsal.index')}}">Jadwal</option>
+                       <option value="{{route('superadmin.futsal.jadwal')}}">Jadwal</option>
                        <option value="{{route('superadmin.futsal.harga')}}">Harga</option>
                      </select>
                    </div>

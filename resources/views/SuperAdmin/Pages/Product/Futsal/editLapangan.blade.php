@@ -29,6 +29,16 @@
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" class="form-control" value="{{ $data->tempat_id }}" disabled></div>
                           </div> -->
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Lama</label></div>
+                            <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
+                          </div>
+                          </div>
+                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar</label></div>
+                          <div class="row form-group">
+                            <div class="col-12 col-md-9"><input type="file" class="form-control" id="gambar" name="gambar" value="{{ $data->gambar }}">
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

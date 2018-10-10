@@ -18,6 +18,7 @@ class CreateTmLapangan extends Migration
           $table->string('nama');
           $table->string('ket');
           $table->integer('tempat_id')->unsigned();
+          $table->string('gambar');
           $table->rememberToken();
           $table->timestamps();
 
