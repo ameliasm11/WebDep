@@ -32,7 +32,7 @@ class MenuSeeder extends Seeder
         DB::table('tm_menu')->insert([
             'name' => 'Product',
             'module_id' => '2',
-            'url' => 'superadmin.futsal.index',
+            'url' => 'superadmin.futsal.jadwal',
         ]);
 
         DB::table('tm_menu')->insert([
