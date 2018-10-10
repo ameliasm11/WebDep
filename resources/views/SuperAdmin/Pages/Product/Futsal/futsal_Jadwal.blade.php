@@ -42,7 +42,7 @@
                       </div>
                       <div class="card-body">
                         <div align="right">
-                        <a href=""><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                        <a href="{{route('superadmin.futsal.Newjadwal')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
