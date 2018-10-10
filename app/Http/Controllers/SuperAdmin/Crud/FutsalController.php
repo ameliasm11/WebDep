@@ -51,8 +51,7 @@ class FutsalController extends SystemController
           $jadwal = new Jadwal();
           $jadwal->lapangan_id = $request->get('lapangan_id');
           $jadwal->tanggal = $request->get('tanggal');
-          $jadwal->jam = $request->get('jam');
-          // $jadwal->status = $request->get('status');
+          $jadwal->jam = $request->get('jam'); p00
           $jadwal->save();
           return redirect()->route('superadmin.futsal.index')->with('alert','Berhasil Menambahkan data');
   }
