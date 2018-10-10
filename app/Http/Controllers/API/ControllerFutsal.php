@@ -13,10 +13,10 @@ class ControllerFutsal extends Controller
       $data = \App\model\Tempat::all();
 
     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
-      $res['status'] = "ok";
-      $res['code'] = 200;
-      $res['message'] = "Success!";
-        $res['values'] = $data;
+      // $res['status'] = "ok";
+      // $res['code'] = 200;
+      // $res['message'] = "Success!";
+      $res = $data;
         return response($res);
     }
     else{
@@ -35,10 +35,10 @@ class ControllerFutsal extends Controller
         $data = \App\model\Jadwal::where('lapangan_id', $lapangan)
             ->where('tanggal', $tanggal)->get();
     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
-      $res['status'] = "ok";
+      $res['status'] = true;
       $res['code'] = 200;
       $res['message'] = "Success!";
-        $res['values'] = $data;
+        $res['data'] = $data;
         return response($res);
     }
     else{
@@ -55,10 +55,10 @@ class ControllerFutsal extends Controller
         $data = \App\model\Lapangan::where('tempat_id',$tempat)->get();
 
     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
-      $res['status'] = "ok";
+      $res['status'] = true;
       $res['code'] = 200;
       $res['message'] = "Success!";
-        $res['values'] = $data;
+      $res['data'] = $data;
         return response($res);
     }
     else{
@@ -74,8 +74,7 @@ class ControllerFutsal extends Controller
     $nohp = $request->input('no_hp'),
     $jadwal = $request->input('jadwal_id'),
     $tanggal = $request->input('tanggal'),
-    $jam = $request->input('jam_pesan'),
-    $status = $request->input('status')
+    $jam = $request->input('jam_pesan')
     ]);
 
       $data = new \App\model\Order();
@@ -84,11 +83,11 @@ class ControllerFutsal extends Controller
       $data->jadwal_id = $jadwal;
       $data->tanggal = $tanggal;
       $data->jam_pesan = $jam;
-      $data->status = $status;
+      $data->status = "false";
 
       if($data->save()){
         $res['status'] = "created";
-        $res['code'] = 201;
+        $res['code'] = 200;
         $res['message'] = "Success!";
         $res['value'] = "$data";
         return response($res);
