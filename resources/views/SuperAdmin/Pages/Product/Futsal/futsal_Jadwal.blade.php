@@ -31,7 +31,7 @@
                    <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
-                       <option value="0" disabled selected>Pilih</option>
+                       <option value="0" disabled selected>Jadwal</option>
                        <option value="{{route('superadmin.futsal.tempat')}}">Tempat</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.jadwal')}}">Jadwal</option>
@@ -48,7 +48,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Nama Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
                         <th>Status</th>

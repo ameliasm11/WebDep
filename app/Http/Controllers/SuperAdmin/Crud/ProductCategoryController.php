@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Kategori_Produk;
+use App\model\Produk;
 
 class ProductCategoryController extends SystemController
 {

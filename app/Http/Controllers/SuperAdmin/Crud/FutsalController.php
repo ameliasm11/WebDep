@@ -24,6 +24,16 @@ class FutsalController extends SystemController
       $data = Jadwal::with('Lapangan')->get();
       return view($page)->with(compact('modules','data','products'));
   }
+
+  public function Jadwal()
+  {
+      $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Jadwal';
+      $modules = Module::with('Menus')->get();
+      $products = Produk::all();
+      $data = Jadwal::with('Lapangan')->get();
+      return view($page)->with(compact('modules','data','products'));
+  }
+
   public function newJadwal()
   {
         $page = 'SuperAdmin.Pages.Product.Futsal.newJadwal';
@@ -133,7 +143,11 @@ class FutsalController extends SystemController
             $data->nama = $request->input('nama');
             $data->ket = $request->input('ket');
             $data->tempat_id = $request->input('tempat_id');
-            // $data = Lapangan::where('tempat_id')->first();
+            $file = $request->file('gambar');
+            $ext = $file->getClientOriginalExtension();
+            $newName = rand(100000,1001238912).".".$ext;
+            $file->move('uploads/gambar',$newName);
+            $data->gambar = $newName;
             $data->save();
             return redirect()->route('superadmin.futsal.lapangan')->with('alert-success','Data berhasil ditambahkan!');
             $data->reset();
@@ -151,8 +165,20 @@ class FutsalController extends SystemController
     public function updateLapangan(Request $request, $id)
         {
           $data = Lapangan::findOrFail($id);
-          $data->nama = $request->nama;
-          $data->ket = $request->ket;
+          $data->nama = $request->input('nama');
+          $data->ket = $request->input('ket');
+          // $data->tempat_id = $request->input('tempat_id');
+          if (empty($request->file('gambar'))){
+              $data->gambar = $data->gambar;
+        }
+        else{
+            unlink('uploads/gambar/'.$data->gambar); //menghapus file lama
+            $file = $request->file('gambar');
+            $ext = $file->getClientOriginalExtension();
+            $newName = rand(100000,1001238912).".".$ext;
+            $file->move('uploads/gambar',$newName);
+            $data->gambar = $newName;
+        }
           $isSuccess = $data->save();
           if ($isSuccess) {
             // return success
@@ -255,6 +281,8 @@ class FutsalController extends SystemController
             $newName = rand(100000,1001238912).".".$ext;
             $file->move('uploads/gambar',$newName);
             $data->gambar = $newName;
+            $data->jam_buka = $request->input('jam_buka');
+            $data->jam_tutup = $request->input('jam_tutup');
             $data->save();
             return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil ditambahkan!');
         }
@@ -284,6 +312,8 @@ class FutsalController extends SystemController
             $file->move('uploads/gambar',$newName);
             $data->gambar = $newName;
         }
+        $data->jam_buka = $request->input('jam_buka');
+        $data->jam_tutup = $request->input('jam_tutup');
         $data->save();
         return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil diubah!');
       }

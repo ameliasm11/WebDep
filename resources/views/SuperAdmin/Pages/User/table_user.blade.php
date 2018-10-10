@@ -38,7 +38,7 @@
                         <td>{{$no++}}</td>
                         <td>{{$users->name}}</td>
                         <td>{{$users->email}}</td>
-                        <!-- <td>{{$users->Role->level}}</td> -->
+                        <td>{{$users->Role->level}}</td>
                         <td>{{$users->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.user.edit', [$users]) }}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>

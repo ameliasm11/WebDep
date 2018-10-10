@@ -14,9 +14,15 @@
         </div>
     </div>
     <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">ID Produk Kategori</label></div>
-        <div class="col-10 col-md-9"><input type="text" id="producat_id" name="producat_id" placeholder="ID Produk Kategori" class="form-control">
-        </div>
+      <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Kategori</label></div>
+      <div class="col-12 col-md-9">
+        <select name="producat_id" id="producat_id" class="form-control">
+          <option value="0" disabled selected>Please select</option>
+          @foreach($products as $product)
+          <option value="{{$product->id}}">{{$product->name}}</option>
+          @endforeach
+        </select>
+      </div>
     </div>
     <div class="row form-group">
         <div class="col col-md-2"><label for="text-input" class=" form-control-label">URL</label></div>
