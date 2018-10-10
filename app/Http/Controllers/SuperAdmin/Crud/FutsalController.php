@@ -51,9 +51,9 @@ class FutsalController extends SystemController
           $jadwal = new Jadwal();
           $jadwal->lapangan_id = $request->get('lapangan_id');
           $jadwal->tanggal = $request->get('tanggal');
-          $jadwal->jam = $request->get('jam'); p00
+          $jadwal->jam = $request->get('jam');
           $jadwal->save();
-          return redirect()->route('superadmin.futsal.index')->with('alert','Berhasil Menambahkan data');
+          return redirect()->route('superadmin.futsal.jadwal')->with('alert','Berhasil Menambahkan data');
   }
 
   public function editJadwal($id)
@@ -72,7 +72,7 @@ class FutsalController extends SystemController
     $isSuccess = $updateJadwal->save();
     if ($isSuccess) {
       // return success
-      return redirect()->route('superadmin.futsal.index')->with('alert','Data berhasil diubah!');
+      return redirect()->route('superadmin.futsal.jadwal')->with('alert','Data berhasil diubah!');
     }
     else {
       // returm failed
@@ -88,12 +88,12 @@ class FutsalController extends SystemController
        $jadwalStatus->status = $request->status = 1;
        $jadwalStatus->save();
       // dd($jadwalStatus);
-      return redirect()->route('superadmin.futsal.index');
+      return redirect()->route('superadmin.futsal.jadwal');
      }
      else {
        $jadwalStatus->status = $request->status = 0;
        $jadwalStatus->save();
-       return redirect()->route('superadmin.futsal.index');
+       return redirect()->route('superadmin.futsal.jadwal');
      }
    }
 
@@ -101,7 +101,7 @@ class FutsalController extends SystemController
    {
      $deleteJadwal = Jadwal::findOrFail($id);
      $deleteJadwal->delete();
-     return redirect()->route('superadmin.futsal.index')->with('alert','Data berhasil dihapus!');
+     return redirect()->route('superadmin.futsal.jadwal')->with('alert','Data berhasil dihapus!');
    }
   //END JADWAL
 
