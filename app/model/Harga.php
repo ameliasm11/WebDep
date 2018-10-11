@@ -10,10 +10,9 @@ class Harga extends Model
 
   protected $fillable = [
     'id',
-    'jadwal_id',
     'harga',
   ];
     public function Jadwal()  {
-      return $this->belongsTo('App\model\Jadwal');
+      return $this->HasMany('App\model\Jadwal');
     }
 }
