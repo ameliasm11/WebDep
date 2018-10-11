@@ -6,34 +6,23 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Produk;
-use App\model\KategoriProduk;
+use App\model\Kategori;
 
 class ProductController extends SystemController
 {
   public function product(){
     $page = 'SuperAdmin.Pages.Master.product';
     $modules = Module::with('Menus')->get();
-<<<<<<< HEAD
-    $products = Produk::with('Kategori_Produk')->get();
+    $products = Produk::with('Kategori')->get();
     return view($page)->with(compact('modules','products'));
-=======
-    $datas = Produk::with('KategoriProduk')->get();
-
-    return view($page)->with(compact('modules', 'datas'));
->>>>>>> 4b0011ddb13029c43cb1310cf740acf3b01dd3f0
   }
 
   public function tambah()
   {
   	$page = 'SuperAdmin.Pages.Master.tambah_product';
     $modules = Module::with('Menus')->get();
-<<<<<<< HEAD
-    $kategoris = Kategori_Produk::all();
+    $kategoris = Kategori::all();
     return view($page)->with(compact('modules', 'kategoris'));
-=======
-    $products = KategoriProduk::all();
-    return view($page)->with(compact('modules', 'products'));
->>>>>>> 4b0011ddb13029c43cb1310cf740acf3b01dd3f0
   }
 
   public function store(Request $request)

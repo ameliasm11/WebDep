@@ -35,27 +35,21 @@
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
-                      @foreach($datas as $data)
+                      @foreach($products as $product)
                         <td>{{$no++}}</td>
-<<<<<<< HEAD
                         <td>{{$product->name}}</td>
-                        
+                        <td>{{$product->Kategori->name}}</td>
                         <td>{{$product->url}}</td>
-=======
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->KategoriProduk->name}}</td>
-                        <td>{{$data->url}}</td>
->>>>>>> 4b0011ddb13029c43cb1310cf740acf3b01dd3f0
                         <td><form action="{{route('product.status', $product->id)}}" method="post">
                           {{csrf_field()}}
-                          @if ($data->status == 0)
+                          @if ($product->status == 0)
                             <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
                             <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
                         </form>
                         </td>
-                        <td>{{$data->created_at}}</td>
+                        <td>{{$product->created_at}}</td>
                         <td>
                           <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">

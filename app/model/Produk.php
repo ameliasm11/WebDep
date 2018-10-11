@@ -15,7 +15,7 @@ class Produk extends Model
     'url',
     'status',
   ];
-  public function KategoriProduk()  {
-    return $this->hasOne('App\model\KategoriProduk');
+  public function Kategori()  {
+    return $this->belongsTo('App\model\Kategori');
   }
 }
