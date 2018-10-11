@@ -13,7 +13,7 @@ class ProductController extends SystemController
   public function product(){
     $page = 'SuperAdmin.Pages.Master.product';
     $modules = Module::with('Menus')->get();
-    $products = Produk::all();
+    $products = Produk::with('Kategori_Produk')->get();
     return view($page)->with(compact('modules','products'));
   }
 
@@ -21,8 +21,8 @@ class ProductController extends SystemController
   {
   	$page = 'SuperAdmin.Pages.Master.tambah_product';
     $modules = Module::with('Menus')->get();
-    $products = Produk::with('Kategori_Produk')->get();
-    return view($page)->with(compact('modules', 'products'));
+    $kategoris = Kategori_Produk::all();
+    return view($page)->with(compact('modules', 'kategoris'));
   }
 
   public function store(Request $request)
