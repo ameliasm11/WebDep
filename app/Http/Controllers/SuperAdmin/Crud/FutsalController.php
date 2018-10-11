@@ -12,6 +12,7 @@ use App\model\Order;
 use App\model\Lapangan;
 use App\model\Harga;
 use App\model\Tempat;
+use App\model\Kategori;
 
 class FutsalController extends SystemController
 {

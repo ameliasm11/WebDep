@@ -23,7 +23,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Nama Type</th>
                         <th>Created at</th>
                         <th>Aksi</th>
                       </tr>

@@ -13,7 +13,10 @@ class Kategori extends Model
     'name',
     'description',
   ];
-  public function Produk()  {
-    return $this->HasMany('App\model\Produk');
+  public function produk(){
+    return $this->hasMany('App\model\Produk');
+  }
+  public function partnercompany(){
+    return $this->hasMany('App\model\Partnercompany');
   }
 }

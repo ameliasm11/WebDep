@@ -24,7 +24,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Kategori Produk</th>
+                        <th>Kategori</th>
                         <th>Produk</th>
                         <th>Created at</th>
                         <th>Aksi</th>
@@ -35,8 +35,8 @@
                       @foreach($types as $type)
                         <td>{{$no++}}</td>
                         <td>{{$type->nama}}</td>
-                        <td>{{$type->produk_category}}</td>
-                        <td>{{$type->produk}}</td>
+                        <td>{{$type->kategori->name}}</td>
+                        <td>{{$type->produk->name}}</td>
                         <td>{{$type->created_at}}</td>
                         <td>
                           <center><a href="{{ route('partner_company.editPC', [$type] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>

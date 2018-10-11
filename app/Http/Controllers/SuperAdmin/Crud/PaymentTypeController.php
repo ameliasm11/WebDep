@@ -5,7 +5,8 @@ namespace App\Http\Controllers\SuperAdmin\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
-use App\model\Payment_type;
+use App\model\Type;
+use App\model\Method;
 
 class PaymentTypeController extends SystemController
 {
@@ -13,7 +14,7 @@ class PaymentTypeController extends SystemController
   {
     $page = 'SuperAdmin.Pages.Master.payment_type';
     $modules = Module::with('Menus')->get();
-    $types = Payment_type::all();
+    $types = Type::all();
     return view($page)->with(compact('modules','types'));
   }
 
@@ -26,7 +27,7 @@ class PaymentTypeController extends SystemController
 
   public function createType(Request $request)
       {
-          $types = new Payment_type();
+          $types = new Type();
           $types->nama = $request->input('nama');
           $types->save();
           return redirect()->route('payment_type')->with('alert-success','Data berhasil ditambahkan!');
@@ -38,14 +39,14 @@ class PaymentTypeController extends SystemController
       {
           $page = 'SuperAdmin.Pages.Master.edit_payment_type';
           $modules = Module::with('Menus')->get();
-          $types = Payment_type::findOrFail($id);
+          $types = Type::findOrFail($id);
           return view($page)->with(compact('modules','types'));
       }
 
   public function updateType(Request $request, $id)
       {
-        $types = Payment_type::findOrFail($id);
-        $types->nama = $request->nama;
+        $types = Type::findOrFail($id);
+        $types->nama = $request->input('nama');
         $isSuccess = $types->save();
         if ($isSuccess) {
           // return success
@@ -61,7 +62,7 @@ class PaymentTypeController extends SystemController
 
     public function deleteType($id)
      {
-         $types = Payment_type::findOrFail($id);
+         $types = Type::findOrFail($id);
          $types->delete();
          return redirect()->route('payment_type')->with('alert-success','Data berhasil dihapus!');
      }
