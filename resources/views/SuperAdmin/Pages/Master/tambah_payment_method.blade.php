@@ -9,10 +9,24 @@
     <form action="{{ route('payment_method.createMethod') }}" method="post">
     {{ csrf_field() }}
     <div class="row form-group">
+      <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Type</label></div>
+      <div class="col-12 col-md-9">
+        <select name="type_id" id="type_id" class="form-control">
+          <option value="0" disabled selected>Please select</option>
+          @foreach($methods as $method)
+          <option value="{{$method->id}}">{{$method->nama}}</option>
+          @endforeach
+        </select>
+      </div>
+    </div>
+
+    <div class="row form-group">
         <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama</label></div>
         <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control">
         </div>
     </div>
+
+
 
     <div class="card-footer">
         <button type="submit" class="btn btn-primary btn-sm">

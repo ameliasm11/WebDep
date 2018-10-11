@@ -15,9 +15,18 @@ class CreateTmHarga extends Migration
     {
         Schema::create('tm_harga', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('tempat_id');
+            $table->integer('lapangan_id');
+            $table->string('jam');
             $table->string('harga');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('tempat_id')->references('id')->on('tm_tempat')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+            $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
           });
     }
 

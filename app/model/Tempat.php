@@ -23,4 +23,8 @@ class Tempat extends Model
   public function Jadwal()  {
     return $this->HasMany('App\model\Jadwal');
   }
+
+  public function Harga() {
+    return $this->hasOne('App\model\Harga');
+  }
 }

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="../images/logoDEP.png">
+    <link rel="shortcut icon" href="../../images/logoDEP.png">
 
     <link rel="stylesheet" href="{{ asset('plugins/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/css/bootstrap.min.css') }}">
@@ -32,13 +32,12 @@
         <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="../images/nav_logo.png" alt="Logo" width="50%"></a>
-                <a class="navbar-brand hidden" href="./"><img src="../images/logoDEP.png" alt="Logo"></a>
+                <a class="navbar-brand" href=""><img src="../../images/nav_logo.png" width="50%"></a>
+                <a class="navbar-brand hidden" href=""><img src="../../images/logoDEP.png"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">

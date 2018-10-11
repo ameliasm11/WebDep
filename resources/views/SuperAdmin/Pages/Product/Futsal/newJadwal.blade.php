@@ -37,6 +37,17 @@
                             <div class="col-12 col-md-9">
                               <select name="jam" id="jam" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
+                                @foreach($hargas as $harga)
+                                <option value="{{$harga->jam}}">{{$harga->jam}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
+                          <!-- <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="jam" id="jam" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>
                                 <option value="03:00">03:00</option>
@@ -63,6 +74,10 @@
                                 <option value="24:00">24:00</option>
                               </select>
                             </div>
+                          </div> -->
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Harga</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="harga" name="harga" placeholder="Harga" class="form-control"></div>
                           </div>
                       </div>
                       <div class="card-footer">

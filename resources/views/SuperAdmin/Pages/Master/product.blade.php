@@ -25,8 +25,8 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Nama Kategori</th>
                         <th>Nama Produk</th>
-
                         <th>URL</th>
                         <th>Status</th>
                         <th>Created at</th>
@@ -38,7 +38,6 @@
                       @foreach($products as $product)
                         <td>{{$no++}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->Kategori->name}}</td>
                         <td>{{$product->url}}</td>
                         <td><form action="{{route('product.status', $product->id)}}" method="post">
                           {{csrf_field()}}

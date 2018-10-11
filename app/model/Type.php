@@ -4,7 +4,7 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Payment_type extends Model
+class Type extends Model
 {
   protected $table = 'tm_payment_type';
 
@@ -12,4 +12,7 @@ class Payment_type extends Model
     'id',
     'nama',
   ];
+  public function method(){
+		return $this->hasMany('App\model\Method');
+	}
 }
