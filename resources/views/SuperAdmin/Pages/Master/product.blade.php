@@ -35,21 +35,21 @@
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
-                      @foreach($products as $product)
+                      @foreach($datas as $data)
                         <td>{{$no++}}</td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->Kategori_Produk->name}}</td>
-                        <td>{{$product->url}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->KategoriProduk->name}}</td>
+                        <td>{{$data->url}}</td>
                         <td><form action="{{route('product.status', $product->id)}}" method="post">
                           {{csrf_field()}}
-                          @if ($product->status == 0)
+                          @if ($data->status == 0)
                             <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
                             <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
                         </form>
                         </td>
-                        <td>{{$product->created_at}}</td>
+                        <td>{{$data->created_at}}</td>
                         <td>
                           <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">
@@ -57,7 +57,6 @@
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
                         </td>
-                      </tr>
                       @endforeach
                     </tbody>
                   </table>

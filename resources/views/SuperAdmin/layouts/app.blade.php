@@ -143,19 +143,9 @@
     <script type="text/javascript" src="scripts.806effac119676237f10.js"></script>
     <script type="text/javascript" src="main.d54cb410a96a4eeea23e.js"></script>
     <script>
-    var dateToday = new Date();
-    var dates = $("#tanggal").datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 3,
-      minDate: dateToday,
-      onSelect: function(selectedDate) {
-          var option = this.id == "tanggal" ? "minDate" : "maxDate",
-              instance = $(this).data("datepicker"),
-              date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
-          dates.not(this).datepicker("option", option, date);
-      }
-    });
+      var today = new Date().toISOString().split('T')[0];
+      document.getElementsByName("tanggal")[0].setAttribute('min', today);
+
     </script>
 
 </body>

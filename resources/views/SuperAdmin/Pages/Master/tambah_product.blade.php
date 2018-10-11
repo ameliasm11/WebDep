@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row form-group">
-      <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Kategori</label></div>
+      <div class="col col-md-2"><label for="select" class=" form-control-label">Kategori</label></div>
       <div class="col-12 col-md-9">
         <select name="producat_id" id="producat_id" class="form-control">
           <option value="0" disabled selected>Please select</option>

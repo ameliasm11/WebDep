@@ -30,11 +30,39 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tanggal" name="tanggal" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" class="form-control"></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam</label></div>
-                            <div class="col-12 col-md-9"><input type="time" id="jam" name="jam" placeholder="Harga" class="form-control"></div>
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="jam" id="jam" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
+                                <option value="01:00">01:00</option>
+                                <option value="02:00">02:00</option>
+                                <option value="03:00">03:00</option>
+                                <option value="04:00">04:00</option>
+                                <option value="05:00">05:00</option>
+                                <option value="06:00">06:00</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
+                                <option value="24:00">24:00</option>
+                              </select>
+                            </div>
                           </div>
                       </div>
                       <div class="card-footer">
@@ -44,7 +72,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('superadmin.futsal.index')}}">
+                        <a href="{{route('superadmin.futsal.jadwal')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

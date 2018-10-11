@@ -15,15 +15,10 @@ class CreateTmHarga extends Migration
     {
         Schema::create('tm_harga', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('jadwal_id')->unsigned();
             $table->string('harga');
             $table->rememberToken();
             $table->timestamps();
-
-             $table->foreign('jadwal_id')->references('id')->on('tm_jadwal')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-        });
+          });
     }
 
     /**

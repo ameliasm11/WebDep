@@ -20,7 +20,7 @@ class Tempat extends Model
   public function Lapangan()  {
     return $this->HasMany('App\model\Lapangan');
   }
-  // public function Lapangan(){
-  //   return $this->HasMany('Lapangan', 'tempat_id');
-  // }
+  public function Jadwal()  {
+    return $this->HasMany('App\model\Jadwal');
+  }
 }
