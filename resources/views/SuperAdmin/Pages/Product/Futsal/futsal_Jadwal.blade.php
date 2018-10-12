@@ -23,7 +23,7 @@
                         <div class="col-12 col-md-3">
                           <select name="level" id="level" class="form-control">
                             <option value="0" disabled selected>Product</option>
-                              @foreach($products as $product)
+                            @foreach($products as $product)
                             <option href="{{$product->url}}" value="">{{$product->nama}}</option>
                             @endforeach
                           </select>
@@ -48,10 +48,11 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Tempat</th>
+
                         <th>Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
+                        <th>Harga</th>
                         <th>Status</th>
                         <th>Created at</th>
                         <th>Actions</th>
@@ -62,10 +63,11 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->Tempat->nama}}</td>
+
                         <td>{{$datas->Lapangan->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
+                        <td>{{$datas->Harga->harga}}</td>
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
                             {{csrf_field()}}
                           @if ($datas->status == 0)

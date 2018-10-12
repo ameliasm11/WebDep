@@ -90,7 +90,7 @@ Auth::routes();
     //Futsal
 
       //ROUTE JADWAL DI SINI
-      Route::get('product/futsal', 'FutsalController@index')->name('superadmin.futsal.index');
+      // Route::get('product/futsal', 'FutsalController@index')->name('superadmin.futsal.index');
       Route::get('product/futsal/jadwal', 'FutsalController@Jadwal')->name('superadmin.futsal.jadwal');
       Route::get('product/futsal/jadwal/new', 'FutsalController@newJadwal')->name('superadmin.futsal.Newjadwal');
       Route::post('product/futsal/jadwal/new', 'FutsalController@SaveJadwal')->name('superadmin.futsal.SaveJadwal');

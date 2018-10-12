@@ -20,13 +20,13 @@ class Jadwal extends Model
       return $this->belongsTo('App\model\Lapangan');
     }
     public function Harga() {
-      return $this->hasOne('App\model\Harga');
+      return $this->belongsTo('App\model\Harga');
     }
     public function Order() {
       return $this->belongsTo('App\model\Order');
     }
-    public function Tempat() {
-      return $this->belongsTo('App\model\Tempat');
-    }
+    // public function Tempat() {
+    //   return $this->belongsTo('App\model\Tempat');
+    // }
 }
 ?>

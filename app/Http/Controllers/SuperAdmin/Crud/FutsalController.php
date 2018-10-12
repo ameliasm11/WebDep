@@ -18,21 +18,22 @@ use App\model\Partnercompany;
 class FutsalController extends SystemController
 {
   //SEMUA FUNCTION JADWAL DI SINI !
-  public function index()
-  {
-      $page = 'SuperAdmin.Pages.Product.Futsal.futsal';
-      $modules = Module::with('Menus')->get();
-      $products = Produk::all();
-      $data = Jadwal::with('Lapangan')->get();
-      return view($page)->with(compact('modules','data','products'));
-  }
+  // public function index()
+  // {
+  //     $page = 'SuperAdmin.Pages.Product.Futsal.futsal';
+  //     $modules = Module::with('Menus')->get();
+  //     $products = Produk::all();
+  //     $data = Jadwal::with('Lapangan','Tempat');
+  //     return view($page)->with(compact('modules','data','products'));
+  // }
 
   public function Jadwal()
   {
       $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Jadwal';
       $modules = Module::with('Menus')->get();
       $products = Produk::all();
-      $data = Jadwal::with('Lapangan','Tempat')->get();
+      $data = Jadwal::with('Lapangan', 'Harga')->get();
+      //$tempat = Lapangan::with('Tempat')->get();
       return view($page)->with(compact('modules','data','products'));
   }
 
@@ -46,17 +47,19 @@ class FutsalController extends SystemController
   }
 
   public function SaveJadwal(Request $request){
-        $this->validate($request, [
-          'lapangan_id'   => 'required',
-          'tanggal'   => 'required',
-          'jam'   => 'required',
-        ]);
-          $jadwal = new Jadwal();
-          $jadwal->lapangan_id = $request->get('lapangan_id');
-          $jadwal->tanggal = $request->get('tanggal');
-          $jadwal->jam = $request->get('jam');
-          $jadwal->save();
-          return redirect()->route('superadmin.futsal.jadwal')->with('alert','Berhasil Menambahkan data');
+      $this->validate($request, [
+        'lapangan_id'   => 'required',
+        'tanggal' => 'required',
+        'jam'   => 'required',
+        'harga_id'   => 'required',
+      ]);
+        $jadwal = new Jadwal();
+        $jadwal->lapangan_id = $request->get('lapangan_id');
+        $jadwal->tanggal = $request->get('tanggal');
+        $jadwal->jam = $request->get('jam');
+        $jadwal->harga_id = $request->get('harga_id');
+        $jadwal->save();
+        return redirect()->route('superadmin.futsal.jadwal')->with('alert','Berhasil Menambahkan data');
   }
 
   public function editJadwal($id)

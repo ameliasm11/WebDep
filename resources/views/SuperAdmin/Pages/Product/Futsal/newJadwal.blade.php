@@ -17,8 +17,8 @@
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.SaveJadwal')}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Lapangan</label></div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
                               <select name="lapangan_id" id="lapangan_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
@@ -43,41 +43,16 @@
                               </select>
                             </div>
                           </div>
-                          <!-- <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Harga</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="jam" id="jam" class="form-control">
+                              <select name="harga_id" id="harga_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
-                                <option value="01:00">01:00</option>
-                                <option value="02:00">02:00</option>
-                                <option value="03:00">03:00</option>
-                                <option value="04:00">04:00</option>
-                                <option value="05:00">05:00</option>
-                                <option value="06:00">06:00</option>
-                                <option value="07:00">07:00</option>
-                                <option value="08:00">08:00</option>
-                                <option value="09:00">09:00</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
-                                <option value="19:00">19:00</option>
-                                <option value="20:00">20:00</option>
-                                <option value="21:00">21:00</option>
-                                <option value="22:00">22:00</option>
-                                <option value="23:00">23:00</option>
-                                <option value="24:00">24:00</option>
+                                @foreach($hargas as $harga)
+                                <option value="{{$harga->harga_id}}">{{$harga->harga}}</option>
+                                @endforeach
                               </select>
                             </div>
-                          </div> -->
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Harga</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="harga" name="harga" placeholder="Harga" class="form-control"></div>
                           </div>
                       </div>
                       <div class="card-footer">
