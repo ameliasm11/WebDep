@@ -72,6 +72,7 @@ class ControllerFutsal extends Controller
     $this->validate($request, [
     $nama = $request->input('nama'),
     $nohp = $request->input('no_hp'),
+    $user = $request->input('user_id'),
     $jadwal = $request->input('jadwal_id'),
     $tanggal = $request->input('tanggal'),
     $jam = $request->input('jam_pesan')
@@ -81,6 +82,7 @@ class ControllerFutsal extends Controller
       $data->nama = $nama;
       $data->no_hp = $nohp;
       $data->jadwal_id = $jadwal;
+      $data->user_id = $user;
       $data->tanggal = $tanggal;
       $data->jam_pesan = $jam;
       $data->status = "false";
@@ -96,5 +98,46 @@ class ControllerFutsal extends Controller
         $res['message'] = "Saving field!";
         return response($res);
       }
+   }
+
+
+   public function harga(Request $request)
+   {
+     $this->validate($request, [
+     $jadwal = $request->input('jadwal_id')
+     ]);
+         $data = \App\model\Harga::where('jadwal_id',$jadwal)->get();
+
+     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
+       $res['status'] = true;
+       $res['code'] = 200;
+       $res['message'] = "Success!";
+       $res['data'] = $data;
+         return response($res);
+     }
+     else{
+         $res['message'] = "Empty!";
+         return response($res);
+     }
+   }
+
+   public function listOrder(Request $request)
+   {
+     $this->validate($request,[
+       $user =$request->input('user_id')
+     ]);
+
+     $data = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
+
+     if(count($data)>0){
+       $res['status'] = true;
+       $res['code'] = 200;
+       $res['message'] = "success !";
+       $res['data']= $data;
+       return response($res);
+     }else {
+       $res['message'] = "empty";
+       return response($res);
+     }
    }
 }
