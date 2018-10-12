@@ -37,7 +37,7 @@
                       @php $no = 1; @endphp
                       @foreach($products as $product)
                         <td>{{$no++}}</td>
-                        <td>{{$product->kategori->name}}</td>
+                        <td>{{$product->kategory->name}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->url}}</td>
                         <td><form action="{{route('product.status', $product->id)}}" method="post">

@@ -15,7 +15,7 @@ class Produk extends Model
     'url',
     'status',
   ];
-  public function kategori(){
+  public function kategory(){
     return $this->belongsTo('App\model\Kategori');
   }
   public function artnercompany(){

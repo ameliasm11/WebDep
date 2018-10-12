@@ -39,6 +39,17 @@
                           <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam Tutup</label></div>
                           <div class="col-12 col-md-9"><input type="time" id="jam_tutup" name="jam_tutup" placeholder="Jam Buka" class="form-control"></div>
                         </div>
+                        <div class="row form-group">
+                          <div class="col col-md-3"><label for="select" class=" form-control-label">Partner</label></div>
+                          <div class="col-12 col-md-9">
+                            <select name="partner_id" id="partner_id" class="form-control">
+                              <option value="0" disabled selected>Please select</option>
+                              @foreach($partners as $partner)
+                              <option value="{{$partner->id}}">{{$partner->nama}}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                        </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
                             <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" placeholder="deskripsi" class="form-control"></textarea></div>

@@ -15,6 +15,7 @@ class Tempat extends Model
     'gambar',
     'jam_buka',
     'jam_tutup',
+    'partner_id',
     'deskripsi',
   ];
   public function Lapangan()  {
@@ -22,5 +23,8 @@ class Tempat extends Model
   }
   public function Jadwal()  {
     return $this->HasMany('App\model\Jadwal');
+  }
+  public function partner(){
+    return $this->belongsTo('App\model\Partnercompany');
   }
 }

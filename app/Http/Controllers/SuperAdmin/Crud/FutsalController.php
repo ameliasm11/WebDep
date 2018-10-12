@@ -13,6 +13,7 @@ use App\model\Lapangan;
 use App\model\Harga;
 use App\model\Tempat;
 use App\model\Kategori;
+use App\model\Partnercompany;
 
 class FutsalController extends SystemController
 {
@@ -111,7 +112,7 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_tempat';
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
-        $data = Tempat::all();
+        $data = Tempat::with('Partnercompany')->get();
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -258,13 +259,13 @@ class FutsalController extends SystemController
        return redirect()->route('superadmin.futsal.harga')->with('alert-success','Data berhasil dihapus!');
      }
      //END HARGA
-
-
+  
     public function newTempat()
     {
           $page = 'SuperAdmin.Pages.Product.Futsal.newTempat';
           $modules = Module::with('Menus')->get();
-          return view($page)->with(compact('modules'));
+          $partners = Partnercompany::all();
+          return view($page)->with(compact('modules', 'partners'));
   	}
 
     public function createTempat(Request $request)

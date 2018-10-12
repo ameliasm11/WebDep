@@ -21,8 +21,8 @@ class ProductController extends SystemController
   {
   	$page = 'SuperAdmin.Pages.Master.tambah_product';
     $modules = Module::with('Menus')->get();
-    $kategoris = Kategori::all();
-    return view($page)->with(compact('modules', 'kategoris'));
+    $categoris = Kategori::all();
+    return view($page)->with(compact('modules', 'categoris'));
   }
 
   public function store(Request $request)

@@ -20,4 +20,7 @@ class Partnercompany extends Model
   public function produk(){
     return $this->belongsTo('App\model\Produk');
   }
+  public function tempat(){
+    return $this->hasMany('App\model\Tempat');
+  }
 }
