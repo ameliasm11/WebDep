@@ -10,13 +10,12 @@ class Harga extends Model
 
   protected $fillable = [
     'id',
-    'tempat_id',
     'lapangan_id',
     'jam_id',
-    'harga',
+    'harga_id',
   ];
     public function Jadwal()  {
-      return $this->belongsTo('App\model\Jadwal');
+      return $this->hasOne('App\model\Jadwal');
     }
 
     public function Tempat(){
