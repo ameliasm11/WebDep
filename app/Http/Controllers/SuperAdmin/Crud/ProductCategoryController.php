@@ -7,6 +7,7 @@ use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\KategoriProduk;
 use App\model\Produk;
+use App\model\Partnercompany;
 
 class ProductCategoryController extends SystemController
 {

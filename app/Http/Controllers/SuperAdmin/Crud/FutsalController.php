@@ -285,7 +285,6 @@ class FutsalController extends SystemController
             $data = new Tempat();
             $data->nama = $request->input('nama');
             $data->alamat = $request->input('alamat');
-            $data->deskripsi = $request->input('deskripsi');
             $file = $request->file('gambar');
             $ext = $file->getClientOriginalExtension();
             $newName = rand(100000,1001238912).".".$ext;
@@ -293,6 +292,8 @@ class FutsalController extends SystemController
             $data->gambar = $newName;
             $data->jam_buka = $request->input('jam_buka');
             $data->jam_tutup = $request->input('jam_tutup');
+            $data->partner_id = $request->input('partner_id');
+            $data->deskripsi = $request->input('deskripsi');
             $data->save();
             return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil ditambahkan!');
         }

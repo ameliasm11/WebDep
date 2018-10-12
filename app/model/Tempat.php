@@ -24,13 +24,10 @@ class Tempat extends Model
   public function Jadwal()  {
     return $this->HasMany('App\model\Jadwal');
   }
-<<<<<<< HEAD
   public function partner(){
     return $this->belongsTo('App\model\Partnercompany');
-=======
-
+  }
   public function Harga() {
     return $this->hasOne('App\model\Harga');
->>>>>>> 47f04705f2bcd947a773087e066a1c0f90442ae7
   }
 }

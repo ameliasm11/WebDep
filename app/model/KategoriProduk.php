@@ -17,6 +17,6 @@ class KategoriProduk extends Model
     return $this->hasMany('App\model\Produk');
   }
   public function partnercompany(){
-    return $this->hasMany('App\model\Partnercompany');
+    return $this->hasManyz('App\model\Partnercompany');
   }
 }
