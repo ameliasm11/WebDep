@@ -18,8 +18,8 @@
       <div class="col-12 col-md-9">
         <select name="producat_id" id="producat_id" class="form-control">
           <option value="0" disabled selected>Please select</option>
-          @foreach($categoris as $categori)
-          <option value="{{$categori->id}}">{{$categori->name}}</option>
+          @foreach($kategoris as $kategori)
+          <option value="{{$kategori->id}}">{{$kategori->name}}</option>
           @endforeach
         </select>
       </div>

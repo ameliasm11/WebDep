@@ -41,7 +41,8 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.newJadwal';
         $modules = Module::with('Menus')->get();
         $lapangan = Lapangan::all();
-        return view($page)->with(compact('modules','lapangan'));
+        $hargas = Harga::all();
+        return view($page)->with(compact('modules','lapangan','hargas'));
   }
 
   public function SaveJadwal(Request $request){
@@ -203,7 +204,7 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_Harga';
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
-        $data = Harga::with('Jadwal')->get();
+        $data = Harga::with('Tempat','Lapangan')->get();
         return view($page)->with(compact('modules','data','products','jadwal'));
     }
 
@@ -212,16 +213,22 @@ class FutsalController extends SystemController
           $page = 'SuperAdmin.Pages.Product.Futsal.newHarga';
           $modules = Module::with('Menus')->get();
           $jadwal = Jadwal::all();
-          return view($page)->with(compact('modules', 'jadwal'));
+          $lapangan = Lapangan::all();
+          $tempats = Tempat::all();
+          return view($page)->with(compact('modules', 'jadwal', 'lapangan', 'tempats'));
   	}
 
     public function SaveHarga(Request $request){
         $this->validate($request, [
-          'jadwal_id'   => 'required',
+          'tempat_id'   => 'required',
+          'lapangan_id'   => 'required',
+          'jam'   => 'required',
           'harga'   => 'required',
         ]);
           $harga = new Harga();
-          $harga->jadwal_id = $request->get('jadwal_id');
+          $harga->tempat_id = $request->get('tempat_id');
+          $harga->lapangan_id = $request->get('lapangan_id');
+          $harga->jam = $request->get('jam');
           $harga->harga = $request->get('harga');
           $harga->save();
           return redirect()->route('superadmin.futsal.harga')->with('alert','Berhasil Menambahkan data');
@@ -229,20 +236,25 @@ class FutsalController extends SystemController
 
     public function editHarga($id)
     {
-      $page = 'SuperAdmin.Pages.Product.Futsal.UpdateHarga';      // $user = Users::find($id);
+      $page = 'SuperAdmin.Pages.Product.Futsal.UpdateHarga';
       $editHarga = Harga::findOrFail($id);
       $modules = Module::with('Menus')->get();
-      return view($page)->with(compact('modules','editHarga'));
+      $lapangan = Lapangan::all();
+      $tempats = Tempat::all();
+      return view($page)->with(compact('modules','editHarga','lapangan','tempats'));
     }
 
     public function updateHarga(Request $request, $id)
     {
       $updateHarga = Harga::findOrFail($id);
+      $updateHarga->tempat_id = $request->tempat_id;
+      $updateHarga->lapangan_id = $request->lapangan_id;
+      $updateHarga->jam = $request->jam;
       $updateHarga->harga = $request->harga;
       $isSuccess = $updateHarga->save();
       if ($isSuccess) {
         // return success
-        return redirect()->route('superadmin.futsal.futsal_Harga')->with('alert','Data berhasil diubah!');
+        return redirect()->route('superadmin.futsal.hiarga')->with('alert','Data berhasil diubah!');
       }
       else {
         // returm failed
@@ -259,7 +271,7 @@ class FutsalController extends SystemController
        return redirect()->route('superadmin.futsal.harga')->with('alert-success','Data berhasil dihapus!');
      }
      //END HARGA
-  
+
     public function newTempat()
     {
           $page = 'SuperAdmin.Pages.Product.Futsal.newTempat';
