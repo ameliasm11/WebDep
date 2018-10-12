@@ -20,9 +20,14 @@ class CreateTmTempat extends Migration
             $table->string('gambar');
             $table->string('jam_buka');
             $table->string('jam_tutup');
+            $table->integer('partner_id');
             $table->string('deskripsi');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('partner_id')->references('id')->on('tm_partner_company')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 

@@ -13,6 +13,7 @@ use App\model\Lapangan;
 use App\model\Harga;
 use App\model\Tempat;
 use App\model\Kategori;
+use App\model\Partnercompany;
 
 class FutsalController extends SystemController
 {
@@ -115,7 +116,7 @@ class FutsalController extends SystemController
         $page = 'SuperAdmin.Pages.Product.Futsal.futsal_tempat';
         $modules = Module::with('Menus')->get();
         $products = Produk::all();
-        $data = Tempat::all();
+        $data = Tempat::with('Partnercompany')->get();
         return view($page)->with(compact('modules','data','products'));
     }
 
@@ -274,12 +275,12 @@ class FutsalController extends SystemController
      }
      //END HARGA
 
-
     public function newTempat()
     {
           $page = 'SuperAdmin.Pages.Product.Futsal.newTempat';
           $modules = Module::with('Menus')->get();
-          return view($page)->with(compact('modules'));
+          $partners = Partnercompany::all();
+          return view($page)->with(compact('modules', 'partners'));
   	}
 
     public function createTempat(Request $request)
@@ -287,7 +288,6 @@ class FutsalController extends SystemController
             $data = new Tempat();
             $data->nama = $request->input('nama');
             $data->alamat = $request->input('alamat');
-            $data->deskripsi = $request->input('deskripsi');
             $file = $request->file('gambar');
             $ext = $file->getClientOriginalExtension();
             $newName = rand(100000,1001238912).".".$ext;
@@ -295,6 +295,8 @@ class FutsalController extends SystemController
             $data->gambar = $newName;
             $data->jam_buka = $request->input('jam_buka');
             $data->jam_tutup = $request->input('jam_tutup');
+            $data->partner_id = $request->input('partner_id');
+            $data->deskripsi = $request->input('deskripsi');
             $data->save();
             return redirect()->route('superadmin.futsal.tempat')->with('alert-success','Data berhasil ditambahkan!');
         }

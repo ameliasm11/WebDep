@@ -15,9 +15,12 @@ class Partnercompany extends Model
     'produk_id',
   ];
   public function kategori(){
-    return $this->belongsTo('App\model\Kategori');
+    return $this->belongsTo('App\model\KategoriProduk');
   }
   public function produk(){
     return $this->belongsTo('App\model\Produk');
+  }
+  public function tempat(){
+    return $this->hasMany('App\model\Tempat');
   }
 }

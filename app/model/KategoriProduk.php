@@ -4,7 +4,7 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class KategoriProduk extends Model
 {
   protected $table = 'tm_category_product';
 
@@ -17,6 +17,6 @@ class Kategori extends Model
     return $this->hasMany('App\model\Produk');
   }
   public function partnercompany(){
-    return $this->hasMany('App\model\Partnercompany');
+    return $this->hasManyz('App\model\Partnercompany');
   }
 }

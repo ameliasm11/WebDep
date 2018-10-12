@@ -16,6 +16,7 @@ class CreateTmOrder extends Migration
       Schema::create('tm_order', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('jadwal_id')->unsigned();
+          $table->integer('user_id')->unsigned();
           $table->string('nama');
           $table->string('tanggal');
           $table->string('jam_pesan');
@@ -27,6 +28,10 @@ class CreateTmOrder extends Migration
            $table->foreign('jadwal_id')->references('id')->on('tm_jadwal')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
+          $table->foreign('user_id')->references('id')->on('tm_user')
+               ->onDelete('cascade')
+               ->onUpdate('cascade');
       });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Partnercompany;
-use App\model\Kategori;
+use App\model\KategoriProduk;
 use App\model\Produk;
 
 class PartnerCompanyController extends SystemController
@@ -15,7 +15,7 @@ class PartnerCompanyController extends SystemController
   {
     $page = 'SuperAdmin.Pages.Master.partner_company';
     $modules = Module::with('Menus')->get();
-    $types = Partnercompany::with('Kategori', 'Produk')->get();
+    $types = Partnercompany::with('KategoriProduk', 'Produk')->get();
     return view($page)->with(compact('modules','types'));
   }
 
@@ -23,7 +23,7 @@ class PartnerCompanyController extends SystemController
     {
         $page = 'SuperAdmin.Pages.Master.tambah_partner_company';
         $modules = Module::with('Menus')->get();
-        $categoris = Kategori::all();
+        $categoris = KategoriProduk::all();
         $products = Produk::all();
         return view($page)->with(compact('modules', 'categoris', 'products'));
   }
@@ -32,8 +32,8 @@ class PartnerCompanyController extends SystemController
       {
           $types = new Partnercompany();
           $types->nama = $request->input('nama');
-          $types->produk_category = $request->input('category_id');
-          $types->produk = $request->input('produk_id');
+          $types->category_id = $request->input('category_id');
+          $types->produk_id = $request->input('produk_id');
           $types->save();
           return redirect()->route('partner_company')->with('alert-success','Data berhasil ditambahkan!');
           $types->reset();
@@ -52,8 +52,8 @@ class PartnerCompanyController extends SystemController
       {
         $types = Partnercompany::findOrFail($id);
         $types->nama = $request->nama;
-        $types->produk_category = $request->produk_category;
-        $types->produk = $request->produk;
+        $types->category_id = $request->input('category_id');
+        $types->produk_id = $request->input('produk_id');
         $isSuccess = $types->save();
         if ($isSuccess) {
           // return success

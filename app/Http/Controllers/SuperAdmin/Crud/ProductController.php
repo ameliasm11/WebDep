@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Produk;
-use App\model\Kategori;
+use App\model\KategoriProduk;
 
 class ProductController extends SystemController
 {
   public function product(){
     $page = 'SuperAdmin.Pages.Master.product';
     $modules = Module::with('Menus')->get();
-    $products = Produk::with('Kategori')->get();
+    $products = Produk::with('KategoriProduk')->get();
     return view($page)->with(compact('modules','products'));
   }
 
@@ -21,7 +21,7 @@ class ProductController extends SystemController
   {
   	$page = 'SuperAdmin.Pages.Master.tambah_product';
     $modules = Module::with('Menus')->get();
-    $kategoris = Kategori::all();
+    $kategoris = KategoriProduk::all();
     return view($page)->with(compact('modules', 'kategoris'));
   }
 
@@ -46,10 +46,10 @@ class ProductController extends SystemController
    public function update(Request $request, $id)
    {
      $products = Produk::findOrFail($id);
-     $products->name = $request->name;
+     $products->name = $request->input('name');
      // $products->producat_id = $request->producat_id;
-     $products->url = $request->url;
-     $products->status = $request->status;
+     $products->url = $request->input('url');
+     $products->status = $request->input('status');
      $isSuccess = $products->save();
      if ($isSuccess) {
        // return success

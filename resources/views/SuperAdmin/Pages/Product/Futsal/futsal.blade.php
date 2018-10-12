@@ -21,7 +21,7 @@
                       <div class="row form-group">
                         <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                         <div class="col-12 col-md-3">
-                          <select name="nama" id="nama" class="form-control">
+                          <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="nama" id="nama" class="form-control">
                             <option value="0" disabled selected>Product</option>
                               @foreach($products as $product)
                             <option href="{{$product->url}}" value="">{{$product->nama}}</option>
