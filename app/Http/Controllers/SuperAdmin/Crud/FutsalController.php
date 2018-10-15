@@ -161,7 +161,8 @@ class FutsalController extends SystemController
             $page = 'SuperAdmin.Pages.Product.Futsal.editLapangan';
             $modules = Module::with('Menus')->get();
             $data = Lapangan::findOrFail($id);
-            return view($page)->with(compact('modules','data'));
+            $tempats = Tempat::all();
+            return view($page)->with(compact('modules','data', 'tempats'));
         }
 
     public function updateLapangan(Request $request, $id)
@@ -169,7 +170,7 @@ class FutsalController extends SystemController
           $data = Lapangan::findOrFail($id);
           $data->nama = $request->input('nama');
           $data->ket = $request->input('ket');
-          // $data->tempat_id = $request->input('tempat_id');
+          $data->tempat_id = $request->input('tempat_id');
           if (empty($request->file('gambar'))){
               $data->gambar = $data->gambar;
         }

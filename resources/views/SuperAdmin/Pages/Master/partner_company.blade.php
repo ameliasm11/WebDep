@@ -35,7 +35,7 @@
                       @foreach($types as $type)
                         <td>{{$no++}}</td>
                         <td>{{$type->nama}}</td>
-                        <td>{{$type->kategori->name}}</td>
+                        <td>{{$type->KategoriProduk->name}}</td>
                         <td>{{$type->produk->name}}</td>
                         <td>{{$type->created_at}}</td>
                         <td>

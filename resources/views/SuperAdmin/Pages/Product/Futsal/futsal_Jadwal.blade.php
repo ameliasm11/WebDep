@@ -17,17 +17,17 @@
                         <div class="card-header">
                             <strong class="card-title">List Jadwal</strong>
                         </div>
-                    <div class="card-body">
-                      <div class="row form-group">
-                        <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
-                        <div class="col-12 col-md-3">
-                          <select name="level" id="level" class="form-control">
-                            <option value="0" disabled selected>Product</option>
-                            @foreach($products as $product)
-                            <option href="{{$product->url}}" value="">{{$product->nama}}</option>
-                            @endforeach
-                          </select>
-                        </div>
+                        <div class="card-body">
+                          <div class="row form-group">
+                            <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
+                            <div class="col-12 col-md-3">
+                              <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="name" id="name" class="form-control">
+                                <option value="0" disabled selected>Product</option>
+                                  @foreach($products as $product)
+                                <option href="{{$product->url}}" value="">{{$product->name}}</option>
+                                @endforeach
+                              </select>
+                            </div>
                    <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                    <div class="col-12 col-md-3">
                      <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">

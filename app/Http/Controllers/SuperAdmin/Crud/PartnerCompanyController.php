@@ -52,8 +52,8 @@ class PartnerCompanyController extends SystemController
       {
         $types = Partnercompany::findOrFail($id);
         $types->nama = $request->nama;
-        $types->category_id = $request->input('category_id');
-        $types->produk_id = $request->input('produk_id');
+        // $types->category_id = $request->input('category_id');
+        // $types->produk_id = $request->input('produk_id');
         $isSuccess = $types->save();
         if ($isSuccess) {
           // return success
