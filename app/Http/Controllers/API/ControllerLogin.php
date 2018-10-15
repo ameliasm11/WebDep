@@ -54,4 +54,23 @@ class ControllerLogin extends Controller
   {
       return Auth::guard();
   }
+
+  public function nama(Request $request){
+    $this->validate($request, [
+    $user = $request->input('id'),
+    $nama = $request->input('name')
+    ]);
+      $data = \App\model\Users::where('id',$user)->update(['name'=>$nama]);
+
+    if ($data) {
+      $res['status'] = true;
+      $res['code'] = 200;
+      $res['message'] = "Success!";
+        return response($res);
+    }
+    else{
+      $res['message'] = "Empty!";
+        return response($res);
+    }
+  }
 }
