@@ -10,6 +10,7 @@ class Jadwal extends Model
 
   protected $fillable = [
     'id',
+    'tempat_id',
     'lapangan_id',
     'tanggal',
     'jam',
@@ -25,8 +26,8 @@ class Jadwal extends Model
     public function Order() {
       return $this->belongsTo('App\model\Order');
     }
-    // public function Tempat() {
-    //   return $this->belongsTo('App\model\Tempat');
-    // }
+    public function Tempat() {
+      return $this->belongsTo('App\model\Tempat');
+    }
 }
 ?>

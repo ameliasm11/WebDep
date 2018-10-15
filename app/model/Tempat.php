@@ -22,7 +22,7 @@ class Tempat extends Model
     return $this->HasMany('App\model\Lapangan');
   }
   public function Jadwal()  {
-    return $this->HasMany('App\model\Jadwal');
+    return $this->hasMany('App\model\Jadwal');
   }
     // belongsTo("NAMA MODEL/TABLE TUJUAN", "NAMA FIELD ID DI TABLE PEMANGGIL", "NAMA ID DI MODEL TUJUAN")
   public function Partnercompany(){

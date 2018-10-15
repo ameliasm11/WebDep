@@ -12,12 +12,23 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Jadwal
+                        <strong>Add New</strong> Harga
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.SaveJadwal')}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
-                        <div class="row form-group">
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="tempat_id" id="tempat_id" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
+                                @foreach($tempats as $tempat)
+                                <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
                               <select name="lapangan_id" id="lapangan_id" class="form-control">
@@ -30,7 +41,7 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>
-                            <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" placeholder="Harga" class="form-control"></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
@@ -49,7 +60,7 @@
                               <select name="harga_id" id="harga_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
                                 @foreach($hargas as $harga)
-                                <option value="{{$harga->harga_id}}">{{$harga->harga}}</option>
+                                <option value="{{$harga->id}}">{{$harga->harga}}</option>
                                 @endforeach
                               </select>
                             </div>
