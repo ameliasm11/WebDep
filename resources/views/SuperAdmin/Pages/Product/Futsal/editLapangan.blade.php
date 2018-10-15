@@ -25,16 +25,23 @@
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Tempat</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" class="form-control" value="{{ $data->ket }}"></div>
                           </div>
-                          <!-- <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Nama Tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" class="form-control" value="{{ $data->tempat_id }}" disabled></div>
-                          </div> -->
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="tempat_id" id="tempat_id" class="form-control">
+                                <option value="{{$data->Tempat->id}}">{{$data->Tempat->nama}}</option>
+                                @foreach($tempats as $tempat)
+                                <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Lama</label></div>
                             <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
                           </div>
                           </div>
-                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar</label></div>
+                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Baru</label></div>
                           <div class="row form-group">
                             <div class="col-12 col-md-9"><input type="file" class="form-control" id="gambar" name="gambar" value="{{ $data->gambar }}">
                           </div>

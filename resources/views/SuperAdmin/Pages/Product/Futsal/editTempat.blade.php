@@ -47,7 +47,7 @@
                         </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
-                            <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" value="{{ $data->deskripsi }}" class="form-control"></textarea></div>
+                            <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" value="{{$data->deskripsi}}" class="form-control"></textarea></div>
                           </div>
                         </div>
                       </div>
