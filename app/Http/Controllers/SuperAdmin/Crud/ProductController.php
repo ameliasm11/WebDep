@@ -7,13 +7,16 @@ use App\Http\Controllers\SuperAdmin\SystemController;
 use App\model\Module;
 use App\model\Produk;
 use App\model\KategoriProduk;
+use DB;
 
 class ProductController extends SystemController
 {
   public function product(){
+
     $page = 'SuperAdmin.Pages.Master.product';
     $modules = Module::with('Menus')->get();
     $products = Produk::with('KategoriProduk')->get();
+
     return view($page)->with(compact('modules','products'));
   }
 

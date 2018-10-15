@@ -70,7 +70,7 @@
                         <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
                         <td>{{$datas->jam_buka}}</td>
                         <td>{{$datas->jam_tutup}}</td>
-                        <td>{{$datas->partner->nama}}
+                        <td>{{$datas->Partnercompany->nama}}
                         <td>{{$datas->deskripsi}}</td>
                         <td>{{$datas->created_at}}</td>
                         <td>

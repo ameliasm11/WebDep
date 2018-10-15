@@ -24,8 +24,9 @@ class Tempat extends Model
   public function Jadwal()  {
     return $this->HasMany('App\model\Jadwal');
   }
-  public function partner(){
-    return $this->belongsTo('App\model\Partnercompany');
+    // belongsTo("NAMA MODEL/TABLE TUJUAN", "NAMA FIELD ID DI TABLE PEMANGGIL", "NAMA ID DI MODEL TUJUAN")
+  public function Partnercompany(){
+    return $this->belongsTo('App\model\Partnercompany', 'partner_id', 'id');
   }
   public function Harga() {
     return $this->hasOne('App\model\Harga');

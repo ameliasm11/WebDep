@@ -57,13 +57,12 @@
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
                         </td>
+                      </tr>
                       @endforeach
                     </tbody>
                   </table>
                         </div>
                     </div>
-                </div>
-                </div>
             </div><!-- .animated -->
         </div><!-- .content -->
         @endsection

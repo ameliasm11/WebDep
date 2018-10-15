@@ -11,14 +11,15 @@ class Produk extends Model
   protected $fillable = [
     'id',
     'name',
-    'producat_id',
+    'producat_id', // Nama table.id
     'url',
     'status',
   ];
   public function kategoriproduk(){
-    return $this->belongsTo('App\model\KategoriProduk');
+    // belongsTo("NAMA MODEL/TABLE TUJUAN", "NAMA FIELD ID DI TABLE PEMANGGIL", "NAMA ID DI MODEL TUJUAN")
+    return $this->belongsTo('App\model\KategoriProduk', 'producat_id', 'id');
   }
-  public function artnercompany(){
+  public function partnercompany(){
     return $this->hasMany('App\model\Partnercompany');
   }
 }
