@@ -17,8 +17,8 @@
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.SaveJadwal')}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Lapangan</label></div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
                               <select name="lapangan_id" id="lapangan_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>
@@ -30,11 +30,29 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="tanggal" name="tanggal" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="date" id="tanggal" name="tanggal" class="form-control"></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam</label></div>
-                            <div class="col-12 col-md-9"><input type="time" id="jam" name="jam" placeholder="Harga" class="form-control"></div>
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="jam" id="jam" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
+                                @foreach($hargas as $harga)
+                                <option value="{{$harga->jam}}">{{$harga->jam}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Harga</label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="harga_id" id="harga_id" class="form-control">
+                                <option value="0" disabled selected>Please select</option>
+                                @foreach($hargas as $harga)
+                                <option value="{{$harga->harga_id}}">{{$harga->harga}}</option>
+                                @endforeach
+                              </select>
+                            </div>
                           </div>
                       </div>
                       <div class="card-footer">
@@ -44,7 +62,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('superadmin.futsal.index')}}">
+                        <a href="{{route('superadmin.futsal.jadwal')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

@@ -3,7 +3,7 @@
     <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Payment Method</strong> Add Data
+            <strong>Partner Company</strong> Add Data
         </div>
     </div>
     <form action="{{ route('partner_company.createPC') }}" method="post">
@@ -14,14 +14,26 @@
         </div>
     </div>
     <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">Kategori Produk</label></div>
-        <div class="col-10 col-md-9"><input type="text" id="produk_category" name="produk_category" placeholder="Kategori Produk" class="form-control">
-        </div>
+      <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Kategori</label></div>
+      <div class="col-12 col-md-9">
+        <select name="category_id" id="category_id" class="form-control">
+          <option value="0" disabled selected>Please select</option>
+          @foreach($categoris as $categori)
+          <option value="{{$categori->id}}">{{$categori->name}}</option>
+          @endforeach
+        </select>
+      </div>
     </div>
     <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">Produk</label></div>
-        <div class="col-10 col-md-9"><input type="text" id="produk" name="produk" placeholder="Produk" class="form-control">
-        </div>
+      <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Produk</label></div>
+      <div class="col-12 col-md-9">
+        <select name="produk_id" id="produk_id" class="form-control">
+          <option value="0" disabled selected>Please select</option>
+          @foreach($products as $product)
+          <option value="{{$product->id}}">{{$product->name}}</option>
+          @endforeach
+        </select>
+      </div>
     </div>
 
     <div class="card-footer">

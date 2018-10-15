@@ -26,7 +26,7 @@
                             <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan Tempat" class="form-control"></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Lapangan</label></div>
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
                             <div class="col-12 col-md-9">
                               <select name="tempat_id" id="tempat_id" class="form-control">
                                 <option value="0" disabled selected>Please select</option>

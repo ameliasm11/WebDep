@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTmPartnerCompany extends Migration
+class CreateTmPaymentMethod extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateTmPartnerCompany extends Migration
      */
     public function up()
     {
-      Schema::create('tm_partner_company', function (Blueprint $table) {
+      Schema::create('tm_payment_method', function (Blueprint $table) {
           $table->increments('id');
+          $table->integer('type_id');
           $table->string('nama');
-          $table->string('produk_category');
-          $table->string('produk');
           $table->rememberToken();
           $table->timestamps();
+
+          $table->foreign('type_id')->references('id')->on('tm_payment_type')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
       });
     }
 

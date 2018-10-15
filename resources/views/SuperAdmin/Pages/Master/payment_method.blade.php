@@ -23,7 +23,8 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Nama Type</th>
+                        <th>Nama Method</th>
                         <th>Created at</th>
                         <th>Aksi</th>
                       </tr>
@@ -32,6 +33,7 @@
                       @php $no = 1; @endphp
                       @foreach($types as $type)
                         <td>{{$no++}}</td>
+                        <td>{{$type->type->nama}}</td>
                         <td>{{$type->nama}}</td>
                         <td>{{$type->created_at}}</td>
                         <td>

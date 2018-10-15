@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTmJadwal extends Migration
+class CreateTmPartnerCompany extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class CreateTmJadwal extends Migration
      */
     public function up()
     {
-      Schema::create('tm_jadwal', function (Blueprint $table) {
+      Schema::create('tm_partner_company', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('lapangan_id')->unsigned();
-          $table->string('tanggal');
-          $table->string('jam');
-          $table->boolean('status')->nullable()->default('false');
+          $table->string('nama');
+          $table->integer('category_id');
+          $table->integer('produk_id');
           $table->rememberToken();
           $table->timestamps();
 
-          $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
+          $table->foreign('category_id')->references('id')->on('tm_category_product')
+               ->onDelete('cascade')
+               ->onUpdate('cascade');
+          $table->foreign('produk_id')->references('id')->on('tm_product')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
       });
