@@ -32,7 +32,7 @@
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
                               <select name="lapangan_id" id="lapangan_id" class="form-control">
-                                <option value="{{$editHarga->Lapangan->id}}">{{$editHarga->Lapangan->nama}}</option>
+                                <option value="{{$editHarga->Lapangan->id}}" disabled disabled>{{$editHarga->Lapangan->nama}}</option>
                                 @foreach($lapangan as $lapangans)
                                 <option value="{{$lapangans->id}}">{{$lapangans->nama}}</option>
                                 @endforeach

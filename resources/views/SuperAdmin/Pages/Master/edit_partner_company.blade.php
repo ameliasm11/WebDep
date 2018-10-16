@@ -13,16 +13,16 @@
           <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control" value="{{ $types->nama }}">
           </div>
       </div>
-      <!-- <div class="row form-group">
+      <div class="row form-group">
           <div class="col col-md-2"><label for="text-input" class=" form-control-label">Kategori Produk</label></div>
-          <div class="col-10 col-md-9"><input type="text" id="produk_category" name="produk_category" class="form-control" value="{{ $types->produk_category }}">
+          <div class="col-10 col-md-9"><input type="text" id="category_id" name="category_id" class="form-control" value="{{ $types->KategoriProduk->name }}" disabled>
           </div>
       </div>
       <div class="row form-group">
           <div class="col col-md-2"><label for="text-input" class=" form-control-label">Produk</label></div>
-          <div class="col-10 col-md-9"><input type="text" id="produk" name="produk" class="form-control" value="{{ $types->produk }}">
+          <div class="col-10 col-md-9"><input type="text" id="produk_id" name="produk_id" class="form-control" value="{{ $types->produk->name }}" disabled>
           </div>
-      </div> -->
+      </div>
     <div class="card-footer">
         <button type="submit" class="btn btn-primary btn-sm">
             <i class="fa fa-dot-circle-o"></i> Submit

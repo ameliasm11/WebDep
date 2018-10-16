@@ -45,15 +45,13 @@ class PartnerCompanyController extends SystemController
           $page = 'SuperAdmin.Pages.Master.edit_partner_company';
           $modules = Module::with('Menus')->get();
           $types = Partnercompany::findOrFail($id);
-          return view($page)->with(compact('modules','types'));
+          return view($page)->with(compact('modules', 'types', 'categoris', 'products'));
       }
 
   public function updatePC(Request $request, $id)
       {
         $types = Partnercompany::findOrFail($id);
-        $types->nama = $request->nama;
-        // $types->category_id = $request->input('category_id');
-        // $types->produk_id = $request->input('produk_id');
+        $types->nama = $request->input('nama');
         $isSuccess = $types->save();
         if ($isSuccess) {
           // return success
