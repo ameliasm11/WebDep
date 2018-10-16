@@ -26,7 +26,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama Produk</th>
-                        <th>Nama Kategori</th>
+                        <th>Kategori</th>
                         <th>URL</th>
                         <th>Status</th>
                         <th>Created at</th>

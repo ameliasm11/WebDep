@@ -13,6 +13,11 @@
           <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control" value="{{ $types->nama }}">
           </div>
       </div>
+      <div class="row form-group">
+          <div class="col col-md-2"><label for="text-input" class=" form-control-label">Payment Type</label></div>
+          <div class="col-10 col-md-9"><input type="text" id="type_id" name="type_id" placeholder="Nama" class="form-control" value="{{ $types->type->nama }}" disabled>
+          </div>
+      </div>
     <div class="card-footer">
         <button type="submit" class="btn btn-primary btn-sm">
             <i class="fa fa-dot-circle-o"></i> Submit

@@ -13,11 +13,11 @@
           <div class="col-10 col-md-9"><input type="text" id="name" name="name" placeholder="Nama" class="form-control" value="{{ $products->name }}">
           </div>
       </div>
-      <!-- <div class="row form-group">
-          <div class="col col-md-2"><label for="text-input" class=" form-control-label">ID Produk Kategori</label></div>
-          <div class="col-10 col-md-9"><input type="text" id="producat_id" name="producat_id" placeholder="ID Produk Kategori" class="form-control" value="{{ $products->producat_id }}" disabled>
+      <div class="row form-group">
+          <div class="col col-md-2"><label for="text-input" class=" form-control-label">Kategori</label></div>
+          <div class="col-10 col-md-9"><input type="text" id="producat_id" name="producat_id" placeholder="ID Produk Kategori" class="form-control" value="{{ $products->KategoriProduk->name }}" disabled>
           </div>
-      </div> -->
+      </div>
       <div class="row form-group">
           <div class="col col-md-2"><label for="text-input" class=" form-control-label">URL</label></div>
           <div class="col-10 col-md-9"><input type="text" id="url" name="url" placeholder="URL" class="form-control" value="{{ $products->url }}">

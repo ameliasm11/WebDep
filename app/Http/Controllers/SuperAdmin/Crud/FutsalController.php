@@ -176,7 +176,7 @@ class FutsalController extends SystemController
           $data = Lapangan::findOrFail($id);
           $data->nama = $request->input('nama');
           $data->ket = $request->input('ket');
-          $data->tempat_id = $request->input('tempat_id');
+          // $data->tempat_id = $request->input('tempat_id');
           if (empty($request->file('gambar'))){
               $data->gambar = $data->gambar;
         }

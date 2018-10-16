@@ -43,7 +43,8 @@ class ProductController extends SystemController
    {
      $products = Produk::findOrFail($id);
      $modules = Module::with('Menus')->get();
-     return view('SuperAdmin.Pages.Master.edit_produk', compact('modules', 'products'));
+     $kategoris = KategoriProduk::all();
+     return view('SuperAdmin.Pages.Master.edit_produk', compact('modules', 'products', 'kategoris'));
    }
 
    public function update(Request $request, $id)
