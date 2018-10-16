@@ -14,14 +14,11 @@ class Jadwal extends Model
     'lapangan_id',
     'tanggal',
     'jam',
-    'harga_id',
+    'harga',
     'status',
   ];
     public function Lapangan()  {
       return $this->belongsTo('App\model\Lapangan');
-    }
-    public function Harga() {
-      return $this->belongsTo('App\model\Harga');
     }
     public function Order() {
       return $this->belongsTo('App\model\Order');
