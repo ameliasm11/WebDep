@@ -48,7 +48,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-
+                        <th>Tempat</th>
                         <th>Lapangan</th>
                         <th>Jam</th>
                         <th>Tanggal</th>
@@ -63,7 +63,7 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-
+                        <td>{{$datas->Tempat->nama}}</td>
                         <td>{{$datas->Lapangan->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>

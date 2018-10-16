@@ -26,12 +26,15 @@ class ControllerLogin extends Controller
        // dd(Users::get());\
       if (Auth::guard()->attempt($superadmin_data))
       {
-        $res['status'] = "ok";
+        $email = $superadmin_data['email'];
+        $data = \App\model\Users::where('email',$email)->first();
+        $res['status'] = true;
         $res['code'] = 200;
         $res['message'] = "Success!";
-        // $res['data'] = $superadmin_data;
-        $res['email'] = $superadmin_data['email'];
-        $res['password'] = $superadmin_data['password'];
+        $res['id'] = $data['id'];
+        $res['name'] = $data['name'];
+        $res['email'] = $data['email'];
+        $res['password'] = $data['password'];
         return response($res);
       }
       else

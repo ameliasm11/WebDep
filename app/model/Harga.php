@@ -15,7 +15,7 @@ class Harga extends Model
     'harga_id',
   ];
     public function Jadwal()  {
-      return $this->hasOne('App\model\Jadwal');
+      return $this->hasMany('App\model\Jadwal');
     }
 
     public function Tempat(){

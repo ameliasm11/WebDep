@@ -127,6 +127,18 @@ class ControllerFutsal extends Controller
        $user =$request->input('user_id')
      ]);
 
+     // $data[] = new Array();
+     //
+     // $orders = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
+     // for ($order as $orders) {
+     //   $data = $oreder['jadwal_id'];
+     //   $jadwal[] = \App\model\Jadwal::where('id',$data);
+     //   $data['orders']['tempat'] = ....
+     //   $data['orders']['lapang'] = ....
+     // }
+
+
+
      $data = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
 
      if(count($data)>0){

@@ -15,6 +15,7 @@ class CreateTmJadwal extends Migration
     {
       Schema::create('tm_jadwal', function (Blueprint $table) {
           $table->increments('id');
+          $table->integer('tempat_id')->unsigned();
           $table->integer('lapangan_id')->unsigned();
           $table->string('tanggal');
           $table->string('jam');
@@ -23,6 +24,9 @@ class CreateTmJadwal extends Migration
           $table->rememberToken();
           $table->timestamps();
 
+          $table->foreign('tempat_id')->references('id')->on('tm_tempat')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
           $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
