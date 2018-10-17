@@ -59,21 +59,42 @@ class ControllerLogin extends Controller
   }
 
   public function nama(Request $request){
-    $this->validate($request, [
+  $this->validate($request, [
     $user = $request->input('id'),
     $nama = $request->input('name')
+  ]);
+  $data = \App\model\Users::where('id',$user)->update(['name'=>$nama]);
+
+  if ($data) {
+    $res['status'] = true;
+    $res['code'] = 200;
+    $res['message'] = "Success!";
+    return response($res);
+  }
+  else{
+    $res['message'] = "Empty!";
+    return response($res);
+  }
+}
+
+  public function getnama(Request $request)
+  {
+    $this->validate($request, [
+    $username = $request->input('id')
     ]);
-      $data = \App\model\Users::where('id',$user)->update(['name'=>$nama]);
+      $data = \App\model\Users::where('id',$username)->first();
 
     if ($data) {
       $res['status'] = true;
       $res['code'] = 200;
       $res['message'] = "Success!";
+      $res['nama'] = $data['name'];
         return response($res);
     }
     else{
       $res['message'] = "Empty!";
         return response($res);
     }
+
   }
 }
