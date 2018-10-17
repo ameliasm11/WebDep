@@ -127,25 +127,38 @@ class ControllerFutsal extends Controller
        $user =$request->input('user_id')
      ]);
 
-     // $data[] = new Array();
-     //
-     // $orders = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
-     // for ($order as $orders) {
-     //   $data = $oreder['jadwal_id'];
-     //   $jadwal[] = \App\model\Jadwal::where('id',$data);
-     //   $data['orders']['tempat'] = ....
-     //   $data['orders']['lapang'] = ....
-     // }
+     $data = array();
+     $datas = array();
+     $orders = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
+     foreach($orders as $order) {
+       $nama = $order['nama'];
+       $no = $order['no_hp'];
+       $tgl = $order['tanggal'];
+       $jm = $order['jam_pesan'];
+       $id_jadwal = $order['jadwal_id'];
+       $jadwal = \App\model\Jadwal::where('id',$id_jadwal)->first();
+       $id_lapangan = $jadwal['lapangan_id'];
+       $id_tempat = $jadwal['tempat_id'];
+       $jam = $jadwal['jam'];
+       $tanggal = $jadwal['tanggal'];
+       $nama_tempat = \App\model\Tempat::where('id',$id_tempat)->first();
+       $nama_lapangan = \App\model\Lapangan::where('id',$id_lapangan)->first();
+       $data['nama'] = $nama;
+       $data['no_hp'] = $no;
+       $data['lapangan'] = $nama_lapangan['nama'];
+       $data['tempat'] = $nama_tempat['nama'];
+       $data['tanggal'] = $tanggal;
+       $data['jam'] = $jam;
+       $data['status'] = $order['status'];
+       $datas[] = $data;
+     }
 
 
-
-     $data = \App\model\Order::where('user_id',$user)->orderByRaw('id DESC')->get();
-
-     if(count($data)>0){
+     if(count($datas)>0){
        $res['status'] = true;
        $res['code'] = 200;
        $res['message'] = "success !";
-       $res['data']= $data;
+       $res['data']= $datas;
        return response($res);
      }else {
        $res['message'] = "empty";

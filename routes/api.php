@@ -26,3 +26,4 @@ Route::post('login', 'API\ControllerLogin@doLogin'); // API Login
 Route::post('register', 'API\ControllerRegister@create'); // Api Register
 Route::post('order', 'API\ControllerFutsal@order'); // Api Register
 Route::post('update', 'API\ControllerLogin@nama');
+Route::post('getnama', 'API\ControllerLogin@getnama');
