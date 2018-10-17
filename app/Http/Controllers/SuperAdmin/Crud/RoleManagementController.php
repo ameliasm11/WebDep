@@ -52,17 +52,6 @@ class RoleManagementController extends SystemController
         $post->description = $request->get('description');
         $post->save();
 
-        // $access = new Access();
-        // $access->role_id=$request->get('role_id');
-
-        // $access->module_id=$request->get('module');
-        // $access->menu_id=$request->get('menu');
-        // $access->do_insert=$request->get('new');
-        // $access->do_update=$request->get('update');
-        // $access->do_delete=$request->get('delete');
-
-        // $access = Access::get('rows');
-        // $data = array();
         $menus = $request->get('menus');
         foreach ($menus as $index => $menu)
         {
@@ -98,6 +87,24 @@ class RoleManagementController extends SystemController
       $updateRole->level = $request->level;
       $updateRole->description = $request->description;
       $isSuccess = $updateRole->save();
+
+      $menus = $request->get('menus');
+      foreach ($menus as $index => $menu)
+      {
+        // dd($menu['id']);
+        $m = Menu::where('id', $menu['id'])->first();
+        $module = Module::where('id', $m->module_id)->first();
+
+        $access = Access::findOrFail($id);
+        $access->role_id = $updateRole->id;
+        $access->module_id = $module->id;
+        $access->menu_id = $menu['id'];
+        $access->do_insert = $menu['access']['new'];
+        $access->do_update = $menu['access']['update'];
+        $access->do_delete = $menu['access']['delete'];
+        $access->save();
+      }
+
       if ($isSuccess) {
         // return success
         return redirect()->route('superadmin.role.index')->with('alert','Data berhasil diubah!');
