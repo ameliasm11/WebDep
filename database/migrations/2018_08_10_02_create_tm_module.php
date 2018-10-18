@@ -19,6 +19,7 @@ class CreateTmModule extends Migration
             $table->string('description');
             $table->string('icon');
             $table->string('order');
+            $table->string('segment');
             $table->rememberToken();
             $table->timestamps();
         });
