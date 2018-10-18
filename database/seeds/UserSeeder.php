@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'name' => 'User',
             'role_id' => '2',
             'email' => 'user@depapps.com',
-            'password' => bcrypt('admin')
+            'password' => bcrypt('user')
         ]);
     }
 }

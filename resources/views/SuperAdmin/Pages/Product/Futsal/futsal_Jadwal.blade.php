@@ -67,7 +67,7 @@
                         <td>{{$datas->Lapangan->nama}}</td>
                         <td>{{$datas->jam}}</td>
                         <td>{{$datas->tanggal}}</td>
-                        <td>{{$datas->Harga->harga}}</td>
+                        <td>{{$datas->harga}}</td>
                         <td><form action="{{route('superadmin.futsal.jadwalStatus', $datas->id)}}" method="post">
                             {{csrf_field()}}
                           @if ($datas->status == 0)

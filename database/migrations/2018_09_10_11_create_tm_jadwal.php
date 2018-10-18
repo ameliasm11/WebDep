@@ -19,7 +19,7 @@ class CreateTmJadwal extends Migration
           $table->integer('lapangan_id')->unsigned();
           $table->string('tanggal');
           $table->string('jam');
-          $table->integer('harga_id')->unsigned();
+          $table->string('harga');
           $table->boolean('status')->nullable()->default('false');
           $table->rememberToken();
           $table->timestamps();
@@ -28,9 +28,6 @@ class CreateTmJadwal extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
           $table->foreign('lapangan_id')->references('id')->on('tm_lapangan')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-          $table->foreign('harga_id')->references('id')->on('tm_harga')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
       });
