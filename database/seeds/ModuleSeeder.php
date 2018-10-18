@@ -15,21 +15,24 @@ class ModuleSeeder extends Seeder
             'name' => 'Administrator',
             'description' => 'Module',
             'icon' => 'fa fa-users',
-            'order' => '1'
+            'order' => '1',
+            'segment' => 'Administrator'
         ]);
 
         DB::table('tm_module')->insert([
             'name' => 'Master Data',
             'description' => 'Module',
             'icon' => 'fa fa-tasks',
-            'order' => '2'
+            'order' => '2',
+            'segment' => 'MasterData'
         ]);
 
         DB::table('tm_module')->insert([
             'name' => 'Report',
             'description' => 'Module',
             'icon' => 'fa fa-file',
-            'order' => '3'
+            'order' => '3',
+            'segment' => 'Report'
         ]);
 
     }
