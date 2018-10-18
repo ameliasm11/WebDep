@@ -25,8 +25,8 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Level</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="level" id="level" class="form-control">
-                                <option value="0" disabled selected>Please select</option>
+                              <select name="level" id="level" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                <option value=""</option>
                                 <option value="Admin">Admin</option>
                                 <option value="User">User</option>
                               </select>

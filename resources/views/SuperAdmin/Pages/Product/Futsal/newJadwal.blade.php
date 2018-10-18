@@ -20,8 +20,8 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="tempat_id" id="tempat_id" class="form-control">
-                                <option value="0" disabled selected>Please select</option>
+                              <select name="tempat_id" id="tempat_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                <option value=""></option>
                                 @foreach($tempats as $tempat)
                                 <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
                                 @endforeach
@@ -31,8 +31,8 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="lapangan_id" id="lapangan_id" class="form-control">
-                                <option value="0" disabled selected>Please select</option>
+                              <select name="lapangan_id" id="lapangan_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                <option value="" disabled selected></option>
                                 @foreach($lapangan as $lapangans)
                                 <option value="{{$lapangans->id}}">{{$lapangans->nama}}</option>
                                 @endforeach
@@ -46,8 +46,8 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="jam" id="jam" class="form-control">
-                                <option value="0" disabled selected>Please Select</option>
+                              <select name="jam" id="jam" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                <option value=""</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>
                                 <option value="03:00">03:00</option>

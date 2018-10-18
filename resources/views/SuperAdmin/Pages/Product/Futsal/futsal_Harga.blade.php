@@ -36,7 +36,6 @@
                        <option value="{{route('superadmin.futsal.tempat')}}">Tempat</option>
                        <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
                        <option value="{{route('superadmin.futsal.jadwal')}}">Jadwal</option>
-                       <option value="{{route('superadmin.futsal.harga')}}">Harga</option>
                      </select>
                    </div>
                  </div>

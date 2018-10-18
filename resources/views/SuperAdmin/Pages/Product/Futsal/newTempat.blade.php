@@ -34,8 +34,8 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Jam Buka</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="jam_buka" id="jam_buka" class="form-control">
-                              <option value="0"disabled selected>Please selected</option>
+                            <select name="jam_buka" id="jam_buka" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <option value=""></option>
                               <option value="01:00">01:00</option>
                               <option value="02:00">02:00</option>
                               <option value="03:00">03:00</option>
@@ -66,8 +66,8 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Jam Tutup</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="jam_tutup" id="jam_tutup" class="form-control">
-                              <option value="0" disabled selected>Please selected</option>
+                            <select name="jam_tutup" id="jam_tutup" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <option value=""></option>
                               <option value="01:00">01:00</option>
                               <option value="02:00">02:00</option>
                               <option value="03:00">03:00</option>
@@ -98,8 +98,8 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Partner</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="partner_id" id="partner_id" class="form-control">
-                              <option value="0" disabled selected>Please select</option>
+                            <select name="partner_id" id="partner_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <option value=""></option>
                               @foreach($partners as $partner)
                               <option value="{{$partner->id}}">{{$partner->nama}}</option>
                               @endforeach

@@ -28,8 +28,8 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="tempat_id" id="tempat_id" class="form-control">
-                                <option value="0" disabled selected>Please select</option>
+                              <select name="tempat_id" id="tempat_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                <option value=""></option>
                                 @foreach($tempats as $tempat)
                                 <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
                                 @endforeach
