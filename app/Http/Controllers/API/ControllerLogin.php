@@ -72,7 +72,9 @@ class ControllerLogin extends Controller
     return response($res);
   }
   else{
-    $res['message'] = "Empty!";
+    $res['status'] = false;
+    $res['code'] = 400;
+    $res['message'] = "Email dan Paaword tidak sesuai";
     return response($res);
   }
 }
@@ -92,7 +94,9 @@ class ControllerLogin extends Controller
         return response($res);
     }
     else{
-      $res['message'] = "Empty!";
+      $res['status'] = false;
+      $res['code'] = 400;
+      $res['message'] = "Error...";
         return response($res);
     }
 

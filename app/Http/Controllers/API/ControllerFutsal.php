@@ -42,7 +42,9 @@ class ControllerFutsal extends Controller
         return response($res);
     }
     else{
-        $res['message'] = "Empty!";
+      $res['status'] = false;
+      $res['code'] = 400;
+        $res['message'] = "Jadwal tidak tersedia";
         return response($res);
     }
   }
@@ -62,7 +64,9 @@ class ControllerFutsal extends Controller
         return response($res);
     }
     else{
-        $res['message'] = "Empty!";
+      $res['status'] = false;
+      $res['code'] = 400;
+        $res['message'] = "Lapangan tidak tersedia";
         return response($res);
     }
   }
@@ -88,13 +92,15 @@ class ControllerFutsal extends Controller
       $data->status = "false";
 
       if($data->save()){
-        $res['status'] = "created";
+        $res['status'] = true;
         $res['code'] = 200;
         $res['message'] = "Success!";
         $res['value'] = "$data";
         return response($res);
       }
       else {
+        $res['status'] = false;
+        $res['code'] = 400;
         $res['message'] = "Saving field!";
         return response($res);
       }
