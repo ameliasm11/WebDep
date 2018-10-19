@@ -31,18 +31,14 @@
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Lama</label></div>
-                            <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
+                            <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;"></div>
                           </div>
-                          </div>
-
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Baru</label></div>
                             <div class="col-12 col-md-9"><input type="file" class="form-control" id="gambar" name="gambar" value="{{ $data->gambar }}">
+                            </div>
                           </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
+
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit
@@ -50,10 +46,13 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        </form>
                         <a href="{{route('superadmin.futsal.lapangan')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>
+                        </form>
+                        </div>
                       </div>
+                      </div>
+                    </div>
 @endsection

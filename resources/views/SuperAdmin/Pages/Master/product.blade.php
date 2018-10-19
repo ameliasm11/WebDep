@@ -43,9 +43,9 @@
                         <td><form action="{{route('product.status', $product->id)}}" method="post">
                           {{csrf_field()}}
                           @if ($product->status == 0)
-                            <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
+                            <button type="link" onClick="return confirm('Aktifkan Produk ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
-                            <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
+                            <button type="link" onClick="return confirm('Nonaktifkan Produk ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
                         </form>
                         </td>

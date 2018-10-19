@@ -37,16 +37,6 @@
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">No HP</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ $data->no_hp }}" disabled></div>
                           </div>
-                          <div class="row form-group">
-                              <div class="col col-md-2"><label for="select" class=" form-control-label">Status</label></div>
-                              <div class="col-12 col-md-9">
-                                  <select name="status" id="status" class="form-control" value="{{ $data->status }}">
-                                      <option value="0" disabled selected>Please select</option>
-                                          <option value="1">True</option>
-                                          <option value="2">False</option>
-                                  </select>
-                              </div>
-                          </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit

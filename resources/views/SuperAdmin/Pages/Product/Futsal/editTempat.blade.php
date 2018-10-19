@@ -25,11 +25,10 @@
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Alamat</label></div>
                             <div class="col-12 col-md-9"><input type="text" id="alamat" name="alamat" value="{{ $data->alamat }}" class="form-control"></div>
                           </div>
-
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Lama</label></div>
                             <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
-                          </div>
+                            </div>
                           </div>
 
                         <div class="row form-group">
@@ -50,8 +49,6 @@
                             <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" value="{{$data->deskripsi}}" class="form-control"></textarea></div>
                           </div>
                         </div>
-                      </div>
-                    </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit
