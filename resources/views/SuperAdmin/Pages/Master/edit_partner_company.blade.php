@@ -3,7 +3,7 @@
     <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Payment Method</strong> Edit Data
+            <strong>Partner Company</strong> Edit Data
         </div>
     </div>
     <form action="{{ route('partner_company.updatePC', $types->id) }}" method="post">

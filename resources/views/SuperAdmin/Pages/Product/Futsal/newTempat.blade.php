@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Tempat Futsal
+                        <strong>Tambah Data</strong> Tempat
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.createTempat')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">

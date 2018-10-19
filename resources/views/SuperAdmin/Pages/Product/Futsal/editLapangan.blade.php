@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Edit </strong> Lapangan
+                        <strong>Edit Data </strong> Lapangan
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.updateLapangan', $data->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -34,11 +34,12 @@
                             <div class="col-12 col-md-9"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
                           </div>
                           </div>
-                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Baru</label></div>
+
                           <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Gambar Baru</label></div>
                             <div class="col-12 col-md-9"><input type="file" class="form-control" id="gambar" name="gambar" value="{{ $data->gambar }}">
                           </div>
-                        </div>
+                          </div>
                       </div>
                     </div>
                   </div>

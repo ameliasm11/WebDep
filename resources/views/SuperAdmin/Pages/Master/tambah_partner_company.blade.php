@@ -3,7 +3,7 @@
     <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Partner Company</strong> Add Data
+            <strong>Partner Company</strong> Tambah Data
         </div>
     </div>
     <form action="{{ route('partner_company.createPC') }}" method="post">

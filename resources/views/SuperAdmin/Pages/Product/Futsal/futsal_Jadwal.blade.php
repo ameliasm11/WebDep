@@ -15,16 +15,16 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Jadwal</strong>
+                            <strong class="card-title">Daftar Jadwal</strong>
                         </div>
                         <div class="card-body">
                           <div class="row form-group">
                             <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                             <div class="col-12 col-md-3">
-                              <select data-placeholder="Product" class="standardSelect" tabindex="1">
+                              <select data-placeholder="Produk" class="standardSelect" tabindex="1">
                                   <option value=""></option>
                                 @foreach($products as $product)
-                                  <option href="{{$product->url}}" value="" onchange="document.location.href=this.options[this.selectedIndex].value;">{{$product->nama}}</option>
+                                  <option href="{{$product->url}}" value="" onchange="document.location.href=this.options[this.selectedIndex].value;">{{$product->name}}</option>
                                 @endforeach
                               </select>
                             </div>
@@ -53,8 +53,8 @@
                         <th>Tanggal</th>
                         <th>Harga</th>
                         <th>Status</th>
-                        <th>Created at</th>
-                        <th>Actions</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

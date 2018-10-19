@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Jadwal
+                        <strong>Tambah Data</strong> Jadwal
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.SaveJadwal')}}" method="POST" enctype="application/json" class="form-horizontal">

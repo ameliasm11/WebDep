@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Lapangan</strong>
+                            <strong class="card-title">Daftar Lapangan</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -52,8 +52,8 @@
                         <th>Keterangan Lapangan</th>
                         <th>Nama Tempat</th>
                         <th>Gambar</th>
-                        <th>Created at</th>
-                        <th>Actions</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

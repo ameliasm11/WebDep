@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">User List</strong>
+                            <strong class="card-title">Daftar User</strong>
                         </div>
                     <div class="card-body">
                       <div align="right">
@@ -25,11 +25,11 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Email</th>
                         <th>Level</th>
-                        <th>Waktu</th>
-                        <th>Actions</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

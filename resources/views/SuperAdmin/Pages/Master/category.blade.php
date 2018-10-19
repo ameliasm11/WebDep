@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Product Category</h1></div>
+        <h1>Produk Kategori</h1></div>
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Product Category</strong></div>
+              <strong class="card-title">Daftar Produk Kategori</strong></div>
                 <div class="card-body">
                   <div align="right">
                     <a href="{{route('product')}}"><button type="button" class="btn btn-success btn-sm">&nbsp; Detail Product</button></a>

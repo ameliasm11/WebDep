@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Role</h1>
+                                <h1>Role Management</h1>
                             </div>
                         </div>
                     </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Role
+                        <strong>Tambah Data</strong> Role
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.role.save')}}" method="POST" enctype="application/json" class="form-horizontal">

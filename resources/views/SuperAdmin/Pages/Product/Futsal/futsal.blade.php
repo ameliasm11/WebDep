@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Jadwal</strong>
+                            <strong class="card-title">Daftar Jadwal</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">

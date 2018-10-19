@@ -26,7 +26,7 @@
                         <th>Jam</th>
                         <th>No HP</th>
                         <th>Status</th>
-                        <th>Created at</th>
+                        <th>Waktu</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
@@ -41,16 +41,17 @@
                         <td><form action="{{route('order.StatusOrder', $datas->id)}}" method="post">
                           {{csrf_field()}}
                           @if ($datas->status == 0)
-                            <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
+                            <button type="link" onClick="return confirm('Aktifkan Order ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
                           @else
-                            <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
+                            <button type="link" onClick="return confirm('Nonaktifkan Order ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
                           @endif
                         </form>
                         </td>
                         <td>{{$datas->created_at}}</td>
-                        <td><center><a href="{{route('order.editOrder', [$datas->id])}}">
+                        <!-- <td><center><a href="{{route('order.editOrder', [$datas->id])}}">
                           <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
-                        </a>
+                        </a> -->
+                        <td>
                            <form method="POST" action="{{route('order.deleteOrder', [$datas->id]) }}" style="display: inline-block;">
                             {{ csrf_field() }}
                               <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>

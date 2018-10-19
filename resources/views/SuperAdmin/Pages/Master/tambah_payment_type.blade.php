@@ -3,7 +3,7 @@
     <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Product</strong> Add Data
+            <strong>Payment Type</strong> Tambah Data
         </div>
     </div>
     <form action="{{ route('payment_type.createType') }}" method="post">

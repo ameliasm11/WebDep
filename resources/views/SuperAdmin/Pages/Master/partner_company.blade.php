@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Partner Company</strong></div>
+              <strong class="card-title">Daftar Partner Company</strong></div>
                 <div class="card-body">
                   <div align="right">
                     <a href="{{route('partner_company.newPC')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
@@ -26,7 +26,7 @@
                         <th>Nama</th>
                         <th>Kategori</th>
                         <th>Produk</th>
-                        <th>Created at</th>
+                        <th>Dibuat Pada</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>

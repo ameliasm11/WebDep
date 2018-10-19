@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Edit </strong> Order
+                        <strong>Edit Data</strong> Order
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.updateLapangan', $data->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
