@@ -101,4 +101,20 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-        @endsection
+@endsection
+
+<!-- <script src="{{asset ('js/vendor/jquery-2.1.4.min.js')}}"></script>
+<script src="{{asset ('js/popper.min.js')}}"></script>
+<script src="{{asset ('js/plugins.js')}}"></script>
+<script src="{{asset ('js/main.js')}}"></script>
+<script src="{{asset ('js/lib/chosen/chosen.jquery.min.js')}}"></script> -->
+
+<!-- @section('javascript')
+    jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 2,
+            no_results_text: "Nothing Found !",
+            width: "100%"
+        });
+    });
+@endsection -->

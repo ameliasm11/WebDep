@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="../../images/logoDEP.png">
+    <link rel="shortcut icon" href="{{asset('images/logoDEP.png')}}">
 
     <link rel="stylesheet" href="{{ asset('plugins/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/css/bootstrap.min.css') }}">
@@ -23,6 +23,8 @@
     <!-- <link rel="stylesheet" href="asset/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{{ asset ('plugins/scss/style.css') }}">
     <link href="{{ asset ('plugins/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('scss/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lib/chosen/chosen.min.css')}}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
@@ -36,8 +38,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href=""><img src="../../images/nav_logo.png" width="50%"></a>
-                <a class="navbar-brand hidden" href=""><img src="../../images/logoDEP.png"></a>
+                <a class="navbar-brand" href=""><img src="{{asset('images/nav_logo.png')}}" width="50%"></a>
+                <a class="navbar-brand hidden" href=""><img src="{{asset('images/logoDEP.png')}}"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -145,6 +147,21 @@
       document.getElementsByName("tanggal")[0].setAttribute('min', today);
 
     </script>
-
+    <script src="{{asset('js/plugins.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/lib/chosen/chosen.jquery.min.js')}}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 2,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
+</script>
+    <!-- @yield('scripts')
+    <script type="text/javascript">
+      @yield('javascript')
+    </script> -->
 </body>
 </html>

@@ -443,17 +443,17 @@ class FutsalController extends SystemController
              }
 
              public function OrderStatus(Request $request, $id){
-               $orderStatus = Produk::findOrFail($id);
+               $orderStatus = Order::findOrFail($id);
                if($orderStatus->status == 0 || null){
                  $orderStatus->status = $request->status = 1;
                  $orderStatus->save();
                 // dd($jadwalStatus);
-                return redirect()->route('product');
+                return redirect()->route('order');
                }
                else {
                  $orderStatus->status = $request->status = 0;
                  $orderStatus->save();
-                 return redirect()->route('product');
+                 return redirect()->route('order');
                }
              }
 
