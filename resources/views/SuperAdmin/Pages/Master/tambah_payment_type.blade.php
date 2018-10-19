@@ -1,11 +1,11 @@
 <!-- @extends('superadmin.layouts.app') -->
 @section('content')
-<<<<<<< HEAD
+
                 <div class="breadcrumbs">
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Form Payment Type</h1>
                             </div>
                         </div>
                     </div>
@@ -23,21 +23,6 @@
                             <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control">
                             </div>
                         </div>
-=======
-    <div class="col-lg-12">
-    <div class="card">
-        <div class="card-header">
-            <strong>Payment Type</strong> Tambah Data
-        </div>
-    </div>
-    <form action="{{ route('payment_type.createType') }}" method="post">
-    {{ csrf_field() }}
-    <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama</label></div>
-        <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control">
-        </div>
-    </div>
->>>>>>> a46e52547eb2a0eb1d310b6f5f459f3a10a0137e
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
