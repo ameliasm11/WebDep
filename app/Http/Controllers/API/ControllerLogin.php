@@ -39,7 +39,7 @@ class ControllerLogin extends Controller
       }
       else
       {
-        $res['status'] = "Bad request";
+        $res['status'] = false;
         $res['code'] = 400;
         $res['message'] = "Email dan password salah";
         return response($res);
@@ -74,7 +74,7 @@ class ControllerLogin extends Controller
   else{
     $res['status'] = false;
     $res['code'] = 400;
-    $res['message'] = "Email dan Paaword tidak sesuai";
+    $res['message'] = "Email dan Password tidak sesuai";
     return response($res);
   }
 }
