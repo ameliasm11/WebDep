@@ -42,7 +42,6 @@
                       </div>
                     </div>
                   </div>
-
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit
@@ -56,5 +55,4 @@
                           <i class="fa fa-close"></i> Cancel
                         </button></a>
                       </div>
-                    </div>
 @endsection

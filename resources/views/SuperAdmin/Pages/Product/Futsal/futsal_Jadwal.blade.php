@@ -21,24 +21,23 @@
                           <div class="row form-group">
                             <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
                             <div class="col-12 col-md-3">
-                              <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="name" id="name" class="form-control">
-                                <option value="0" disabled selected>Product</option>
-                                  @foreach($products as $product)
-                                <option href="{{$product->url}}" value="">{{$product->name}}</option>
+                              <select data-placeholder="Product" class="standardSelect" tabindex="1">
+                                  <option value=""></option>
+                                @foreach($products as $product)
+                                  <option href="{{$product->url}}" value="" onchange="document.location.href=this.options[this.selectedIndex].value;">{{$product->nama}}</option>
                                 @endforeach
                               </select>
                             </div>
-                   <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
-                   <div class="col-12 col-md-3">
-                     <select onchange="document.location.href=this.options[this.selectedIndex].value;" name="level" id="level" class="form-control">
-                       <option value="0" disabled selected>Jadwal</option>
-                       <option value="{{route('superadmin.futsal.tempat')}}">Tempat</option>
-                       <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
-                       <option value="{{route('superadmin.futsal.jadwal')}}">Jadwal</option>
-                       <option value="{{route('superadmin.futsal.harga')}}">Harga</option>
-                     </select>
-                   </div>
-                 </div>
+                           <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
+                           <div class="col-12 col-md-3">
+                               <select data-placeholder="Jadwal" class="standardSelect" tabindex="1" onchange="document.location.href=this.options[this.selectedIndex].value;">
+                                 <option value=""></option>
+                                 <option value="{{route('superadmin.futsal.tempat')}}">Tempat</option>
+                                 <option value="{{route('superadmin.futsal.lapangan')}}">Lapangan</option>
+                                 <option value="{{route('superadmin.futsal.jadwal')}}">Jadwal</option>
+                             </select>
+                           </div>
+                         </div>
                       </div>
                       <div class="card-body">
                         <div align="right">

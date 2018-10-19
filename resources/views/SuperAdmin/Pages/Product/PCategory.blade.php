@@ -4,19 +4,18 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Role Management</h1>
+                        <h1>Product Category</h1>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Role List</strong>
+                            <strong class="card-title">Product Category List</strong>
                         </div>
                     <div class="card-body">
                     <div align="right">

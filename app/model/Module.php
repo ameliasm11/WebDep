@@ -14,6 +14,7 @@ class Module extends Model
 		'description',
     'icon',
 		'order',
+    'segment',
 	];
     public function Access()  {
     	return $this->belongsToMany('App\model\Access');

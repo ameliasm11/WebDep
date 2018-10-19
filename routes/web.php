@@ -28,64 +28,73 @@ Auth::routes();
 	//MENAMPILKAN KONTEN
 
 	Route::group(['namespace' => 'Crud'], function () {
-    //ROLE MANAGEMENT
-		Route::get('role', 'RoleManagementController@index')->name('superadmin.role.index');
-		Route::get('role/new', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
-		Route::post('role/new', 'RoleManagementController@save')->name('superadmin.role.save');
-    Route::get('role/update/{id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
-    Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('superadmin.role.update');
-    Route::delete('role/{id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
-    //USER WEB MANAGEMENT
-    Route::get('user', 'ControllerUser@data')->name('superadmin.user.data');
-    Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('superadmin.user.edit');
-    Route::post('user/edituser/{id}', 'ControllerUser@update')->name('superadmin.user.update');
-    Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('superadmin.user.delete');
-    Route::get('user/newUser', 'ControllerUser@newUser')->name('superadmin.user.newUser');
-    Route::post('user/tambahuser', 'ControllerUser@createUser')->name('superadmin.user.tambah');
 
-    //Payment Method dan Payment Type
-    Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');
-    Route::get('payment_type/newType', 'PaymentTypeController@newType')->name('payment_type.newType');
-    Route::post('payment_type/createType', 'PaymentTypeController@createType')->name('payment_type.createType');
-    Route::get('payment_type/editType/{id}', 'PaymentTypeController@editType')->name('payment_type.editType');
-    Route::post('payment_type/updateType/{id}', 'PaymentTypeController@updateType')->name('payment_type.updateType');
-    Route::post('payment_type/deleteType/{id}', 'PaymentTypeController@deleteType')->name('payment_type.deleteType');
+		Route::group(['prefix' => 'Administrator/'], function() {
+      //ROLE MANAGEMENT
+  		Route::get('role', 'RoleManagementController@index')->name('superadmin.role.index');
+  		Route::get('role/new', 'RoleManagementController@create')->name('superadmin.role.tambahdata');
+  		Route::post('role/new', 'RoleManagementController@save')->name('superadmin.role.save');
+      Route::get('role/update/{id}', 'RoleManagementController@edit')->name('superadmin.role.edit');
+      Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('superadmin.role.update');
+      Route::delete('role/{id}', 'RoleManagementController@destroy')->name('superadmin.role.delete');
 
-    //Payment Method dan Payment Method
-    Route::get('Payment_method', 'PaymentMethodController@method')->name('payment_method');
-    Route::get('Payment_method/newMethod', 'PaymentMethodController@newMethod')->name('payment_method.newMethod');
-    Route::post('Payment_method/createMethod', 'PaymentMethodController@createMethod')->name('payment_method.createMethod');
-    Route::get('Payment_method/editMethod/{id}', 'PaymentMethodController@editMethod')->name('payment_method.editMethod');
-    Route::post('Payment_method/updateMethod/{id}', 'PaymentMethodController@updateMethod')->name('payment_method.updateMethod');
-    Route::post('Payment_method/deleteMethod/{id}', 'PaymentMethodController@deleteMethod')->name('payment_method.deleteMethod');
+      //USER WEB MANAGEMENT
+      Route::get('user', 'ControllerUser@data')->name('superadmin.user.data');
+      Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('superadmin.user.edit');
+      Route::post('user/edituser/{id}', 'ControllerUser@update')->name('superadmin.user.update');
+      Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('superadmin.user.delete');
+      Route::get('user/newUser', 'ControllerUser@newUser')->name('superadmin.user.newUser');
+      Route::post('user/tambahuser', 'ControllerUser@createUser')->name('superadmin.user.tambah');
 
-    //Payment Method dan Partner Company
-    Route::get('Partner_company', 'PartnerCompanyController@PC')->name('partner_company');
-    Route::get('Partner_company/newPC', 'PartnerCompanyController@newPC')->name('partner_company.newPC');
-    Route::post('Partner_company/createPC', 'PartnerCompanyController@createPC')->name('partner_company.createPC');
-    Route::get('Partner_company/editPC/{id}', 'PartnerCompanyController@editPC')->name('partner_company.editPC');
-    Route::post('Partner_company/updatePC/{id}', 'PartnerCompanyController@updatePC')->name('partner_company.updatePC');
-    Route::post('Partner_company/deletePC/{id}', 'PartnerCompanyController@deletePC')->name('partner_company.deletePC');
+    });
 
-    //Order
-    Route::get('Order', 'FutsalController@order')->name('order');
-    Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
-    Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
-    Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
-    Route::post('Order-StatusOrder/{id}', 'FutsalController@OrderStatus')->name('order.StatusOrder');
+  //MASTERDATA
 
-    //PRODUCT CATEGORY
-    Route::get('category', 'ProductCategoryController@category')->name('category');
-    Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');
+  Route::group(['prefix' => 'MasterData/'], function() {
 
-    //Product
-    Route::get('product', 'ProductController@product')->name('product');
-    Route::get('product/add', 'ProductController@tambah')->name('product.add');
-    Route::post('product/add', 'ProductController@store')->name('product.add');
-    Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
-    Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
-    Route::post('product/delete/{id}', 'ProductController@destroy')->name('product.delete');
-    Route::post('product/status/{id}', 'ProductController@productStatus')->name('product.status');
+      //Payment Method dan Payment Type
+      Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');
+      Route::get('payment_type/newType', 'PaymentTypeController@newType')->name('payment_type.newType');
+      Route::post('payment_type/createType', 'PaymentTypeController@createType')->name('payment_type.createType');
+      Route::get('payment_type/editType/{id}', 'PaymentTypeController@editType')->name('payment_type.editType');
+      Route::post('payment_type/updateType/{id}', 'PaymentTypeController@updateType')->name('payment_type.updateType');
+      Route::post('payment_type/deleteType/{id}', 'PaymentTypeController@deleteType')->name('payment_type.deleteType');
+
+      //Payment Method dan Payment Method
+      Route::get('Payment_method', 'PaymentMethodController@method')->name('payment_method');
+      Route::get('Payment_method/newMethod', 'PaymentMethodController@newMethod')->name('payment_method.newMethod');
+      Route::post('Payment_method/createMethod', 'PaymentMethodController@createMethod')->name('payment_method.createMethod');
+      Route::get('Payment_method/editMethod/{id}', 'PaymentMethodController@editMethod')->name('payment_method.editMethod');
+      Route::post('Payment_method/updateMethod/{id}', 'PaymentMethodController@updateMethod')->name('payment_method.updateMethod');
+      Route::post('Payment_method/deleteMethod/{id}', 'PaymentMethodController@deleteMethod')->name('payment_method.deleteMethod');
+
+      //Payment Method dan Partner Company
+      Route::get('Partner_company', 'PartnerCompanyController@PC')->name('partner_company');
+      Route::get('Partner_company/newPC', 'PartnerCompanyController@newPC')->name('partner_company.newPC');
+      Route::post('Partner_company/createPC', 'PartnerCompanyController@createPC')->name('partner_company.createPC');
+      Route::get('Partner_company/editPC/{id}', 'PartnerCompanyController@editPC')->name('partner_company.editPC');
+      Route::post('Partner_company/updatePC/{id}', 'PartnerCompanyController@updatePC')->name('partner_company.updatePC');
+      Route::post('Partner_company/deletePC/{id}', 'PartnerCompanyController@deletePC')->name('partner_company.deletePC');
+
+      //Order
+      Route::get('Order', 'FutsalController@order')->name('order');
+      Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
+      Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
+      Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
+      Route::post('Order-StatusOrder/{id}', 'FutsalController@OrderStatus')->name('order.StatusOrder');
+
+      //PRODUCT CATEGORY
+      Route::get('category', 'ProductCategoryController@category')->name('category');
+      Route::post('category/delete{id}', 'ProductCategoryController@destroy')->name('category.delete');
+
+      //Product
+      Route::get('product', 'ProductController@product')->name('product');
+      Route::get('product/add', 'ProductController@tambah')->name('product.add');
+      Route::post('product/add', 'ProductController@store')->name('product.add');
+      Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
+      Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
+      Route::post('product/delete/{id}', 'ProductController@destroy')->name('product.delete');
+      Route::post('product/status/{id}', 'ProductController@productStatus')->name('product.status');
 
     //Futsal
 
@@ -133,9 +142,7 @@ Auth::routes();
       Route::post('product/futsal/updateLapangan/{id}', 'FutsalController@updateLapangan')->name('superadmin.futsal.updateLapangan');
       //delete tempart
       Route::post('product/futsal/deleteLapangan/{id}', 'FutsalController@deleteLapangan')->name('superadmin.futsal.deleteLapangan');
-	});
-
-
-// Route::group(['namespace'=> 'Crud'], function(){
+	   });
+   });
 });
- // });
+?>

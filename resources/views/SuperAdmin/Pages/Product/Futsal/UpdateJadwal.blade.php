@@ -40,7 +40,7 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="jam" id="jam" class="form-control">
+                              <select name="jam" id="jam" class="standardSelect" tabindex="1">
                                 <option value="{{$editJadwal->jam}}">{{$editJadwal->jam}}</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>

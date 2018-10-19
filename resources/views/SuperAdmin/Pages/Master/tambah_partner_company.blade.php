@@ -16,8 +16,8 @@
     <div class="row form-group">
       <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Kategori</label></div>
       <div class="col-12 col-md-9">
-        <select name="category_id" id="category_id" class="form-control">
-          <option value="0" disabled selected>Please select</option>
+        <select name="category_id" id="category_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+          <option value=""></option>
           @foreach($categoris as $categori)
           <option value="{{$categori->id}}">{{$categori->name}}</option>
           @endforeach
@@ -28,7 +28,7 @@
       <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Produk</label></div>
       <div class="col-12 col-md-9">
         <select name="produk_id" id="produk_id" class="form-control">
-          <option value="0" disabled selected>Please select</option>
+          <option value=""></option>
           @foreach($products as $product)
           <option value="{{$product->id}}">{{$product->name}}</option>
           @endforeach

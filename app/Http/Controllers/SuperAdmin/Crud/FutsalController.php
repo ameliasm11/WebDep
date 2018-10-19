@@ -69,7 +69,7 @@ class FutsalController extends SystemController
 
   public function editJadwal($id)
   {
-    $page = 'SuperAdmin.Pages.Product.Futsal.UpdateJadwal';      // $user = Users::find($id);
+    $page = 'SuperAdmin.Pages.Product.Futsal.UpdateJadwal';
     $editJadwal = Jadwal::findOrFail($id);
     $modules = Module::with('Menus')->get();
     return view($page)->with(compact('modules','editJadwal'));

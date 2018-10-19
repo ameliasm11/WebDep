@@ -48,15 +48,14 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                     <h3 class="menu-title">Main Menu</h3>
+                    <h3 class="menu-title">Main Menu</h3>
                     @foreach($modules as $module)
-                    <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown.show">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="menu-icon {{$module->icon}}"></i>{{$module->name}}</a>
-                        <ul class="sub-menu children dropdown-menu">
+                        <ul class="{{ request()->segment(1) == $module->segment ? 'sub-menu children dropdown-menu.show' : 'sub-menu children dropdown-menu' }}">
                             @foreach($module->Menus as $menu)
                             <li>
-                                <i class="fa fa-pencil-square-o"></i>
                                 <a href="{{route($menu->url)}}">{{$menu->name}}</a>
                             </li>
                             @endforeach
