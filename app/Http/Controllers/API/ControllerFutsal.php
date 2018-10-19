@@ -145,11 +145,12 @@ class ControllerFutsal extends Controller
        $nama_lapangan = \App\model\Lapangan::where('id',$id_lapangan)->first();
        $data['nama'] = $nama;
        $data['no_hp'] = $no;
+       $data['tanggal'] = $tgl;
        $data['lapangan'] = $nama_lapangan['nama'];
        $data['tempat'] = $nama_tempat['nama'];
-       $data['tanggal'] = $tanggal;
-       $data['jam'] = $jam;
-       $data['status'] = $order['status'];
+       $data['tanggalmain'] = $tanggal;
+       $data['jammain'] = $jam;
+       $data['statusorder'] = $order['status'];
        $datas[] = $data;
      }
 
@@ -158,7 +159,7 @@ class ControllerFutsal extends Controller
        $res['status'] = true;
        $res['code'] = 200;
        $res['message'] = "success !";
-       $res['data']= $datas;
+       $res['data'] = $datas;
        return response($res);
      }else {
        $res['message'] = "empty";
