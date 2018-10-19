@@ -12,26 +12,18 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Edit</strong> Jadwal
+                        <strong>Edit Data</strong> Jadwal
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.updatejadwal', $editJadwal->id)}}" method="POST" enctype="application/json" class="form-horizontal">
                           {{ csrf_field() }}
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
-                            <div class="col-12 col-md-9">
-                              <select name="tempat_id" id="tempat_id" class="form-control">
-                                <option value="{{$editJadwal->Tempat->id}}" disabled selected>{{$editJadwal->Tempat->nama}}</option>
-                              </select>
-                            </div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Tempat</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="tempat_id" name="tempat_id" class="form-control" value="{{ $editJadwal->Tempat->nama }}" disabled></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
-                            <div class="col-12 col-md-9">
-                              <select name="lapangan_id" id="lapangan_id" class="form-control">
-                                <option value="{{$editJadwal->Lapangan->id}}" disabled selected>{{$editJadwal->Lapangan->nama}}</option>
-                              </select>
-                            </div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Lapangan</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="lapangan_id" name="lapangan_id" class="form-control" value="{{$editJadwal->Lapangan->nama}}" disabled></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class="form-control-label">Tanggal</label></div>

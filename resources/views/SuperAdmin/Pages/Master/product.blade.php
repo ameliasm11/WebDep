@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Product</h1></div>
+        <h1>Produk</h1></div>
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Product</strong></div>
+              <strong class="card-title">Daftar Produk</strong></div>
               <div class="card-body">
               <div align="right">
                   <a href="{{route('product.add')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
@@ -29,8 +29,8 @@
                         <th>Kategori</th>
                         <th>URL</th>
                         <th>Status</th>
-                        <th>Created at</th>
-                        <th>Action</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

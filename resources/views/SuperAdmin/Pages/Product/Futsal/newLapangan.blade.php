@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Lapangan
+                        <strong>Tambah Data</strong> Lapangan
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.createLapangan')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -22,8 +22,8 @@
                             <div class="col-12 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama Lapangan" class="form-control"></div>
                           </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan Tempat</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan Tempat" class="form-control"></div>
+                            <div class="col col-md-3"><label for="text-input" class="form-control-label">Keterangan</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="ket" name="ket" placeholder="Keterangan" class="form-control"></div>
                           </div>
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>

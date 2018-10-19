@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Add New</strong> Tempat Futsal
+                        <strong>Tambah Data</strong> Tempat
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.futsal.createTempat')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -111,8 +111,6 @@
                             <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" placeholder="deskripsi" class="form-control"></textarea></div>
                           </div>
                         </div>
-                      </div>
-                    </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit

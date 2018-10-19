@@ -4,19 +4,18 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Role Management</h1>
+                        <h1>Product Category</h1>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Daftar Role</strong>
+                            <strong class="card-title">Product Category List</strong>
                         </div>
                     <div class="card-body">
                     <div align="right">
@@ -26,11 +25,10 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Role</th>
+                        <th>Role Name</th>
                         <th>Level</th>
-                        <th>Deskripsi</th>
-                        <th>Dibuat Pada</th>
-                        <th>Aksi</th>
+                        <th>Description</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -40,19 +38,17 @@
                         <td>{{$datas->name}}</td>
                         <td>{{$datas->level}}</td>
                         <td>{{$datas->description}}</td>
-                        <td>{{$datas->created_at}}</td>
                         <td>
-                          <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">
+                          <center><a href="">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
                           </a>
-                            <form action="{{route ('superadmin.role.delete', $datas->id) }}" method="POST" style="display: inline-block">
+                            <!-- <form method="POST" action="{{ route('superadmin.role.delete', [$datas->id]) }}" style="display: inline-block;">
   								            {{ csrf_field() }}
-                              {{ method_field('DELETE') }}
-                              <!-- <a href="{{route('superadmin.role.delete', [$datas->id])}}"> -->
-                                <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button>
-                              <!-- </a> -->
-                            </form>
-                            </center>
+                              {{ method_field('DELETE') }} -->
+                              <a href="{{route('superadmin.role.delete', [$datas->id])}}">
+                                <button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                              </a></center>
+                            <!-- </form> -->
                         </td>
                       </tr>
                       @endforeach

@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Tempat</strong>
+                            <strong class="card-title">Daftar Tempat</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -55,8 +55,8 @@
                         <th>Jam Tutup</th>
                         <th>Partner</th>
                         <th>Deskripsi</th>
-                        <th>Created at</th>
-                        <th>Actions</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

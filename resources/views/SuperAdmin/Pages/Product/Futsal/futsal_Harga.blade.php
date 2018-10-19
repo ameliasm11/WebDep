@@ -16,7 +16,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Harga</strong>
+                            <strong class="card-title">Daftar Harga</strong>
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
@@ -52,8 +52,8 @@
                           <th>Lapangan</th>
                           <th>Jam</th>
                           <th>Harga</th>
-                          <th>Created at</th>
-                          <th>Actions</th>
+                          <th>Dibuat Pada</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>

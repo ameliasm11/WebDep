@@ -52,7 +52,7 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
 
     Route::group(['prefix' => 'MasterData/'], function() {
 
-      //Payment Method dan Payment Type
+      //Payment Type
       Route::get('payment_type', 'PaymentTypeController@type')->name('payment_type');
       Route::get('payment_type/newType', 'PaymentTypeController@newType')->name('payment_type.newType');
       Route::post('payment_type/createType', 'PaymentTypeController@createType')->name('payment_type.createType');
@@ -60,7 +60,7 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
       Route::post('payment_type/updateType/{id}', 'PaymentTypeController@updateType')->name('payment_type.updateType');
       Route::post('payment_type/deleteType/{id}', 'PaymentTypeController@deleteType')->name('payment_type.deleteType');
 
-      //Payment Method dan Payment Method
+      //Payment Method
       Route::get('Payment_method', 'PaymentMethodController@method')->name('payment_method');
       Route::get('Payment_method/newMethod', 'PaymentMethodController@newMethod')->name('payment_method.newMethod');
       Route::post('Payment_method/createMethod', 'PaymentMethodController@createMethod')->name('payment_method.createMethod');
@@ -68,7 +68,7 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
       Route::post('Payment_method/updateMethod/{id}', 'PaymentMethodController@updateMethod')->name('payment_method.updateMethod');
       Route::post('Payment_method/deleteMethod/{id}', 'PaymentMethodController@deleteMethod')->name('payment_method.deleteMethod');
 
-      //Payment Method dan Partner Company
+      //Partner Company
       Route::get('Partner_company', 'PartnerCompanyController@PC')->name('partner_company');
       Route::get('Partner_company/newPC', 'PartnerCompanyController@newPC')->name('partner_company.newPC');
       Route::post('Partner_company/createPC', 'PartnerCompanyController@createPC')->name('partner_company.createPC');
@@ -76,12 +76,7 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
       Route::post('Partner_company/updatePC/{id}', 'PartnerCompanyController@updatePC')->name('partner_company.updatePC');
       Route::post('Partner_company/deletePC/{id}', 'PartnerCompanyController@deletePC')->name('partner_company.deletePC');
 
-      //Order
-      Route::get('Order', 'FutsalController@order')->name('order');
-      Route::post('Order-deleteOrder/{id}', 'FutsalController@deleteOrder')->name('order.deleteOrder');
-      Route::post('Order-editOrder/{id}', 'FutsalController@editOrder')->name('order.editOrder');
-      Route::post('Order-UpdateOrder/{id}', 'FutsalController@UpdateOrder')->name('order.UpdateOrder');
-      Route::post('Order-StatusOrder/{id}', 'FutsalController@OrderStatus')->name('order.StatusOrder');
+
 
       //PRODUCT CATEGORY
       Route::get('category', 'ProductCategoryController@category')->name('category');
@@ -105,8 +100,9 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
       Route::post('product/futsal/jadwal/update/{id}', 'FutsalController@updateJadwal')->name('superadmin.futsal.updatejadwal');
       Route::post('product/futsal/jadwal/delete/{id}', 'FutsalController@deleteJadwal')->name('superadmin.futsal.deleteJadwal');
       Route::post('product/futsal/jadwal/status/{id}', 'FutsalController@jadwalStatus')->name('superadmin.futsal.jadwalStatus');
-      //tabel order
-      Route::get('product/futsal/order', 'FutsalController@order')->name('superadmin.futsal.order');
+      // //tabel order
+      // Route::get('product/futsal/order', 'FutsalController@order')->name('superadmin.futsal.order');
+
       //tabel tempat
       Route::get('product/futsal/tempat', 'FutsalController@tempat')->name('superadmin.futsal.tempat');
       Route::get('product/futsal/newTempat', 'FutsalController@newTempat')->name('superadmin.futsal.newTempat');
@@ -136,6 +132,16 @@ Route::group(['/', 'namespace' => 'SuperAdmin'], function(){
       //delete lapangan
       Route::post('product/futsal/deleteLapangan/{id}', 'FutsalController@deleteLapangan')->name('superadmin.futsal.deleteLapangan');
 	   });
+
+    Route::group(['prefix' => 'Report/'], function() {
+
+      //Order
+      Route::get('Order', 'OrderController@order')->name('order');
+      Route::post('Order/deleteOrder/{id}', 'OrderController@deleteOrder')->name('order.deleteOrder');
+      Route::post('Order/editOrder/{id}', 'OrderController@editOrder')->name('order.editOrder');
+      Route::post('Order/updateOrder/{id}', 'OrderController@UpdateOrder')->name('order.UpdateOrder');
+      Route::post('Order/statusOrder/{id}', 'OrderController@OrderStatus')->name('order.StatusOrder');
+    });
    });
 });
 ?>
