@@ -48,12 +48,12 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Nama</th>
                         <th>Keterangan Lapangan</th>
                         <th>Nama Tempat</th>
                         <th>Gambar</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -61,11 +61,6 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$datas->nama}}</td>
-                        <td>{{$datas->ket}}</td>
-                        <td>{{$datas->Tempat->nama}}</th>
-                        <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
-                        <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.futsal.editLapangan', [$datas->id])}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
@@ -77,6 +72,11 @@
                               </center>
                             <!-- </form> -->
                         </td>
+                        <td>{{$datas->nama}}</td>
+                        <td>{{$datas->ket}}</td>
+                        <td>{{$datas->Tempat->nama}}</th>
+                        <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
+                        <td>{{$datas->created_at}}</td>
                       </tr>
                       @endforeach
                     </tbody>

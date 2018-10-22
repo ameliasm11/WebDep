@@ -26,21 +26,17 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Role</th>
                         <th>Level</th>
                         <th>Deskripsi</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$datas->id}}</td>
-                        <td>{{$datas->name}}</td>
-                        <td>{{$datas->level}}</td>
-                        <td>{{$datas->description}}</td>
-                        <td>{{$datas->created_at}}</td>
                         <td>
                           <center><a href="{{route ('superadmin.role.edit', $datas->id)}}">
                             <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
@@ -54,6 +50,11 @@
                             </form>
                             </center>
                         </td>
+                        <td>{{$datas->name}}</td>
+                        <td>{{$datas->level}}</td>
+                        <td>{{$datas->description}}</td>
+                        <td>{{$datas->created_at}}</td>
+
                       </tr>
                       @endforeach
                     </tbody>

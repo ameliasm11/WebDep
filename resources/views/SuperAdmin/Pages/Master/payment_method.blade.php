@@ -23,19 +23,16 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Nama Type</th>
                         <th>Nama Method</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
                       @foreach($types as $type)
                         <td>{{$no++}}</td>
-                        <td>{{$type->type->nama}}</td>
-                        <td>{{$type->nama}}</td>
-                        <td>{{$type->created_at}}</td>
                         <td>
                           <center><a href="{{ route('payment_method.editMethod', [$type] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('payment_method.deleteMethod', $type->id) }}" method="post" style="display: inline-block">
@@ -43,6 +40,9 @@
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
                         </td>
+                        <td>{{$type->type->nama}}</td>
+                        <td>{{$type->nama}}</td>
+                        <td>{{$type->created_at}}</td>
                       </tr>
                       @endforeach
                     </tbody>

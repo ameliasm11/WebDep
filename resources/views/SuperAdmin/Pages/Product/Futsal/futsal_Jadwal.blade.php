@@ -47,6 +47,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Tempat</th>
                         <th>Lapangan</th>
                         <th>Jam</th>
@@ -54,7 +55,6 @@
                         <th>Harga</th>
                         <th>Status</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -62,6 +62,16 @@
                       @foreach($data as $datas)
                       <tr>
                         <td>{{$no++}}</td>
+                        <td>
+                          <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
+                            <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
+                          </a>
+                            <form method="POST" action="{{route('superadmin.futsal.deleteJadwal' , [$datas->id])}}" style="display: inline-block;">
+  								            {{ csrf_field() }}
+                                <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                              </center>
+                            </form>
+                        </td>
                         <td>{{$datas->Tempat->nama}}</td>
                         <td>{{$datas->Lapangan->nama}}</td>
                         <td>{{$datas->jam}}</td>
@@ -78,16 +88,6 @@
                         </td>
                         <td>{{$datas->created_at}}</td>
                         </form></td>
-                        </td>
-                        <td>
-                          <center><a href="{{route ('superadmin.futsal.editjadwal', $datas->id)}}">
-                            <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
-                          </a>
-                            <form method="POST" action="{{route('superadmin.futsal.deleteJadwal' , [$datas->id])}}" style="display: inline-block;">
-  								            {{ csrf_field() }}
-                                <button type="submit" onClick="return confirm('Yakin ingin menghapus data ini ?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                              </center>
-                            </form>
                         </td>
                       </tr>
                       @endforeach

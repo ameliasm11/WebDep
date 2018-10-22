@@ -25,21 +25,17 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Level</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
                       @foreach($user as $users)
                         <td>{{$no++}}</td>
-                        <td>{{$users->name}}</td>
-                        <td>{{$users->email}}</td>
-                        <td>{{$users->Role->level}}</td>
-                        <td>{{$users->created_at}}</td>
                         <td>
                           <center><a href="{{route('superadmin.user.edit', [$users]) }}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                           <form action="{{ route('superadmin.user.delete', $users->id) }}" method="post" style="display: inline-block">
@@ -47,6 +43,10 @@
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
                         </td>
+                        <td>{{$users->name}}</td>
+                        <td>{{$users->email}}</td>
+                        <td>{{$users->Role->level}}</td>
+                        <td>{{$users->created_at}}</td>
                       </tr>
                       @endforeach
                     </tbody>
