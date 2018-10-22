@@ -26,7 +26,7 @@
                         <th>Jam</th>
                         <th>No HP</th>
                         <th>Status</th>
-                        <th>Waktu</th>
+                        <th>Dibuat Pada</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
