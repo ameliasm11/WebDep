@@ -81,6 +81,7 @@ class ControllerFutsal extends Controller
     $tanggal = $request->input('tanggal'),
     $jam = $request->input('jam_pesan')
     ]);
+    $status_jadwal = \App\model\Jadwal::where('id',$jadwal)->update(['status'=>false]);
 
       $data = new \App\model\Order();
       $data->nama = $nama;
