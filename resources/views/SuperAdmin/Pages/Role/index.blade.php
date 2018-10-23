@@ -22,7 +22,7 @@
                     <div align="right">
                         <a href="{{route('superadmin.role.tambahdata')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
                     </div><br>
-                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                  <table id="dataTable" class="table table-striped table-bordered">
                     <thead>
                       <tr>
                         <th>No</th>

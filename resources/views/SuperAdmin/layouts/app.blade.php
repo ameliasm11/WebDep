@@ -159,9 +159,5 @@
         });
     });
 </script>
-    <!-- @yield('scripts')
-    <script type="text/javascript">
-      @yield('javascript')
-    </script> -->
 </body>
 </html>
