@@ -48,12 +48,12 @@
                       <thead>
                         <tr>
                           <th>No</th>
+                          <th>Aksi</th>
                           <th>Tempat</th>
                           <th>Lapangan</th>
                           <th>Jam</th>
                           <th>Harga</th>
                           <th>Dibuat Pada</th>
-                          <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -61,11 +61,6 @@
                         @foreach($data as $datas)
                         <tr>
                           <td>{{$no++}}</td>
-                          <td>{{$datas->Tempat->nama}}</td>
-                          <td>{{$datas->Lapangan->nama}}</td>
-                          <td>{{$datas->jam}}</td>
-                          <td>{{$datas->harga}}</td>
-                          <td>{{$datas->created_at}}</td>
                           <td>
                             <center><a href="{{route('superadmin.futsal.editHarga', $datas->id)}}">
                               <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
@@ -76,6 +71,11 @@
                              </form>
                               </center>
                           </td>
+                          <td>{{$datas->Tempat->nama}}</td>
+                          <td>{{$datas->Lapangan->nama}}</td>
+                          <td>{{$datas->jam}}</td>
+                          <td>{{$datas->harga}}</td>
+                          <td>{{$datas->created_at}}</td>
                         </tr>
                         @endforeach
                       </tbody>

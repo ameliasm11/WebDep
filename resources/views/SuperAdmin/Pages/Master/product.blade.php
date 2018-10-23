@@ -25,18 +25,25 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Nama Produk</th>
                         <th>Kategori</th>
                         <th>URL</th>
                         <th>Status</th>
                         <th>Dibuat Pada</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
                       @foreach($products as $product)
                         <td>{{$no++}}</td>
+                        <td>
+                          <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                          <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">
+                               {{ csrf_field() }}
+                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                          </form>
+                        </td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->kategoriproduk->name}}</td>
                         <td>{{$product->url}}</td>
@@ -49,14 +56,7 @@
                           @endif
                         </form>
                         </td>
-                        <td>{{$product->created_at}}</td>
-                        <td>
-                          <center><a href="{{ route('product.edit', [$product] )}}"><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                          <form action="{{ route('product.delete', $product->id) }}" method="post" style="display: inline-block">
-                               {{ csrf_field() }}
-                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                          </form>
-                        </td>
+                        <td>{{$product->created_at}}</td>  
                       </tr>
                       @endforeach
                     </tbody>

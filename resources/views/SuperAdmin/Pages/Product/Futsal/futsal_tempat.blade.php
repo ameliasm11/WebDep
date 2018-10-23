@@ -48,6 +48,7 @@
                                 <thead>
                                   <tr>
                                     <th>No</th>
+                                    <th>Aksi</th>
                                     <th>Nama</th>
                                     <th>Alamat</th>
                                     <th>Gambar</th>
@@ -56,7 +57,6 @@
                                     <th>Partner</th>
                                     <th>Deskripsi</th>
                                     <th>Dibuat Pada</th>
-                                    <th>Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -64,14 +64,6 @@
                                   @foreach($data as $datas)
                                   <tr>
                                     <td>{{$no++}}</td>
-                                    <td>{{$datas->nama}}</td>
-                                    <td>{{$datas->alamat}}</td>
-                                    <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
-                                    <td>{{$datas->jam_buka}}</td>
-                                    <td>{{$datas->jam_tutup}}</td>
-                                    <td>{{$datas->Partnercompany->nama}}
-                                    <td>{{$datas->deskripsi}}</td>
-                                    <td>{{$datas->created_at}}</td>
                                     <td>
                                       <center><a href="{{route('superadmin.futsal.editTempat', [$datas->id])}}">
                                         <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button>
@@ -82,6 +74,14 @@
                                           </form>
                                           </center>
                                     </td>
+                                    <td>{{$datas->nama}}</td>
+                                    <td>{{$datas->alamat}}</td>
+                                    <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
+                                    <td>{{$datas->jam_buka}}</td>
+                                    <td>{{$datas->jam_tutup}}</td>
+                                    <td>{{$datas->Partnercompany->nama}}
+                                    <td>{{$datas->deskripsi}}</td>
+                                    <td>{{$datas->created_at}}</td>
                                   </tr>
                                   @endforeach
                                 </tbody>

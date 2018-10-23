@@ -23,23 +23,23 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Aksi</th>
                         <th>Nama</th>
                         <th>Deskripsi</th>
-                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $no = 1; @endphp
                       @foreach($categorys as $category)
                         <td>{{$no++}}</td>
-                        <td>{{$category->name}}</td>
-                        <td>{{$category->description}}</td>
                         <td>
                           <form action="{{ route('category.delete', $category->id) }}" method="post" style="display: inline-block">
                                {{ csrf_field() }}
                           <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                           </form>
                         </td>
+                        <td>{{$category->name}}</td>
+                        <td>{{$category->description}}</td>
                       </tr>
                       @endforeach
                     </tbody>
