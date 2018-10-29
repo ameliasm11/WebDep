@@ -12,13 +12,13 @@ class MenuSeeder extends Seeder
     public function run()
     {
         DB::table('tm_menu')->insert([
-            'name' => 'Role Management',
+            'name' => 'Manajement Role',
             'module_id' => '1',
             'url' => 'superadmin.role.index',
         ]);
 
         DB::table('tm_menu')->insert([
-            'name' => 'User Web Registration',
+            'name' => 'Registrasi User Web',
             'module_id' => '1',
             'url' => 'superadmin.user.data',
         ]);
