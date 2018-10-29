@@ -38,7 +38,7 @@
                                 {{ csrf_field() }}
 
                                 <div class="header header-primary text-center">
-                                    <h4>Login</h4>
+                                    <h4>Masuk</h4>
                                 </div>
                                 <p class="text-divider"></p>
                                 <div class="content">
@@ -78,7 +78,7 @@
                                     </div> -->
                                 </div>
                                 <div class="footer text-center">
-                                    <button href="#pablo" type="submit" class="btn btn-simple btn-primary btn-lg">Get Started</button>
+                                    <button href="#pablo" type="submit" class="btn btn-simple btn-primary btn-lg">Masuk</button>
                                 </div>
                             </form>
                         </div>
