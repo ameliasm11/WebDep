@@ -19,7 +19,7 @@
                           {{ csrf_field() }}
 
                         <div class="row form-group">
-                            <div class="col col-md-2"><label for="text-input" class=" form-control-label">Name</label></div>
+                            <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama</label></div>
                             <div class="col-10 col-md-9"><input type="text" id="name" name="name" class="form-control" value="{{ $user->name }}">
                             </div>
                           </div>
