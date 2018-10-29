@@ -41,7 +41,7 @@
                           <div class="col-12 col-md-9"><input type="time" id="jam_buka" name="jam_buka" value="{{$data->jam_buka}}" class="form-control"></div>
                         </div>
                         <div class="row form-group">
-                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam Buka</label></div>
+                          <div class="col col-md-3"><label for="text-input" class="form-control-label">Jam Tutup</label></div>
                           <div class="col-12 col-md-9"><input type="time" id="jam_tutup" name="jam_tutup" value="{{$data->jam_tutup}}" class="form-control"></div>
                         </div>
                           <div class="row form-group">

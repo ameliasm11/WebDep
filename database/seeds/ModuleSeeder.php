@@ -28,7 +28,7 @@ class ModuleSeeder extends Seeder
         ]);
 
         DB::table('tm_module')->insert([
-            'name' => 'Report',
+            'name' => 'Transaksi',
             'description' => 'Module',
             'icon' => 'fa fa-file',
             'order' => '3',

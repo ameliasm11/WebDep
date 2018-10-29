@@ -5,7 +5,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Payment Type</h1>
+                                <h1>Form Type Pembayaran</h1>
                             </div>
                         </div>
                     </div>
@@ -13,13 +13,13 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Tambah Data</strong> Payment Type
+                        <strong>Tambah Data</strong> Tipe Pembayaran
                       </div>
                       <div class="card-body card-block">
                         <form action="{{ route('payment_type.createType') }}" method="post">
                         {{ csrf_field() }}
                         <div class="row form-group">
-                            <div class="col col-md-2"><label for="text-input" class=" form-control-label">Nama</label></div>
+                            <div class="col col-md-2"><label for="text-input" class=" form-control-label">Tipe Pembayaran</label></div>
                             <div class="col-10 col-md-9"><input type="text" id="nama" name="nama" placeholder="Nama" class="form-control">
                             </div>
                         </div>

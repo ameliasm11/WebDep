@@ -5,7 +5,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Partner Company</h1>
+                                <h1>Form Perusahaan</h1>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                           </div>
                         </div>
 
-    
+
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit

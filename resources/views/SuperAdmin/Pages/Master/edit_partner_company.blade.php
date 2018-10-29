@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Partner Company</strong> Edit Data
+                        <strong>Perusahaan</strong> Edit Data
                       </div>
                       <div class="card-body card-block">
                         <form action="{{ route('partner_company.updatePC', $types->id) }}" method="post">

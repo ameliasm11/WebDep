@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Payment Type</strong> Edit Data
+                        <strong>Tipe Pembayaran</strong> Edit Data
                       </div>
                       <div class="card-body card-block">
                         <form action="{{ route('payment_type.updateType', $types->id) }}" method="post">

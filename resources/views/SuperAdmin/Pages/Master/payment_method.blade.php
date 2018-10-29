@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <div class="page-header float-left">
       <div class="page-title">
-        <h1>Payment Method</h1></div>
+        <h1>Metode Pembayaran</h1></div>
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">Daftar Payment Method</strong></div>
+              <strong class="card-title">Daftar Metode Pembayaran</strong></div>
                 <div class="card-body">
                   <div align="right">
                     <a href="{{route('payment_method.newMethod')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
@@ -24,8 +24,8 @@
                       <tr>
                         <th>No</th>
                         <th>Aksi</th>
-                        <th>Nama Type</th>
-                        <th>Nama Method</th>
+                        <th>Tipe Pembayaran</th>
+                        <th>Metode Pembayaran</th>
                         <th>Dibuat Pada</th>
                       </tr>
                     </thead>

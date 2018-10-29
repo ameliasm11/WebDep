@@ -54,7 +54,7 @@
                                     <th>Gambar</th>
                                     <th>Jam Buka</th>
                                     <th>Jam Tutup</th>
-                                    <th>Partner</th>
+                                    <th>Perusahaan</th>
                                     <th>Deskripsi</th>
                                     <th>Dibuat Pada</th>
                                   </tr>

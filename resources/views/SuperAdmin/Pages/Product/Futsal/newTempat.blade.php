@@ -96,7 +96,7 @@
                           </div>
                         </div>
                         <div class="row form-group">
-                          <div class="col col-md-3"><label for="select" class=" form-control-label">Partner</label></div>
+                          <div class="col col-md-3"><label for="select" class=" form-control-label">Perusahaan</label></div>
                           <div class="col-12 col-md-9">
                             <select name="partner_id" id="partner_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
                               <option value=""></option>
