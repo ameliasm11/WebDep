@@ -41,7 +41,6 @@
                 <a class="navbar-brand" href=""><img src="{{asset('images/nav_logo.png')}}" width="50%"></a>
                 <a class="navbar-brand hidden" href=""><img src="{{asset('images/logoDEP.png')}}"></a>
             </div>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
