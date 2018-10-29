@@ -19,10 +19,10 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('tm_user')->insert([
-            'name' => 'Lufianti',
-            'role_id' => '1',
-            'email' => 'Lufianti08@gmail.com',
-            'password' => bcrypt('lufi')
+            'name' => 'User 1',
+            'role_id' => '2',
+            'email' => 'user@depapps.com',
+            'password' => bcrypt('user')
         ]);
     }
 }
