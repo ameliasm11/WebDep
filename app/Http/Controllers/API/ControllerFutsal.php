@@ -81,7 +81,7 @@ class ControllerFutsal extends Controller
     $tanggal = $request->input('tanggal'),
     $jam = $request->input('jam_pesan')
     ]);
-    $status_jadwal = \App\model\Jadwal::where('id',$jadwal)->update(['status'=>false]);
+      $status_jadwal = \App\model\Jadwal::where('id',$jadwal)->update(['status'=>false]);
 
       $data = new \App\model\Order();
       $data->nama = $nama;
@@ -90,7 +90,7 @@ class ControllerFutsal extends Controller
       $data->user_id = $user;
       $data->tanggal = $tanggal;
       $data->jam_pesan = $jam;
-      $data->status = "false";
+      $data->status = false;
 
       if($data->save()){
         $res['status'] = true;
@@ -104,29 +104,9 @@ class ControllerFutsal extends Controller
         $res['code'] = 400;
         $res['message'] = "Saving field!";
         return response($res);
-      }
+       }
    }
 
-
-   public function harga(Request $request)
-   {
-     $this->validate($request, [
-     $jadwal = $request->input('jadwal_id')
-     ]);
-         $data = \App\model\Harga::where('jadwal_id',$jadwal)->get();
-
-     if(count($data) > 0){ //mengecek apakah data kosong atau tidak
-       $res['status'] = true;
-       $res['code'] = 200;
-       $res['message'] = "Success!";
-       $res['data'] = $data;
-         return response($res);
-     }
-     else{
-         $res['message'] = "Empty!";
-         return response($res);
-     }
-   }
 
    public function listOrder(Request $request)
    {
