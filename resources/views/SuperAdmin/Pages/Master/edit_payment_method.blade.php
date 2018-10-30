@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Metode Pembayaran</h1>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                                 <i class="fa fa-ban"></i> Reset
                             </button>
                             <button class="btn btn-danger btn-sm" type="submit" href="{{route('payment_method')}}">
-                                <i class="fa fa-close"></i>cancel
+                                <i class="fa fa-close"></i> Batal
                             </button>
                         </div>
                         </form>

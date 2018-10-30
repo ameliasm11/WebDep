@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Futsal</h1>
                             </div>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Tempat</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="tempat_id" id="tempat_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <select name="tempat_id" id="tempat_id" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                                 <option value=""></option>
                                 @foreach($tempats as $tempat)
                                 <option value="{{$tempat->id}}">{{$tempat->nama}}</option>
@@ -31,7 +31,7 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Lapangan</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="lapangan_id" id="lapangan_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <select name="lapangan_id" id="lapangan_id" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                                 <option value="" disabled selected></option>
                                 @foreach($lapangan as $lapangans)
                                 <option value="{{$lapangans->id}}">{{$lapangans->nama}}</option>
@@ -46,7 +46,7 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Jam</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="jam" id="jam" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <select name="jam" id="jam" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                                 <option value=""</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>
@@ -89,7 +89,7 @@
                         </button>
                         <a href="{{route('superadmin.futsal.jadwal')}}">
                         <button type="button" class="btn btn-danger btn-sm">
-                          <i class="fa fa-close"></i> Cancel
+                          <i class="fa fa-close"></i> Batal
                         </button></a>
                         </form>
                       </div>

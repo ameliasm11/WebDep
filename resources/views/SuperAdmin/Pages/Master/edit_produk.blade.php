@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Produk</h1>
+                                <h1>Produk</h1>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             </button>
                             <a href="{{route('product')}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                              <i class="fa fa-close"></i> Cancel
+                              <i class="fa fa-close"></i> Kembali
                             </button></a>
                           </div>
                         </div>

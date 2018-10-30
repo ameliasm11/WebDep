@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Tipe Pembayaran</h1>
                             </div>
                         </div>
                     </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Tipe Pembayaran</strong> Edit Data
+                        <strong>Edit Data</strong> Tipe Pembayaran
                       </div>
                       <div class="card-body card-block">
                         <form action="{{ route('payment_type.updateType', $types->id) }}" method="post">
@@ -31,7 +31,7 @@
                             </button>
                             <a href="{{route('payment_type')}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                              <i class="fa fa-close"></i> Cancel
+                              <i class="fa fa-close"></i> Batal
                             </button></a>
                         </div>
                         </form>

@@ -5,7 +5,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Metode Pembayaran</h1>
                             </div>
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                         <div class="row form-group">
                           <div class="col col-md-2"><label for="select" class=" form-control-label">Tipe Pembayaran</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="type_id" id="type_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                            <select name="type_id" id="type_id" data-placeholder="Silahkan pilih..." class="standardSelect" tabindex="1">
                               <option value=""></option>
                               @foreach($methods as $method)
                               <option value="{{$method->id}}">{{$method->nama}}</option>
@@ -43,7 +43,7 @@
                             </button>
                             <a href="{{route('payment_method')}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                              <i class="fa fa-close"></i> Cancel
+                              <i class="fa fa-close"></i> Batal
                             </button></a>
                         </div>
                         </form>

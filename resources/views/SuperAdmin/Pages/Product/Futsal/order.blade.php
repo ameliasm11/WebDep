@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <strong class="card-title">List Order</strong></div>
+              <strong class="card-title">Daftar Order</strong></div>
                 <div class="card-body">
                   <div align="right">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">

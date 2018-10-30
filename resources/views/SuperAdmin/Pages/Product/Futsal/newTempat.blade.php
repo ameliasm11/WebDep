@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Futsal</h1>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Jam Buka</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="jam_buka" id="jam_buka" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                            <select name="jam_buka" id="jam_buka" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                               <option value=""></option>
                               <option value="01:00">01:00</option>
                               <option value="02:00">02:00</option>
@@ -66,7 +66,7 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Jam Tutup</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="jam_tutup" id="jam_tutup" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                            <select name="jam_tutup" id="jam_tutup" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                               <option value=""></option>
                               <option value="01:00">01:00</option>
                               <option value="02:00">02:00</option>
@@ -98,7 +98,7 @@
                         <div class="row form-group">
                           <div class="col col-md-3"><label for="select" class=" form-control-label">Perusahaan</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="partner_id" id="partner_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                            <select name="partner_id" id="partner_id" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                               <option value=""></option>
                               @foreach($partners as $partner)
                               <option value="{{$partner->id}}">{{$partner->nama}}</option>
@@ -107,7 +107,7 @@
                           </div>
                         </div>
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
+                            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
                             <div class="col-12 col-md-9"><textarea name="deskripsi" id="deskripsi" rows="3" placeholder="deskripsi" class="form-control"></textarea></div>
                           </div>
                         </div>
@@ -120,7 +120,7 @@
                         </button>
                         <a href="{{route('superadmin.futsal.tempat')}}">
                         <button type="button" class="btn btn-danger btn-sm">
-                          <i class="fa fa-close"></i> Cancel
+                          <i class="fa fa-close"></i> Batal
                         </button></a>
                         </form>
                       </div>

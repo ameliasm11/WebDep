@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>User Management</h1>
+                                <h1>Registrasi User Web</h1>
                             </div>
                         </div>
                     </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <strong>Tambah Data</strong> User Management
+                        <strong>Tambah Data</strong> User
                       </div>
                       <div class="card-body card-block">
                         <form action="{{route('superadmin.user.tambah')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -24,7 +24,7 @@
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Level</label></div>
                             <div class="col-12 col-md-9">
-                              <select name="level" id="level" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                              <select name="level" id="level" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                                 <option value=""></option>
                                 @foreach($levels as $level)
                                 <option value="{{$level->id}}">{{$level->name}}</option>
@@ -51,7 +51,7 @@
                         </button>
                         <a href="{{route('superadmin.user.data')}}">
                         <button type="button" class="btn btn-danger btn-sm">
-                          <i class="fa fa-close"></i> Cancel
+                          <i class="fa fa-close"></i> Batal
                         </button></a>
                         </form>
                       </div>

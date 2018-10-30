@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>User Management</h1>
+                        <h1>Registrasi User Web</h1>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                         </div>
                     <div class="card-body">
                       <div align="right">
-                          <a href="{{route('superadmin.user.newUser')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                          <a href="{{route('superadmin.user.newUser')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                       </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>

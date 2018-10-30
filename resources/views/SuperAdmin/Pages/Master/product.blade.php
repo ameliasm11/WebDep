@@ -17,7 +17,7 @@
               <strong class="card-title">Daftar Produk</strong></div>
               <div class="card-body">
               <div align="right">
-                  <a href="{{route('product.add')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                  <a href="{{route('product.add')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
               </div><br>
                 <div class="card-body">
                   <div align="right">
@@ -56,7 +56,7 @@
                           @endif
                         </form>
                         </td>
-                        <td>{{$product->created_at}}</td>  
+                        <td>{{$product->created_at}}</td>
                       </tr>
                       @endforeach
                     </tbody>

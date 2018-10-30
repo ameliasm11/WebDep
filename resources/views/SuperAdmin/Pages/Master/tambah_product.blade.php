@@ -5,7 +5,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Product</h1>
+                                <h1>Produk</h1>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="row form-group">
                           <div class="col col-md-2"><label for="select" class=" form-control-label">Kategori</label></div>
                           <div class="col-12 col-md-9">
-                            <select name="producat_id" id="producat_id" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                            <select name="producat_id" id="producat_id" data-placeholder="Silahkan Pilih..." class="standardSelect" tabindex="1">
                               <option value=""></option>
                               @foreach($kategoris as $kategori)
                               <option value="{{$kategori->id}}">{{$kategori->name}}</option>
@@ -48,7 +48,7 @@
                           </button>
                           <a href="{{route('product')}}">
                           <button type="button" class="btn btn-danger btn-sm">
-                            <i class="fa fa-close"></i> Cancel
+                            <i class="fa fa-close"></i> Kembali
                           </button></a>
                         </div>
                         </div>

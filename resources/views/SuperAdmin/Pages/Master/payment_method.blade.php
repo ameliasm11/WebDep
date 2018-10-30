@@ -17,7 +17,7 @@
               <strong class="card-title">Daftar Metode Pembayaran</strong></div>
                 <div class="card-body">
                   <div align="right">
-                    <a href="{{route('payment_method.newMethod')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                    <a href="{{route('payment_method.newMethod')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                   </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>

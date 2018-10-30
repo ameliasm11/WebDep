@@ -4,7 +4,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Form Futsal</h1>
+                        <h1>Futsal</h1>
                     </div>
                 </div>
             </div>
@@ -20,16 +20,16 @@
                         </div>
                     <div class="card-body">
                       <div class="row form-group">
-                        <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
+                        <div class="col col-md-1"><label for="select" class=" form-control-label">Cari</label></div>
                         <div class="col-12 col-md-3">
-                          <select data-placeholder="Product" class="standardSelect" tabindex="1">
+                          <select data-placeholder="Produk" class="standardSelect" tabindex="1">
                               <option value=""></option>
                             @foreach($products as $product)
                               <option href="{{$product->url}}" value="" onchange="document.location.href=this.options[this.selectedIndex].value;">{{$product->nama}}</option>
                             @endforeach
                           </select>
                         </div>
-                        <div class="col col-md-1"><label for="select" class=" form-control-label">Search</label></div>
+                        <div class="col col-md-1"><label for="select" class=" form-control-label">Cari</label></div>
                          <div class="col-12 col-md-3">
                            <select data-placeholder="Lapangan" class="standardSelect" tabindex="1" onchange="document.location.href=this.options[this.selectedIndex].value;">
                              <option value=""></option>
@@ -42,7 +42,7 @@
                       </div>
                       <div class="card-body">
                         <div align="right">
-                        <a href="{{route('superadmin.futsal.newLapangan')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; New</button></a>
+                        <a href="{{route('superadmin.futsal.newLapangan')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                     </div><br>
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>

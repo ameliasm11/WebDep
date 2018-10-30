@@ -4,7 +4,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Futsal</h1>
+                                <h1>Futsal</h1>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         </form>
                         <a href="{{route('superadmin.futsal.tempat')}}">
                         <button type="button" class="btn btn-danger btn-sm">
-                          <i class="fa fa-close"></i> Cancel
+                          <i class="fa fa-close"></i> Batal
                         </button></a>
                       </div>
                     </div>

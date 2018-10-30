@@ -5,7 +5,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Form Type Pembayaran</h1>
+                                <h1>Type Pembayaran</h1>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             </button>
                             <a href="{{route('payment_type')}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                              <i class="fa fa-close"></i> Cancel
+                              <i class="fa fa-close"></i> Batal
                             </button></a>
                         </div>
                         </form>
